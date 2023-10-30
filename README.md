@@ -1,4 +1,4 @@
-# kungbi의42Seoul 저장소
+# 42seoul storage
 1. [libft](#libft)
 2. [get_next_line](#get_next_line)
 
