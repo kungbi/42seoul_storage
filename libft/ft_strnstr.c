@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 20:05:39 by woonshin          #+#    #+#             */
-/*   Updated: 2023/10/29 15:00:07 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:59:07 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	haystack_len;
 	size_t	i;
 
+	if (haystack == NULL && len == 0)
+		return (NULL);
 	needle_len = ft_strlen(needle);
 	haystack_len = ft_strlen(haystack);
 	if (needle_len == 0)
