@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:45:17 by woonshin          #+#    #+#             */
-/*   Updated: 2023/11/03 13:55:59 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/11/03 20:32:36 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int		flexstr_extend(t_flexstr **line);
 int		flexstr_new(t_flexstr **flex_str, size_t size);
 int		flexstr_free(t_flexstr **flex_str);
 int		get_line_length(char *str, size_t n, size_t *i);
-int		flexstr_slicenpop(t_flexstr *line, char **output);
+int		flexstr_slicenpop(t_flexstr **line, char **output);
 int		flexstr_npop(t_flexstr *line, size_t n);
+int	flexstr_getline(t_flexstr **line, char **output, size_t *output_len);
 
 #endif

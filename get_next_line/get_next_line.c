@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:45:09 by woonshin          #+#    #+#             */
-/*   Updated: 2023/11/03 13:55:48 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/11/03 20:27:36 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,12 @@ char	*get_next_line(int fd)
 	char				buffer[BUFFER_SIZE];
 	char				*result;
 
-	if (fd < 0)
+	if (
+		fd < 0 ||
+		(line == NULL && flexstr_new(&line, BUFFER_SIZE) != 0) ||
+		flexstr_slicenpop(&line, &result) < 0
+	)
 		return (NULL);
-	if (line == NULL)
-		if (flexstr_new(&line, BUFFER_SIZE) != 0)
-		{
-			flexstr_free(&line);
-			return (NULL);
-		}
-	if (flexstr_slicenpop(line, &result) < 0)
-	{
-		flexstr_free(&line);
-		return (NULL);
-	}
 	if (result != NULL)
 		return (result);
 	n = read(fd, buffer, BUFFER_SIZE);
@@ -48,11 +41,8 @@ char	*get_next_line(int fd)
 			flexstr_free(&line);
 			return (NULL);
 		}
-		if (flexstr_slicenpop(line, &result) < 0)
-		{
-			flexstr_free(&line);
+		if (flexstr_slicenpop(&line, &result) < 0)
 			return (NULL);
-		}
 		if (result != NULL)
 			return (result);
 		n = read(fd, buffer, BUFFER_SIZE);
@@ -60,6 +50,11 @@ char	*get_next_line(int fd)
 	if (0 < line->cursor)
 	{
 		result = (char *)malloc(sizeof(char) * (line->cursor + 1));
+		if (result == NULL)
+		{
+			flexstr_free(&line);
+			return (NULL);
+		}
 		i = 0;
 		while (i < line->cursor)
 		{
@@ -70,8 +65,7 @@ char	*get_next_line(int fd)
 		flexstr_free(&line);
 		return (result);
 	}
-	if (line != NULL)
-		flexstr_free(&line);
+	flexstr_free(&line);
 	return (NULL);
 }
 

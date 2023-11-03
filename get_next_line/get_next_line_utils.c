@@ -6,34 +6,43 @@
 /*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:45:25 by woonshin          #+#    #+#             */
-/*   Updated: 2023/11/03 13:55:56 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/11/03 20:38:02 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	flexstr_slicenpop(t_flexstr *line, char **output)
+int	flexstr_slicenpop(t_flexstr **line, char **output)
 {
 	size_t	output_len;
+	int		getline_result;
+
+	getline_result = flexstr_getline(line, output, &output_len);
+	if (getline_result != 0)
+		return (getline_result);
+	flexstr_npop(*line, output_len);
+	return (0);
+}
+
+int	flexstr_getline(t_flexstr **line, char **output, size_t *output_len)
+{
 	size_t	i;
 
-	*output = NULL;
-	if (get_line_length(line->str, line->cursor, &output_len) != 0)
+	if (get_line_length((*line)->str, (*line)->cursor, output_len) != 0)
 		return (1);
-	*output = (char *)malloc(sizeof(char) * (output_len + 1));
+	*output = (char *)malloc(sizeof(char) * (*output_len + 1));
 	if (*output == NULL)
 	{
-		flexstr_free(&line);
+		flexstr_free(line);
 		return (-1);
 	}
 	i = 0;
-	while (i < output_len)
+	while (i < *output_len)
 	{
-		(*output)[i] = line->str[i];
+		(*output)[i] = (*line)->str[i];
 		i++;
 	}
-	(*output)[output_len] = '\0';
-	flexstr_npop(line, output_len);
+	(*output)[*output_len] = '\0';
 	return (0);
 }
 
@@ -105,7 +114,6 @@ int	flexstr_new(t_flexstr **flex_str, size_t size)
 	if ((*flex_str)->str == NULL)
 	{
 		flexstr_free(flex_str);
-		free((*flex_str)->str);
 		return (-1);
 	}
 	i = 0;
