@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:45:17 by woonshin          #+#    #+#             */
-/*   Updated: 2023/11/03 20:32:36 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/11/04 17:38:30 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct s_flexstr
 	char	*str;
 	size_t	size;
 	size_t	cursor;
+	int		nl_flag;
+	size_t	nl_i;
 }	t_flexstr;
 
 typedef struct s_flexstr_lst
@@ -37,13 +39,11 @@ typedef struct s_flexstr_lst
 	t_flexstr	*line;
 }	t_flexstr_lst;
 
-int		flex_strcat(t_flexstr **line, char *src, size_t strlen);
-int		flexstr_extend(t_flexstr **line);
-int		flexstr_new(t_flexstr **flex_str, size_t size);
-int		flexstr_free(t_flexstr **flex_str);
-int		get_line_length(char *str, size_t n, size_t *i);
-int		flexstr_slicenpop(t_flexstr **line, char **output);
-int		flexstr_npop(t_flexstr *line, size_t n);
-int	flexstr_getline(t_flexstr **line, char **output, size_t *output_len);
+int	flexstr_new(t_flexstr **flexstr, size_t size);
+int	flexstr_append(t_flexstr **flexstr, char *src, size_t strlen);
+int	flexstr_getline(t_flexstr **flexstr, char **output);
+int	flexstr_linepop(t_flexstr **flexstr, char **output);
+int	flexstr_extend(t_flexstr **flexstr);
+int	flexstr_free(t_flexstr **flexstr, int exit_num);
 
 #endif
