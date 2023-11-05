@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:45:17 by woonshin          #+#    #+#             */
-/*   Updated: 2023/11/04 17:38:30 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/11/05 19:14:34 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,22 @@ typedef struct s_flexstr
 	size_t	nl_i;
 }	t_flexstr;
 
-typedef struct s_flexstr_lst
+typedef struct s_flexlst
 {
-	int			fd;
-	t_flexstr	*line;
-}	t_flexstr_lst;
+	int					fd;
+	t_flexstr			*flexstr;
+	struct s_flexlst	*next;
+}	t_flexlst;
 
 int	flexstr_new(t_flexstr **flexstr, size_t size);
 int	flexstr_append(t_flexstr **flexstr, char *src, size_t strlen);
 int	flexstr_getline(t_flexstr **flexstr, char **output);
-int	flexstr_linepop(t_flexstr **flexstr, char **output);
+int	flexstr_linepop(t_flexstr **flexstr, char **output, size_t i);
 int	flexstr_extend(t_flexstr **flexstr);
 int	flexstr_free(t_flexstr **flexstr, int exit_num);
+
+t_flexlst	*flexlst_push(t_flexlst **flexlst, int fd);
+int			flexlst_getline(t_flexlst *flexlst, char **output);
+t_flexlst	*flexlst_clear(t_flexlst **flexlst);
 
 #endif

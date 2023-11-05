@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:45:25 by woonshin          #+#    #+#             */
-/*   Updated: 2023/11/04 18:47:40 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/11/05 19:22:39 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	flexstr_extend(t_flexstr **flexstr)
 	size_t		i;
 
 	if (flexstr_new(&new_flexstr, (*flexstr)->size * 2) != 0)
-		return (-1);
+		return (flexstr_free(flexstr, -1));
 	i = 0;
 	while (i < new_flexstr->size)
 	{
@@ -82,6 +82,8 @@ int	flexstr_getline(t_flexstr **flexstr, char **output)
 	size_t	i;
 
 	*output = NULL;
+	if (*flexstr == NULL)
+		return (-1);
 	if ((*flexstr)->nl_flag == 0)
 		return (1);
 	*output = (char *)malloc(sizeof(char) * ((*flexstr)->nl_i) + 1);
@@ -97,9 +99,8 @@ int	flexstr_getline(t_flexstr **flexstr, char **output)
 	return (0);
 }
 
-int	flexstr_linepop(t_flexstr **flexstr, char **output)
+int	flexstr_linepop(t_flexstr **flexstr, char **output, size_t i)
 {
-	size_t	i;
 	size_t	nl_i;
 
 	if (flexstr_getline(flexstr, output) < 0)
@@ -108,7 +109,6 @@ int	flexstr_linepop(t_flexstr **flexstr, char **output)
 		return (1);
 	nl_i = (*flexstr)->nl_i;
 	(*flexstr)->nl_flag = 0;
-	i = 0;
 	while (i < (*flexstr)->size)
 	{
 		if (i + nl_i < (*flexstr)->size)
