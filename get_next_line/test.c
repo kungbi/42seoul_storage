@@ -1,4 +1,4 @@
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void leaks()
 {
@@ -7,20 +7,38 @@ void leaks()
 
 int main()
 {
-	int		fd;
+	int		fd1;
 	int		fd2;
 	char	*result;
 
-	fd = open("test.txt", O_RDONLY);
+	fd1 = open("test2.txt", O_RDONLY);
 	fd2 = open("test2.txt", O_RDONLY);
+	result = get_next_line(fd1);
+	printf("%s", result);
+	result = get_next_line(fd2);
+	printf("%s", result);
+	result = get_next_line(fd1);
+	printf("%s", result);
+	result = get_next_line(fd2);
+	printf("%s", result);
+	result = get_next_line(fd2);
+	printf("%s", result);
 	result = get_next_line(fd2);
 	printf("%s", result);
 	result = get_next_line(fd2);
 	printf("%s", result);
 	result = get_next_line(fd2);
 	printf("%s", result);
-	// result = get_next_line(fd);
-	// printf("%s", result);
+	result = get_next_line(fd1);
+	printf("%s", result);
+	result = get_next_line(fd1);
+	printf("%s", result);
+	result = get_next_line(fd1);
+	printf("%s", result);
+	result = get_next_line(fd1);
+	printf("%s", result);
+		// result = get_next_line(fd);
+		// printf("%s", result);
 	// result = get_next_line(fd);
 	// printf("%s", result);
 	// result = get_next_line(fd);

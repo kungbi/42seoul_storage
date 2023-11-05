@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:45:09 by woonshin          #+#    #+#             */
-/*   Updated: 2023/11/05 23:13:16 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/11/06 01:09:59 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 #include <stdio.h>
 
 char	*get_next_line(int fd)
@@ -25,10 +25,7 @@ char	*get_next_line(int fd)
 	if (lst == NULL)
 		return (NULL);
 	if (flexlst_getline(lst, &result) < 0)
-	{
-		flexlst_clear(&flexlst);
-		return (NULL);
-	}
+		return (flexlst_clear(&flexlst, fd));
 	if (result != NULL)
 		return (result);
 	return (NULL);
@@ -57,16 +54,17 @@ t_flexlst	*flexlst_push(t_flexlst **flexlst, int fd)
 	{
 		if (node->fd == fd)
 			return (node);
-		if (node->next != NULL)
-			node = node->next;
+		if (node->next == NULL)
+			break ;
+		node = node->next;
 	}
 	new_flexlst = (t_flexlst *)malloc(sizeof(t_flexlst) * 1);
 	if (new_flexlst == NULL)
-		return (flexlst_clear(flexlst));
+		return (NULL);
 	if (flexstr_new(&new_flexlst->flexstr, BUFFER_SIZE) != 0)
 	{
 		free(new_flexlst);
-		return (flexlst_clear(flexlst));
+		return (NULL);
 	}
 	new_flexlst->fd = fd;
 	new_flexlst->next = NULL;
@@ -111,19 +109,32 @@ int	flexlst_getline(t_flexlst *flexlst, char **output)
 	return (-1);
 }
 
-t_flexlst	*flexlst_clear(t_flexlst **flexlst)
+char	*flexlst_clear(t_flexlst **flexlst, int fd)
 {
-	t_flexlst	*next_lst;
+	t_flexlst	*curr_node;
+	t_flexlst	*tmp;
 
-	if (*flexlst == NULL)
+	if (flexlst == NULL)
 		return (NULL);
-	next_lst = *flexlst;
-	while (*flexlst != NULL)
+	curr_node = *flexlst;
+	if (curr_node->fd == fd)
 	{
-		next_lst = (*flexlst)->next;
-		flexstr_free(&(*flexlst)->flexstr, -1);
-		free(*flexlst);
-		*flexlst = next_lst;
+		*flexlst = curr_node->next;
+		flexstr_free(&curr_node->flexstr, -1);
+		free(curr_node);
+		return (NULL);
+	}
+	while (curr_node != NULL)
+	{
+		if (curr_node->next->fd == fd)
+		{
+			tmp = curr_node->next;
+			curr_node->next = tmp->next;
+			flexstr_free(&tmp->flexstr, -1);
+			free(tmp);
+			return (NULL);
+		}
+		curr_node = curr_node->next;
 	}
 	return (NULL);
 }
