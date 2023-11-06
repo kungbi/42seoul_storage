@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 20:29:32 by woonshin          #+#    #+#             */
-/*   Updated: 2023/10/27 21:33:12 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:28:00 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@ static char	get_sign_bit(const char *str, size_t *i);
 int	ft_atoi(const char *str)
 {
 	size_t		i;
-	size_t		str_len;
 	char		sign_bit;
 	char		overflow_result;
 	int			result;
 
 	i = 0;
 	result = 0;
-	str_len = ft_strlen(str);
 	while (ft_isspace(str[i]))
 		i++;
 	sign_bit = get_sign_bit(str, &i);

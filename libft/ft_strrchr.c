@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:39:28 by woonshin          #+#    #+#             */
-/*   Updated: 2023/10/07 15:41:08 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/11/07 00:20:28 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	s_len;
 	size_t	i;
 
-	s_len = ft_strlen(s);
-	i = s_len;
+	i = ft_strlen(s);
 	while (0 <= i)
 	{
 		if (s[i] == (char)c)

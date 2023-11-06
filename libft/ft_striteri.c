@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 23:16:32 by woonshin          #+#    #+#             */
-/*   Updated: 2023/10/26 23:19:05 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:28:20 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
-	size_t	s_len;
 
-	s_len = ft_strlen(s);
 	i = 0;
 	while (s[i] != '\0')
 	{
