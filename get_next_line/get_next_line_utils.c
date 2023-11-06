@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:45:25 by woonshin          #+#    #+#             */
-/*   Updated: 2023/11/06 00:51:45 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:50:59 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	flexstr_new(t_flexstr **flexstr, size_t size)
 {
@@ -90,10 +90,6 @@ int	flexstr_getline(t_flexstr **flexstr, char **output)
 	if (*output == NULL)
 		return (flexstr_free(flexstr, -1));
 	i = 0;
-	if ((*flexstr)->str[0] == '8')
-	{
-		printf("%s", (*flexstr)->str);
-	}
 	while (i < (*flexstr)->nl_i)
 	{
 		(*output)[i] = (*flexstr)->str[i];
