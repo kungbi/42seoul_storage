@@ -1,10 +1,10 @@
 CC		= gcc
-NAME	= ft_printf.a
+NAME	= libftprintf.a
 LIBFT	= libft
 INCLUDE	= include
 SRC_DIR	= src/
 OBJ_DIR	= obj/
-CFLAGS	= -Wall -Werror -Wextra -I
+CFLAGS	= -Wall -Werror -Wextra
 AR		= ar rcs
 
 #Sources
@@ -12,21 +12,18 @@ SRC_FILES	= ft_printf
 SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
-OBJF		=	.cache_exists
+all: $(NAME)
 
-all:		$(NAME)
+$(NAME): libft $(OBJ)
+	$(AR) $(NAME) $(OBJ)
 
-$(NAME): $(OBJ)
+libft: 
 	make -C $(LIBFT)
 	cp libft/libft.a .
 	mv libft.a $(NAME)
-	$(AR) $(NAME) $(OBJ)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
-	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
-
-$(OBJF):
-	mkdir -p $(OBJ_DIR)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	$(CC) $(NAME) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -c $< -o $@ 
 
 clean:
 	rm -rf $(OBJ_DIR)
@@ -38,4 +35,4 @@ fclean:	clean
 
 re: fclean all
 
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re libft
