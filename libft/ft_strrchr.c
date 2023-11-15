@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:39:28 by woonshin          #+#    #+#             */
-/*   Updated: 2023/11/07 00:20:28 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:04:05 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 		if (s[i] == (char)c)
 			break ;
 		if (i == 0)
-			return (0);
+			return (NULL);
 		i--;
 	}
 	return ((char *)s + i);
