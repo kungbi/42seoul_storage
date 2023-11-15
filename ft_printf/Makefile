@@ -1,5 +1,5 @@
 CC		= gcc
-NAME	= ft_printf.a
+NAME	= libftprintf.a.a
 LIBFT	= libft
 INCLUDE	= include
 SRC_DIR	= src/
