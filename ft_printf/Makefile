@@ -18,12 +18,12 @@ $(NAME): libft $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
 libft: 
-	make -C $(LIBFT)
-	cp libft/libft.a .
-	mv libft.a $(NAME)
+	make -sC $(LIBFT)
+	cp libft/libft.a $(NAME)
+	mkdir $(OBJ_DIR)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	$(CC) $(NAME) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -c $< -o $@ 
+	$(CC) -I $(NAME) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -c $< -o $@ 
 
 clean:
 	rm -rf $(OBJ_DIR)
