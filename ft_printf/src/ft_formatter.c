@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_formatter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 00:35:28 by woonshin          #+#    #+#             */
-/*   Updated: 2023/12/02 23:40:05 by woonshin         ###   ########.fr       */
+/*   Created: 2023/12/02 23:22:23 by woonshin          #+#    #+#             */
+/*   Updated: 2023/12/02 23:29:25 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
+#include "libft.h"
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-int		ft_printf(const char *str, ...);
-
-void	print_char(char *c);
-
-#endif
+void	print_char(char *c)
+{
+	ft_putchar_fd(*c, 1);
+}

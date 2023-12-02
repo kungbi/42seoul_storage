@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_load_formatter.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 00:35:28 by woonshin          #+#    #+#             */
-/*   Updated: 2023/12/02 23:40:05 by woonshin         ###   ########.fr       */
+/*   Created: 2023/12/02 23:14:34 by woonshin          #+#    #+#             */
+/*   Updated: 2023/12/02 23:37:54 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-int		ft_printf(const char *str, ...);
-
-void	print_char(char *c);
-
-#endif
+void	(*get_formatter(char format))(char*)
+{
+	if (format == 'c')
+		return print_char;
+	// else if (format == 's')
+		
+	// else if (format == 'p')
+		
+	// else if (format == 'd' || format == 'i')
+		
+	// else if (format == 'u')
+		
+	// else if (format == 'x' || format == 'X')
+		
+	// else if (format == '%')
+		
+}

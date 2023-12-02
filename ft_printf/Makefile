@@ -5,7 +5,7 @@ INCLUDE	= include
 SRC_DIR	= src/
 OBJ_DIR	= obj/
 CFLAGS	= -Wall -Werror -Wextra
-AR		= ar rcs
+AR		= ar rus
 
 #Sources
 SRC_FILES	= ft_printf
