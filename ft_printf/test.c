@@ -8,9 +8,9 @@ int main()
 	int num;
 	unsigned int ui = 123123;
 
-	num = printf("| %c %c %c |\n", '0', 0, '1');
+	num = printf(" %p %p ", 4294967296, -4294967296);
 	printf("num: %d\n", num);
-	num = ft_printf("| %c %c %c |\n", '0', 0, '1');
+	num = ft_printf(" %p %p ", 4294967296, -4294967296);
 	printf("num: %d\n", num);
 	return 0;
 }

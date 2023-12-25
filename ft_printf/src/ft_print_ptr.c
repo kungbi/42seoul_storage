@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_unsigned_int.c                              :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/25 12:00:59 by woonshin          #+#    #+#             */
-/*   Updated: 2023/12/25 12:48:34 by woonshin         ###   ########.fr       */
+/*   Created: 2023/12/25 10:59:41 by woonshin          #+#    #+#             */
+/*   Updated: 2023/12/25 17:31:12 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_unsigned_int(unsigned int num)
+int	ft_print_ptr(long long ptr)
 {
-	char	*dec;
-	char	result[10];
-	int		i;
-	int		len;
+	int	length;
 
-	dec = "0123456789";
-	i = 9;
-	while (0 < num)
+	length = 2;
+	write(1, "0x", 2);
+	if (ptr == (long long)0x8000000000000000)
 	{
-		result[i] = dec[num % 10];
-		num /= 10;
-		i--;
+		write(1, "8000000000000000", 16);
+		length += 16;
 	}
-	i++;
-	len = 10 - i;
-	while (i < 10)
+	else if (ptr == 0)
 	{
-		write(1, &result[i], 1);
-		i++;
+		write(1, "0", 1);
+		length += 1;
 	}
-	return (len);
+	else
+		length += ft_print_hex_long_long(ptr);
+	return (length);
 }

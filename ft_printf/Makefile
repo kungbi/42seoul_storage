@@ -7,26 +7,22 @@ OBJ_DIR	= obj/
 CFLAGS	= -Wall -Werror -Wextra
 AR		= ar rcs
 
-SRC_FILES	= ft_printf ft_putptr ft_puthex ft_put_unsigned_int
+SRC_FILES	= ft_printf ft_print_ptr ft_print_hex ft_print_unsigned_int ft_print_nbr
 SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
-OBJF		=	.cache_exists
-
 all: $(NAME)
 
-$(NAME): libft $(OBJ)
-	$(AR) $(NAME) $(OBJ)
-
-libft: 
+$(NAME): $(OBJ_DIR) $(OBJ)
 	make -C $(LIBFT)
 	cp libft/libft.a $(NAME)
+	$(AR) $(NAME) $(OBJ)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	$(CC) -I $(NAME) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -c $< -o $@ 
 
-$(OBJF):
-	@mkdir -p $(OBJ_DIR)
+$(OBJ_DIR):
+	mkdir $(OBJ_DIR)
 
 clean:
 	rm -rf $(OBJ_DIR)
