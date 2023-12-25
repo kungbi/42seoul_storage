@@ -3,43 +3,69 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_nbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 17:08:34 by woonshin          #+#    #+#             */
-/*   Updated: 2023/12/25 18:02:21 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/12/26 00:07:49 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-int	get_len(int num);
+int	ft_putnbr(int n);
+int	get_digit(int n);
 
 int	ft_print_nbr(int num)
 {
 	int	length;
 
-	ft_putnbr_fd(num, 1);
-	length = get_len(num);
+	if (ft_putnbr(num) < 0)
+		return (-1);
+	length = get_digit(num);
+	if (num < 0)
+		length++;
 	if (0 < length)
 		return (length);
 	return (1);
 }
 
-int	get_len(int num)
+int	ft_putnbr(int n)
 {
-	int		len;
-	long	num_l;
+	int		digit;
+	long	num;
+	char	result[33];
 
-	num_l = (long)num;
-	if (num_l < 0)
-		num_l *= -1;
-	len = 0;
-	while (0 < num_l)
+	num = n;
+	if (n < 0)
 	{
-		num_l /= 10;
-		len++;
+		num *= -1;
+		if (ft_print_char('-') < 0)
+			return (-1);
 	}
-	if (num < 0)
-		len++;
-	return (len);
+	ft_memset(result, 0, 33);
+	digit = get_digit(n);
+	digit--;
+	while (0 <= digit)
+	{
+		result[digit] = "0123456789"[num % 10];
+		num /= 10;
+		digit--;
+	}
+	if (ft_print_str(result) < 0)
+		return (-1);
+	return (1);
+}
+
+int	get_digit(int n)
+{
+	int	digit;
+
+	digit = 1;
+	while (n / 10 != 0)
+	{
+		n /= 10;
+		digit++;
+	}
+	return (digit);
 }

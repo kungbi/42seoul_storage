@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 15:25:21 by woonshin          #+#    #+#             */
-/*   Updated: 2023/10/29 15:05:38 by woonshin         ###   ########.fr       */
+/*   Created: 2023/12/25 23:14:30 by woonshin          #+#    #+#             */
+/*   Updated: 2023/12/26 00:05:45 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_print_str(char *s)
 {
-	size_t	i;
+	int	len;
 
-	i = 0;
-	while (i < n)
+	if (s == NULL)
 	{
-		if (*(char *)(s + i) == (char)c)
-			return ((void *)(s + i));
-		i++;
+		if (write(1, "(null)", 6) < 0)
+			return (-1);
+		return (6);
 	}
-	return (0);
+	len = 0;
+	while (s[len] != '\0')
+	{
+		if (write(1, &s[len], 1) < 0)
+			return (-1);
+		len++;
+	}
+	return (len);
 }

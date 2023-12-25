@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 23:22:57 by woonshin          #+#    #+#             */
-/*   Updated: 2023/10/26 23:37:49 by woonshin         ###   ########.fr       */
+/*   Created: 2023/12/25 23:15:02 by woonshin          #+#    #+#             */
+/*   Updated: 2023/12/26 00:26:21 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_print_char(int c)
 {
-	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
+	if (write(1, &c, 1) < 0)
+		return (-1);
+	return (1);
 }

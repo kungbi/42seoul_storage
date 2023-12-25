@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_unsigned_int.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 12:00:59 by woonshin          #+#    #+#             */
-/*   Updated: 2023/12/25 18:02:51 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/12/26 00:08:22 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	ft_print_unsigned_int(unsigned int num)
 	len = ft_put_unsigned_int(num);
 	if (num == 0)
 	{
-		write(1, "0", 1);
+		if (write(1, "0", 1) < 0)
+			return (-1);
 		len++;
 	}
 	return (len);
@@ -46,7 +47,8 @@ int	ft_put_unsigned_int(unsigned int num)
 	i++;
 	while (i < 10)
 	{
-		write(1, &result[i], 1);
+		if (write(1, &result[i], 1) < 0)
+			return (-1);
 		i++;
 	}
 	return (len);
