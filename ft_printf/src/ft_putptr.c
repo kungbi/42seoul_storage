@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_formatter.c                                     :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 23:22:23 by woonshin          #+#    #+#             */
-/*   Updated: 2023/12/02 23:29:25 by woonshin         ###   ########.fr       */
+/*   Created: 2023/12/25 10:59:41 by woonshin          #+#    #+#             */
+/*   Updated: 2023/12/25 12:46:37 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 
-void	print_char(char *c)
+int	ft_putptr(long long ptr)
 {
-	ft_putchar_fd(*c, 1);
+	write(1, "0x", 2);
+	ft_puthex_long_long(ptr);
+	return (10);
 }

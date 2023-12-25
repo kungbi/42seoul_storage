@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_load_formatter.c                                :+:      :+:    :+:   */
+/*   ft_put_unsigned_int.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 23:14:34 by woonshin          #+#    #+#             */
-/*   Updated: 2023/12/02 23:37:54 by woonshin         ###   ########.fr       */
+/*   Created: 2023/12/25 12:00:59 by woonshin          #+#    #+#             */
+/*   Updated: 2023/12/25 12:48:34 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	(*get_formatter(char format))(char*)
+int	ft_put_unsigned_int(unsigned int num)
 {
-	if (format == 'c')
-		return print_char;
-	// else if (format == 's')
-		
-	// else if (format == 'p')
-		
-	// else if (format == 'd' || format == 'i')
-		
-	// else if (format == 'u')
-		
-	// else if (format == 'x' || format == 'X')
-		
-	// else if (format == '%')
-		
+	char	*dec;
+	char	result[10];
+	int		i;
+	int		len;
+
+	dec = "0123456789";
+	i = 9;
+	while (0 < num)
+	{
+		result[i] = dec[num % 10];
+		num /= 10;
+		i--;
+	}
+	i++;
+	len = 10 - i;
+	while (i < 10)
+	{
+		write(1, &result[i], 1);
+		i++;
+	}
+	return (len);
 }
