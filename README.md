@@ -16,9 +16,14 @@
 
 ## 제약조건
 
-각 함수마다 제약조건이 다름.
+- 전역변수 사용 불가.
+- 출력하는 경우 <unistd.h>의 `write`만 사용 가능.
+- 메모리가 필요할 경우 <stdlib.h>의 `malloc`만 사용 가능.
+- 절대 memory leak이 발생하면 안된다.
 
 ## Part 1 - Libc function
+
+calloc과 strdup 는 malloc을 사용할 수 있으며 다른 함수들을 외부 함수를 사용하지 않는다.
 
 1. isalpha
 2. isdigit
@@ -45,18 +50,52 @@
 ## Part 2 - Additional functions
 
 1. ft_substr
+
+   문자열에서 특정 부분을 잘라 새로운 문자열을 생성하여 반환하는 함수.
+
 2. ft_strjoin
+
+   두 문자열을 이어붙여 새로운 문자열을 생성하여 반환하는 함수.
+
 3. strtrim
+
+   양 쪽 끝에서 지정한 문자들을 제거한 문자열을 생성하여 반환하는 함수.
+
 4. ft_split
+
+   구분자를 기준으로 문자열을 분할하여 그 결과를 문자열 배열에 저장하여 반환하는 함수.
+
 5. ft_itoa
+
+   인자로 받은 정수를 문자열로 변환하는 함수. 음수 또한 처리되어야 한다.
+
 6. ft_strmapi
+
+   문자열의 각 문자를 순회하여 인자로 받은 함수를 적용하고, 각 문자에 함수가 적용된 새로운 문자열을 생성하여 반환하는 함수.
+
 7. ft_striteri
+
+   문자열의 각 문자를 순회하여 인자로 받은 함수를 적용하는 함수.
+
 8. ft_putchar_fd
+
+   인자로 전달받은 file-descriptor에 문자를 출력한다.
+
 9. ft_putstr_fd
+
+   인자로 전달받은 file-descriptor에 문자열을 출력한다.
+
 10. ft_putendl_fd
+
+    인자로 전달받은 file-descriptor에 문자열을 출력하고, 개행을 출력한다.
+
 11. ft_putnbr_fd
 
+    인자로 전달받은 file-descriptor에 인자로 전달받은 정수를 출력한다.
+
 ## Part 3 - Linked list
+
+Linked list를 사용할 때 필요한 함수들이다.
 
 1. ft_lstnew
 2. ft_lstadd_front
