@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 11:45:48 by woonshin          #+#    #+#             */
-/*   Updated: 2023/12/25 23:21:18 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/12/27 09:15:13 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int		ft_put_hex_unsigned_int(unsigned int num, int upper);
 int		ft_put_hex_long_long(unsigned long num);
-void	*ft_memset(void *b, int c, size_t len);
 
 int	ft_print_hex_long_long(long long num)
 {

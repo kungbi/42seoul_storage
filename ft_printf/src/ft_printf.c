@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:35:02 by woonshin          #+#    #+#             */
-/*   Updated: 2023/12/26 00:48:27 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/12/27 09:21:41 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_printf(const char *str, ...)
 {
 	va_list	ap;
 	int		length;
-	int		formmater_result;
+	int		write_result;
 
 	length = 0;
 	va_start(ap, str);
@@ -27,19 +27,16 @@ int	ft_printf(const char *str, ...)
 		if (*str == '%')
 		{
 			str++;
-			formmater_result = formmater(str, &ap);
-			if (formmater_result < 0)
-				return (-1);
-			length += formmater_result;
+			write_result = formmater(str, &ap);
 		}
 		else
-		{
-			length += 1;
-			if (write(1, str, 1) < 0)
-				return (-1);
-		}
+			write_result = write(1, str, 1);
+		if (write_result < 0)
+			return (-1);
+		length += write_result;
 		str++;
 	}
+	va_end(ap);
 	return (length);
 }
 

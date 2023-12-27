@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 12:00:59 by woonshin          #+#    #+#             */
-/*   Updated: 2023/12/26 00:08:22 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/12/27 09:07:16 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_print_unsigned_int(unsigned int num)
 	int	len;
 
 	len = ft_put_unsigned_int(num);
+	if (len < 0)
+		return (-1);
 	if (num == 0)
 	{
 		if (write(1, "0", 1) < 0)
