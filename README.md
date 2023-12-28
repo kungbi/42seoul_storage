@@ -1,8 +1,3 @@
-<img src="img/42logo.jpg" width="400"/>
-<br/><br/>
-
-# 42seoul Project list
-
 <img src="img/holy_graph.jpg"/>
 
 '42 Seoul'을 하면서 진행했던 프로젝트를 기록한 repository입니다.
