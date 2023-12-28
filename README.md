@@ -1,8 +1,16 @@
+<img src="img/42logo.jpg" width="400"/>
+<br/><br/>
+
 # 42seoul Project list
+
+<img src="img/holy_graph.jpg"/>
+
+'42 Seoul'을 하면서 진행했던 프로젝트를 기록한 repository입니다.
 
 1. [libft](#libft)
 2. [get_next_line](#get_next_line)
 3. [ft_printf](#ft_printf)
+4. Born2beRoot
 
 <br/><br/><br/><br/>
 
