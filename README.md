@@ -116,6 +116,9 @@ Linked list를 사용할 때 필요한 함수들이다.
 
 <br/>
 <img src="img/libft_paco.png">
+<img src="img/libft_score.png">
+
+---
 
 <br/><br/><br/>
 
@@ -156,7 +159,23 @@ External functs.: `read`, `malloc`, `free`
 
 ## Bonus part
 
-<br/><br/>
+- 정적변수를 하나만 사용하여 `get_next_line()`을 구현한다.
+- 여러 개의 file descriptor를 한번에 관리할 수 있어야 한다.
+- 예를들어, file descriptor 3, 4, 5에 대한 reading thread를 잃지 않은 채로 인자로 입력받은 fd에 해당하는 데이터를 읽을 수 있어야 한다.
+- `get_next_line()`을 호출하여 fd 3, fd 4, fd 5를 읽고 다시 fd 3, fd 4 를 읽을 수 있어야 한다.
+
+Bonus를 적용한 `get_next_line()`은 다음과 같이 사용됩니다.
+
+<img src="img/gnl_test2.png" width='400'/>
+
+---
+
+<br/>
+<img src="img/gnl_paco.png">
+
+---
+
+<br/><br/><br/>
 <a name="ft_printf"></a>
 
 # FT PRINTF
