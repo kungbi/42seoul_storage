@@ -14,6 +14,10 @@
 # LIBFT
 
 <img src="img/libft.png">
+<a href="https://github.com/kungbi/42seoul_storage/tree/master/libft"
+   style="color: #000; font-size: 20px">
+   🔗Repository Link🔗
+</a>
 
 ## 프로젝트 설명
 
@@ -127,6 +131,10 @@ Linked list를 사용할 때 필요한 함수들이다.
 # GET NEXT LINE
 
 <img src="img/get_next_line.png">
+<a href="https://github.com/kungbi/42seoul_storage/tree/master/get_next_line"
+   style="color: #000; font-size: 20px">
+   🔗Repository Link🔗
+</a>
 
 ## 프로젝트 설명
 
@@ -179,3 +187,15 @@ Bonus를 적용한 `get_next_line()`은 다음과 같이 사용됩니다.
 <a name="ft_printf"></a>
 
 # FT PRINTF
+
+<img src="img/ft_printf.png"/>
+<a href="https://github.com/kungbi/42seoul_storage/tree/master/ft_printf"
+   style="color: #000; font-size: 20px">
+   🔗Repository Link🔗
+</a>
+
+## 프로젝트 설명
+
+## 제약 조건
+
+## Mandatory part
