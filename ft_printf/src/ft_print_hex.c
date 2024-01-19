@@ -3,27 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 11:45:48 by woonshin          #+#    #+#             */
-/*   Updated: 2023/12/25 18:03:29 by woonshin         ###   ########.fr       */
+/*   Updated: 2023/12/27 09:15:13 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_put_hex_unsigned_int(unsigned int num, int upper);
-int	ft_put_hex_long_long(unsigned long num);
+int		ft_put_hex_unsigned_int(unsigned int num, int upper);
+int		ft_put_hex_long_long(unsigned long num);
 
 int	ft_print_hex_long_long(long long num)
 {
-	int		len;
+	int	len;
 
 	len = ft_put_hex_long_long((unsigned long)num);
+	if (len < 0)
+		return (-1);
 	if (num == 0)
 	{
-		write(1, "0", 1);
+		if (write(1, "0", 1) < 0)
+			return (-1);
 		len++;
 	}
 	return (len);
@@ -49,7 +51,8 @@ int	ft_put_hex_long_long(unsigned long num)
 	i++;
 	while (i < 16)
 	{
-		write(1, &result[i], 1);
+		if (write(1, &result[i], 1) < 0)
+			return (-1);
 		i++;
 	}
 	return (len);
@@ -60,9 +63,12 @@ int	ft_print_hex_unsigned_int(unsigned int num, int upper)
 	int		len;
 
 	len = ft_put_hex_unsigned_int(num, upper);
+	if (len < 0)
+		return (-1);
 	if (num == 0)
 	{
-		write(1, "0", 1);
+		if (write(1, "0", 1) < 0)
+			return (-1);
 		len++;
 	}
 	return (len);
@@ -90,7 +96,8 @@ int	ft_put_hex_unsigned_int(unsigned int num, int upper)
 	i++;
 	while (i < 16)
 	{
-		write(1, &result[i], 1);
+		if (write(1, &result[i], 1) < 0)
+			return (-1);
 		i++;
 	}
 	return (len);
