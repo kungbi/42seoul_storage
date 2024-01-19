@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: woonshin <woonshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:45:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/01/19 17:05:26 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:13:01 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
