@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 20:51:27 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/04 23:59:40 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/05 00:44:07 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,11 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "libft.h"
+# include "stack.h"
 
-typedef struct s_stack
-{
-	struct s_node	*head;
-	struct s_node	*tail;
-	size_t			size;
-}	t_stack;
+#include <stdio.h>
 
-typedef struct s_node
-{
-	int				num;
-	struct s_node	*next;
-	struct s_node	*prev;
-}	t_node;
-
-int	input_validate(int n, char *arr[]);
+int     input_validate(int n, char *arr[]);
+void	return_error();
 
 #endif

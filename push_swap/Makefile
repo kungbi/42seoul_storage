@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:54:02 by woonshin          #+#    #+#              #
-#    Updated: 2024/02/04 23:25:28 by woonshin         ###   ########.fr        #
+#    Updated: 2024/02/05 00:47:57 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,10 @@ NAME	= push_swap
 INCLUDE	= include
 SRC_DIR	= src/
 OBJ_DIR	= obj/
-CFLAGS	= -Wall -Werror -Wextra
+# CFLAGS	= -Wall -Werror -Wextra
 
-SRC_FILES	= push_swap stack input_validate
+STACK_FILES = stack stack_operation stack_cleaner
+SRC_FILES	= push_swap input_validate $(STACK_FILES)
 SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
