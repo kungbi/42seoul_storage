@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:25:34 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/05 01:09:37 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/05 01:17:54 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ int	main(int argc, char *argv[])
 {
 	t_dual_stack	*dual_stack;
 
-	atexit(leak);
+	// atexit(leak);
 	if (input_validate(argc - 1, argv + 1) == 0)
 		return_error();
 	dual_stack = NULL;
 	new_dual_stack(&dual_stack);
 	dual_stack_init(dual_stack, argc - 1, argv + 1);
+	// 정렬 하기.
 	clean_dual_stack(&dual_stack);
 	return (0);
 }
