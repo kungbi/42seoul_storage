@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:25:34 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/05 01:20:25 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/05 08:07:05 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ int	main(int argc, char *argv[])
 	dual_stack = NULL;
 	new_dual_stack(&dual_stack);
 	dual_stack_init(dual_stack, argc - 1, argv + 1);
+
+	sa(dual_stack);
+	print_dual_stack(dual_stack);
+
 	// 정렬 하기.
 	// opcount = sort(dual_stack);
 	clean_dual_stack(&dual_stack);

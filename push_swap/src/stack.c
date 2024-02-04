@@ -6,18 +6,47 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 21:00:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/05 01:12:05 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/05 08:09:10 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-1. stack 생성하는 함수 (두 개짜리 a, b)
-2. stack(a)에 추가하는 push 함수
-3. 각종 연산 구현
-4. dual_stack을 지우는 함수
-*/
+// 임시 함수
+void	print_dual_stack(t_dual_stack *dual_stack)
+{
+	t_node	*node;
+
+	printf("<a>\n");
+	node = dual_stack->a->head;
+	while (node)
+	{
+		printf("%d -> ", node->num);
+		node = node->next;
+	}
+	printf("\n");
+	node = dual_stack->a->tail;
+	while (node)
+	{
+		printf("%d -> ", node->num);
+		node = node->prev;
+	}
+
+	printf("\n<b>\n");
+	node = dual_stack->b->head;
+	while (node)
+	{
+		printf("%d -> ", node->num);
+		node = node->next;
+	}
+	printf("\n");
+	node = dual_stack->b->tail;
+	while (node)
+	{
+		printf("%d -> ", node->num);
+		node = node->prev;
+	}
+}
 
 int	new_dual_stack(t_dual_stack **dual_stack)
 {

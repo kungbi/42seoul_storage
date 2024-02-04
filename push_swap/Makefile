@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:54:02 by woonshin          #+#    #+#              #
-#    Updated: 2024/02/05 01:27:20 by woonshin         ###   ########.fr        #
+#    Updated: 2024/02/05 08:07:56 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC_DIR	= src/
 OBJ_DIR	= obj/
 # CFLAGS	= -Wall -Werror -Wextra
 
-STACK_FILES = stack stack_operation stack_cleaner
+STACK_FILES = stack stack_operation stack_cleaner stack_swap
 SRC_FILES	= push_swap input_validate $(STACK_FILES)
 SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
