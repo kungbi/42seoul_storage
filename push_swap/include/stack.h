@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 00:09:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/05 01:02:38 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/05 01:12:16 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_node
 int	new_dual_stack(t_dual_stack **dual_stack);
 int	dual_stack_init(t_dual_stack *dual_stack, int n, char *arr[]);
 int	new_stack(t_stack **stack);
-int new_node(t_node *node, int num);
+int new_node(t_node **node, int num);
 int stack_push(t_stack *stack, int num);
 
 int	clean_dual_stack(t_dual_stack **dual_stack);
