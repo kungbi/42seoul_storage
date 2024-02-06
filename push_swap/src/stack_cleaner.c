@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 00:29:56 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/05 00:59:40 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/06 22:23:06 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	clean_dual_stack(t_dual_stack **dual_stack)
 {
-	t_stack *a_stack;
-	t_stack *b_stack;
+	t_stack	*a_stack;
+	t_stack	*b_stack;
 
 	a_stack = (*dual_stack)->a;
 	b_stack = (*dual_stack)->b;
@@ -26,7 +26,7 @@ int	clean_dual_stack(t_dual_stack **dual_stack)
 	return (0);
 }
 
-int clean_stack(t_stack *stack)
+int	clean_stack(t_stack *stack)
 {
 	t_node	*node;
 	t_node	*next_node;

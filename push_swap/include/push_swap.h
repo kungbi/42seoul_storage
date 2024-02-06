@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 20:51:27 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/05 00:44:07 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/06 22:28:42 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include "libft.h"
 # include "stack.h"
 
-#include <stdio.h>
+# include <stdio.h>
 
-int     input_validate(int n, char *arr[]);
-void	return_error();
+int		input_validate(int n, char *arr[]);
+void	return_error(void);
 
 #endif

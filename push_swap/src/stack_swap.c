@@ -6,13 +6,13 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 01:29:08 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/05 08:08:12 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/06 22:19:18 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int stack_swap(t_stack *stack)
+int	stack_swap(t_stack *stack)
 {
 	t_node	*node1;
 	t_node	*node2;
@@ -32,19 +32,19 @@ int stack_swap(t_stack *stack)
 	return (0);
 }
 
-int sa(t_dual_stack *dual_stack)
+int	sa(t_dual_stack *dual_stack)
 {
 	stack_swap(dual_stack->a);
 	return (0);
 }
 
-int sb(t_dual_stack *dual_stack)
+int	sb(t_dual_stack *dual_stack)
 {
 	stack_swap(dual_stack->b);
 	return (0);
 }
 
-int ss(t_dual_stack *dual_stack)
+int	ss(t_dual_stack *dual_stack)
 {
 	sa(dual_stack);
 	sb(dual_stack);

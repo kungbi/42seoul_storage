@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 21:00:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/05 08:09:10 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/06 22:25:41 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	print_dual_stack(t_dual_stack *dual_stack)
 		printf("%d -> ", node->num);
 		node = node->prev;
 	}
-
 	printf("\n<b>\n");
 	node = dual_stack->b->head;
 	while (node)
@@ -53,7 +52,7 @@ int	new_dual_stack(t_dual_stack **dual_stack)
 	t_stack	*a_stack;
 	t_stack	*b_stack;
 
-	*dual_stack = (t_dual_stack*)malloc(sizeof(t_dual_stack) * 1);
+	*dual_stack = (t_dual_stack *)malloc(sizeof(t_dual_stack) * 1);
 	if (*dual_stack == NULL)
 		return_error();
 	new_stack(&a_stack);
@@ -65,7 +64,7 @@ int	new_dual_stack(t_dual_stack **dual_stack)
 
 int	new_stack(t_stack **stack)
 {
-	*stack = (t_stack*)malloc(sizeof(t_stack) * 1);
+	*stack = (t_stack *)malloc(sizeof(t_stack) * 1);
 	if (stack == NULL)
 		return_error();
 	(*stack)->head = NULL;
@@ -74,9 +73,9 @@ int	new_stack(t_stack **stack)
 	return (0);
 }
 
-int new_node(t_node **node, int num)
+int	new_node(t_node **node, int num)
 {
-	*node = (t_node*)malloc(sizeof(t_node) * 1);
+	*node = (t_node *)malloc(sizeof(t_node) * 1);
 	if ((*node) == NULL)
 		return_error();
 	(*node)->next = NULL;
@@ -87,14 +86,14 @@ int new_node(t_node **node, int num)
 
 int	dual_stack_init(t_dual_stack *dual_stack, int n, char *arr[])
 {
-	int	i;
-	t_stack *a_stack;
+	int		i;
+	t_stack	*a_stack;
 
 	a_stack = dual_stack->a;
 	i = 0;
 	while (i < n)
 	{
-		stack_push(a_stack, ft_atoi(arr[i]));
+		stack_num_push(a_stack, ft_atoi(arr[i]));
 		i++;
 	}
 	return (0);
