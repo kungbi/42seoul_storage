@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 01:29:12 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/06 22:22:29 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/07 23:38:55 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,14 @@ int	stack_pop(t_stack *stack_from, t_stack *stack_to)
 
 int	pa(t_dual_stack *dual_stack)
 {
+	ft_putendl_fd("pa", 1);
 	stack_pop(dual_stack->a, dual_stack->b);
 	return (0);
 }
 
 int	pb(t_dual_stack *dual_stack)
 {
+	ft_putendl_fd("pb", 1);
 	stack_pop(dual_stack->b, dual_stack->a);
 	return (0);
 }
