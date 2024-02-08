@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 01:29:08 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/07 23:39:36 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/08 10:27:27 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ int	stack_swap(t_stack *stack)
 		stack->tail = node1;
 	node1->prev = node2;
 	node1->next = node2->next;
-	node2->next->prev = node1;
-	node2->prev = NULL;
 	node2->next = node1;
+	node2->prev = NULL;
 	return (0);
 }
 

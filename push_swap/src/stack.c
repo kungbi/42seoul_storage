@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 21:00:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/06 22:25:41 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/08 15:23:32 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	print_dual_stack(t_dual_stack *dual_stack)
 		printf("%d -> ", node->num);
 		node = node->prev;
 	}
+	printf("\n");
 }
 
 int	new_dual_stack(t_dual_stack **dual_stack)
@@ -52,7 +53,7 @@ int	new_dual_stack(t_dual_stack **dual_stack)
 	t_stack	*a_stack;
 	t_stack	*b_stack;
 
-	*dual_stack = (t_dual_stack *)malloc(sizeof(t_dual_stack) * 1);
+	*dual_stack = (t_dual_stack *)ft_calloc(1, sizeof(t_dual_stack));
 	if (*dual_stack == NULL)
 		return_error();
 	new_stack(&a_stack);
@@ -64,7 +65,7 @@ int	new_dual_stack(t_dual_stack **dual_stack)
 
 int	new_stack(t_stack **stack)
 {
-	*stack = (t_stack *)malloc(sizeof(t_stack) * 1);
+	*stack = (t_stack *)ft_calloc(1, sizeof(t_stack));
 	if (stack == NULL)
 		return_error();
 	(*stack)->head = NULL;
@@ -75,7 +76,7 @@ int	new_stack(t_stack **stack)
 
 int	new_node(t_node **node, int num)
 {
-	*node = (t_node *)malloc(sizeof(t_node) * 1);
+	*node = (t_node *)ft_calloc(1, sizeof(t_node));
 	if ((*node) == NULL)
 		return_error();
 	(*node)->next = NULL;
