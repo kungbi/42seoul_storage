@@ -6,17 +6,36 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 01:29:00 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/07 23:39:11 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/09 15:24:13 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-int rra(t_dual_stack *dual_stack);
-int rrb(t_dual_stack *dual_stack);
-int rrr(t_dual_stack *dual_stack);
-*/
+void	dual_stack_restore(t_dual_stack *dual_stack, int ra_cnt, int rb_cnt)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < ra_cnt && j < rb_cnt)
+	{
+		rrr(dual_stack);
+		i++;
+		j++;
+	}
+	while (i < ra_cnt)
+	{
+		rra(dual_stack);
+		i++;
+	}
+	while (j < rb_cnt)
+	{
+		rrb(dual_stack);
+		j++;
+	}
+}
 
 int	stack_reverse_rotate(t_stack *stack)
 {

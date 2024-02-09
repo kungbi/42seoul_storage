@@ -6,47 +6,11 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 21:00:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/08 15:23:32 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/09 10:54:15 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// 임시 함수
-void	print_dual_stack(t_dual_stack *dual_stack)
-{
-	t_node	*node;
-
-	printf("<a>\n");
-	node = dual_stack->a->head;
-	while (node)
-	{
-		printf("%d -> ", node->num);
-		node = node->next;
-	}
-	printf("\n");
-	node = dual_stack->a->tail;
-	while (node)
-	{
-		printf("%d -> ", node->num);
-		node = node->prev;
-	}
-	printf("\n<b>\n");
-	node = dual_stack->b->head;
-	while (node)
-	{
-		printf("%d -> ", node->num);
-		node = node->next;
-	}
-	printf("\n");
-	node = dual_stack->b->tail;
-	while (node)
-	{
-		printf("%d -> ", node->num);
-		node = node->prev;
-	}
-	printf("\n");
-}
 
 int	new_dual_stack(t_dual_stack **dual_stack)
 {

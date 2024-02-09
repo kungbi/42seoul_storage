@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 00:09:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/06 22:27:52 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/09 15:24:22 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int		sa(t_dual_stack *dual_stack);
 int		sb(t_dual_stack *dual_stack);
 int		ss(t_dual_stack *dual_stack);
 
+void	dual_stack_restore(t_dual_stack *dual_stack, int i, int j);
 int		stack_rotate(t_stack *stack);
 int		ra(t_dual_stack *dual_stack);
 int		rb(t_dual_stack *dual_stack);

@@ -6,23 +6,24 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 23:46:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/08 14:58:43 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/09 10:55:11 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    get_two_pivots(t_stack *stack, int n, int pivots[])
+void	get_two_pivots(t_stack *stack, int n, int pivots[])
 {
 	int	*arr;
 
 	arr = (int *)ft_calloc(n, sizeof(int));
 	if (arr == NULL)
-		return return_error();
+		return (return_error());
 	lst_to_arr(stack, n, arr);
 	quick_sort(arr, 0, n - 1, n);
 	pivots[0] = arr[(n - 1) / 3];
 	pivots[1] = arr[(n - 1) * 2 / 3];
+	free(arr);
 }
 
 void	lst_to_arr(t_stack *stack, int n, int *arr)
@@ -38,7 +39,7 @@ void	lst_to_arr(t_stack *stack, int n, int *arr)
 		node = node->next;
 		i++;
 		if (i == n)
-			break;
+			break ;
 	}
 }
 
@@ -68,7 +69,7 @@ void	quick_sort(int *arr, int left, int right, int n)
 
 void	swap(int *arr, int *l, int *r)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = *(arr + *l);
 	*(arr + *l) = *(arr + *r);
