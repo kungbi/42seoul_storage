@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 00:09:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 11:34:33 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 12:18:59 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 typedef struct s_operation_counter
 {
-	int ra_cnt;
-	int rb_cnt;
-	int pa_cnt;
-	int pb_cnt;
-}   t_oper_counter;
+	int	ra_cnt;
+	int	rb_cnt;
+	int	pa_cnt;
+	int	pb_cnt;
+}	t_oper_counter;
 
 typedef struct s_dual_stack
 {

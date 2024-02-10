@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 00:21:34 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/09 21:47:16 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 12:19:59 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	print_stack(t_stack *stack)
 {
 	t_node	*node;
-	
+
 	node = stack->head;
 	printf("size: %zu\n", stack->size);
 	while (node != NULL)

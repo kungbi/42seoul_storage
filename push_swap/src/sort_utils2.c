@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:00:50 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 11:37:22 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 12:22:32 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ void	hard_sort_three_a(t_dual_stack *dual_stack)
 		arr[0] = dual_stack->a->head->num;
 		arr[1] = dual_stack->a->head->next->num;
 		arr[2] = dual_stack->a->head->next->next->num;
-
 		if ((arr[0] > arr[1] && arr[0] > arr[2])
 			|| (arr[2] > arr[0] && arr[2] > arr[1]))
 			sa(dual_stack);
@@ -111,7 +110,6 @@ void	hard_sort_three_a_fit(t_dual_stack *dual_stack)
 		arr[0] = dual_stack->a->head->num;
 		arr[1] = dual_stack->a->head->next->num;
 		arr[2] = dual_stack->a->head->next->next->num;
-
 		if ((arr[0] < arr[1] && arr[1] > arr[2] && arr[0] < arr[2])
 			|| (arr[0] > arr[1] && arr[1] < arr[2] && arr[0] < arr[2])
 			|| (arr[0] > arr[1] && arr[1] > arr[2] && arr[0] > arr[2]))
@@ -135,9 +133,8 @@ void	hard_sort_three_b(t_dual_stack *dual_stack)
 		arr[0] = dual_stack->b->head->num;
 		arr[1] = dual_stack->b->head->next->num;
 		arr[2] = dual_stack->b->head->next->next->num;
-		
-		
-		if ((arr[0] < arr[1] && arr[0] < arr[2]) || (arr[2] < arr[0] && arr[2] < arr[1]))
+		if ((arr[0] < arr[1] && arr[0] < arr[2])
+			|| (arr[2] < arr[0] && arr[2] < arr[1]))
 		{
 			sb(dual_stack);
 		}
@@ -159,9 +156,8 @@ void	hard_sort_three_b_fit(t_dual_stack *dual_stack)
 		arr[0] = dual_stack->b->head->num;
 		arr[1] = dual_stack->b->head->next->num;
 		arr[2] = dual_stack->b->head->next->next->num;
-		
-		
-		if ((arr[0] > arr[1] && arr[1] < arr[2] && arr[0] > arr[2]) || (arr[0] < arr[1] && arr[1] > arr[2] && arr[0] > arr[2])
+		if ((arr[0] > arr[1] && arr[1] < arr[2] && arr[0] > arr[2])
+			|| (arr[0] < arr[1] && arr[1] > arr[2] && arr[0] > arr[2])
 			|| (arr[0] < arr[1] && arr[1] < arr[2] && arr[0] < arr[2]))
 		{
 			sb(dual_stack);

@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:25:34 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/09 21:48:35 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 12:20:09 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,6 @@ int	main(int argc, char *argv[])
 	dual_stack = NULL;
 	new_dual_stack(&dual_stack);
 	dual_stack_init(dual_stack, argc - 1, argv + 1);
-
-	// print_stack(dual_stack->a);
-	// sa(dual_stack);
-	// print_stack(dual_stack->a);
-	// rra(dual_stack);
-	// print_stack(dual_stack->a);
-
 	if (!is_sorted(dual_stack, 'a', dual_stack->a->size))
 		sort_dual_stack(dual_stack);
 	clean_dual_stack(&dual_stack);

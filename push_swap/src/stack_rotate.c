@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 01:29:05 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 12:01:38 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 12:19:45 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ra(t_dual_stack *dual_stack, t_oper_counter *oper_counter)
 int	rb(t_dual_stack *dual_stack, t_oper_counter *oper_counter)
 {
 	if (dual_stack->b->size < 2)
-		return (0); 
+		return (0);
 	if (oper_counter != NULL)
 		oper_counter->rb_cnt++;
 	ft_putendl_fd("rb", 1);
