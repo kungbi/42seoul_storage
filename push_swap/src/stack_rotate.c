@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 01:29:05 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/07 23:38:31 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/09 21:07:12 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	stack_rotate(t_stack *stack)
 
 	if (stack->size < 2)
 		return (-1);
+	else if (stack->size == 2)
+		return (stack_swap(stack));
 	node = stack->head;
 	node->next->prev = NULL;
 	stack->head = node->next;

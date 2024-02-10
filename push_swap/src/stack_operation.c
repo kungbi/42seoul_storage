@@ -6,18 +6,39 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 00:21:34 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/08 15:22:40 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/09 21:47:16 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	print_stack(t_stack *stack)
+{
+	t_node	*node;
+	
+	node = stack->head;
+	printf("size: %zu\n", stack->size);
+	while (node != NULL)
+	{
+		printf("%d -> ", node->num);
+		node = node->next;
+	}
+	printf("\n");
+	node = stack->tail;
+	while (node != NULL)
+	{
+		printf("%d -> ", node->num);
+		node = node->prev;
+	}
+	printf("\n\n\n\n");
+}
 
 int	stack_num_push(t_stack *stack, int num)
 {
 	t_node	*node;
 	t_node	*tail;
 
-	stack->size++;
+	stack->size += 1;
 	new_node(&node, num);
 	tail = stack->tail;
 	if (stack->head == NULL)

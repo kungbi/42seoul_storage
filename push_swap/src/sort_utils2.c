@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:00:50 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/09 18:33:22 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/09 21:14:27 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	is_sorted(t_dual_stack *dual_stack, char pos, int n)
 	if (pos == 'b')
 		stack = dual_stack->b;
 	i = 0;
+	if (stack->head == NULL)
+		return (0);
 	prev_num = stack->head->num;
 	node = stack->head->next;
 	while (node != NULL)
@@ -61,13 +63,11 @@ void	hard_sort_b(t_dual_stack *dual_stack, int n)
 
 	if (n == 0)
 		return ;
-	if (is_sorted(dual_stack, 'b', n) != 1 && n == 2)
+	if (n == 2)
 		sb(dual_stack);
-	else if (is_sorted(dual_stack, 'b', n) != 1 && n == 3)
+	else if (n == 3)
 		hard_sort_three_b(dual_stack);
-	i = 0;
-	while (i++ < n)
-		pa(dual_stack);
+	stack_pop_repeat(dual_stack, 'a', n);
 }
 
 void	hard_sort_three_a(t_dual_stack *dual_stack)
@@ -79,7 +79,10 @@ void	hard_sort_three_a(t_dual_stack *dual_stack)
 		arr[0] = dual_stack->a->head->num;
 		arr[1] = dual_stack->a->head->next->num;
 		arr[2] = dual_stack->a->head->next->next->num;
-		if (arr[0] > arr[1])
+		if (dual_stack->a->size == 3 && arr[1] < arr[2] 
+			&& arr[1] < arr[0] && arr[2] < arr[0])
+			rra(dual_stack);
+		else if (arr[0] > arr[1])
 			sa(dual_stack);
 		else if (dual_stack->a->size == 3 && arr[0] < arr[2] && arr[2] < arr[1])
 		{
@@ -113,7 +116,10 @@ void	hard_sort_three_b(t_dual_stack *dual_stack)
 		arr[0] = dual_stack->b->head->num;
 		arr[1] = dual_stack->b->head->next->num;
 		arr[2] = dual_stack->b->head->next->next->num;
-		if (arr[0] < arr[1])
+		if (dual_stack->b->size == 3 && arr[1] > arr[2]
+			&& arr[0] < arr[1] && arr[0] < arr[2])
+			rrb(dual_stack);
+		else if (arr[0] < arr[1])
 			sb(dual_stack);
 		else if (dual_stack->b->size == 3 && arr[0] > arr[2] && arr[2] > arr[1])
 		{

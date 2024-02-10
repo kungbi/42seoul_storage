@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 01:29:12 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/08 10:00:01 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/09 21:50:03 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,19 @@ int	pb(t_dual_stack *dual_stack)
 	ft_putendl_fd("pb", 1);
 	stack_pop(dual_stack->a, dual_stack->b);
 	return (0);
+}
+
+void	stack_pop_repeat(t_dual_stack *dual_stack, char pos, int n)
+{
+	int		i;
+
+	i = 0;
+	while (i < n)
+	{
+		if (pos == 'a')
+			pa(dual_stack);
+		else if (pos == 'b')
+			pb(dual_stack);
+		i++;
+	}
 }
