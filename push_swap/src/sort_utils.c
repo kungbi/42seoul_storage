@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 23:46:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 11:52:30 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 12:31:16 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	get_two_pivots(t_stack *stack, int n, int pivots[])
 	lst_to_arr(stack, n, arr);
 	quick_sort(arr, 0, n - 1, n);
 	pivots[0] = arr[(n - 1) / 3];
-	pivots[1] = arr[(n - 1) / 3 * 2];
+	pivots[1] = arr[(n - 1) * 2 / 3];
 	free(arr);
 }
 

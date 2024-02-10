@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 00:21:34 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 12:19:59 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 13:36:32 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	print_stack(t_stack *stack)
 		printf("%d -> ", node->num);
 		node = node->prev;
 	}
-	printf("\n\n\n\n");
+	printf("\n\n");
 }
 
 int	stack_num_push(t_stack *stack, int num)

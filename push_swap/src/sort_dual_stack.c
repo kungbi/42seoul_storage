@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:56:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 12:21:26 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 13:43:53 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	sort_dual_stack_a(t_dual_stack *dual_stack, int n)
 	if (n <= 3)
 		return (hard_sort_a(dual_stack, n));
 	get_two_pivots(dual_stack->a, n, pivots);
-	if (is_sorted(dual_stack, 'a', n))
-		return ;
 	i = 0;
 	oper_counter.ra_cnt = 0;
 	oper_counter.rb_cnt = 0;
@@ -79,15 +77,15 @@ void	sort_dual_stack_b(t_dual_stack *dual_stack, int n)
 	while (i < n)
 	{
 		head_num = dual_stack->b->head->num;
-		if (head_num < pivots[0])
+		if (head_num <= pivots[0])
 			rb(dual_stack, &oper_counter);
 		else
 		{
 			pa(dual_stack, &oper_counter);
-			if (head_num < pivots[1])
+			if (head_num <= pivots[1])
 			{
 				if (i + 1 < n && dual_stack->b->size
-					&& dual_stack->b->head->num < pivots[0])
+					&& dual_stack->b->head->num <= pivots[0])
 				{
 					rr(dual_stack, &oper_counter);
 					i++;
@@ -99,7 +97,25 @@ void	sort_dual_stack_b(t_dual_stack *dual_stack, int n)
 		i++;
 	}
 	sort_dual_stack_a(dual_stack, oper_counter.pa_cnt - oper_counter.ra_cnt);
-	dual_stack_restore(dual_stack, oper_counter.ra_cnt, oper_counter.rb_cnt);
+
+
+	i = 0;
+	j = 0;
+	while (i < oper_counter.ra_cnt && i < oper_counter.rb_cnt)
+	{
+		rrr(dual_stack);
+		i++;
+		j++;
+	}
+	for(; i < oper_counter.ra_cnt; i++){
+		rra(dual_stack);
+	}
+	for(; j < oper_counter.rb_cnt; j++){
+		rrb(dual_stack);
+	}
+
+
+	// dual_stack_restore(dual_stack, oper_counter.ra_cnt, oper_counter.rb_cnt);
 	sort_dual_stack_a(dual_stack, oper_counter.ra_cnt);
 	sort_dual_stack_b(dual_stack, oper_counter.rb_cnt);
 }

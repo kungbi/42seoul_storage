@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 01:29:12 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 11:36:40 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 12:59:09 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int	stack_pop(t_stack *stack_from, t_stack *stack_to)
 
 int	pa(t_dual_stack *dual_stack, t_oper_counter *oper_counter)
 {
-	if (dual_stack->b->size < 1)
-		return (0);
 	if (oper_counter != NULL)
 		oper_counter->pa_cnt++;
+	if (dual_stack->b->size < 1)
+		return (0);
 	ft_putendl_fd("pa", 1);
 	stack_pop(dual_stack->b, dual_stack->a);
 	return (0);
@@ -48,10 +48,10 @@ int	pa(t_dual_stack *dual_stack, t_oper_counter *oper_counter)
 
 int	pb(t_dual_stack *dual_stack, t_oper_counter *oper_counter)
 {
-	if (dual_stack->a->size < 1)
-		return (0);
 	if (oper_counter != NULL)
 		oper_counter->pb_cnt++;
+	if (dual_stack->a->size < 1)
+		return (0);
 	ft_putendl_fd("pb", 1);
 	stack_pop(dual_stack->a, dual_stack->b);
 	return (0);
