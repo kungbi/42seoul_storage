@@ -6,11 +6,31 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 23:46:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 12:31:16 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 15:20:59 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	get_min(t_stack *stack, int n, int except)
+{
+	int		min;
+	int		i;
+	t_node	*node;
+
+	node = stack->head;
+	i = 0;
+	while (node != NULL)
+	{
+		if (min > node->num && node->num != except)
+			min = node->num;
+		node = node->next;
+		i++;
+		if (i == n)
+			break ;
+	}
+	return (min);
+}
 
 void	get_two_pivots(t_stack *stack, int n, int pivots[])
 {

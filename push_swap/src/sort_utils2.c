@@ -6,14 +6,19 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:00:50 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 12:22:32 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 15:13:28 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	hard_sort_three_a(t_dual_stack *dual_stack);
-void	hard_sort_three_b(t_dual_stack *dual_stack);
+void	init_oper_counter(t_oper_counter *oper_counter)
+{
+	oper_counter->ra_cnt = 0;
+	oper_counter->rb_cnt = 0;
+	oper_counter->pa_cnt = 0;
+	oper_counter->pb_cnt = 0;
+}
 
 int	is_sorted(t_dual_stack *dual_stack, char pos, int n)
 {
@@ -33,9 +38,8 @@ int	is_sorted(t_dual_stack *dual_stack, char pos, int n)
 	node = stack->head->next;
 	while (node != NULL)
 	{
-		if (pos == 'a' && prev_num > node->num)
-			return (0);
-		if (pos == 'b' && prev_num < node->num)
+		if ((pos == 'a' && prev_num > node->num)
+			|| pos == 'b' && prev_num < node->num)
 			return (0);
 		prev_num = node->num;
 		node = node->next;
@@ -78,94 +82,4 @@ void	hard_sort_b(t_dual_stack *dual_stack, int n)
 			hard_sort_three_b(dual_stack);
 	}
 	stack_pop_repeat(dual_stack, 'a', n);
-}
-
-void	hard_sort_three_a(t_dual_stack *dual_stack)
-{
-	int	arr[3];
-
-	while (!is_sorted(dual_stack, 'a', 3))
-	{
-		arr[0] = dual_stack->a->head->num;
-		arr[1] = dual_stack->a->head->next->num;
-		arr[2] = dual_stack->a->head->next->next->num;
-		if ((arr[0] > arr[1] && arr[0] > arr[2])
-			|| (arr[2] > arr[0] && arr[2] > arr[1]))
-			sa(dual_stack);
-		else if ((arr[1] > arr[0] && arr[1] > arr[2]))
-		{
-			ra(dual_stack, NULL);
-			sa(dual_stack);
-			rra(dual_stack);
-		}
-	}
-}
-
-void	hard_sort_three_a_fit(t_dual_stack *dual_stack)
-{
-	int	arr[3];
-
-	while (!is_sorted(dual_stack, 'a', 3))
-	{
-		arr[0] = dual_stack->a->head->num;
-		arr[1] = dual_stack->a->head->next->num;
-		arr[2] = dual_stack->a->head->next->next->num;
-		if ((arr[0] < arr[1] && arr[1] > arr[2] && arr[0] < arr[2])
-			|| (arr[0] > arr[1] && arr[1] < arr[2] && arr[0] < arr[2])
-			|| (arr[0] > arr[1] && arr[1] > arr[2] && arr[0] > arr[2]))
-		{
-			sa(dual_stack);
-			continue ;
-		}
-		if ((arr[0] > arr[1] && arr[1] < arr[2]))
-			ra(dual_stack, NULL);
-		else
-			rra(dual_stack);
-	}
-}
-
-void	hard_sort_three_b(t_dual_stack *dual_stack)
-{
-	int	arr[3];
-
-	while (!is_sorted(dual_stack, 'b', 3))
-	{
-		arr[0] = dual_stack->b->head->num;
-		arr[1] = dual_stack->b->head->next->num;
-		arr[2] = dual_stack->b->head->next->next->num;
-		if ((arr[0] < arr[1] && arr[0] < arr[2])
-			|| (arr[2] < arr[0] && arr[2] < arr[1]))
-		{
-			sb(dual_stack);
-		}
-		else if ((arr[1] < arr[0] && arr[1] < arr[2]))
-		{
-			rb(dual_stack, NULL);
-			sb(dual_stack);
-			rrb(dual_stack);
-		}
-	}
-}
-
-void	hard_sort_three_b_fit(t_dual_stack *dual_stack)
-{
-	int	arr[3];
-
-	while (!is_sorted(dual_stack, 'b', 3))
-	{
-		arr[0] = dual_stack->b->head->num;
-		arr[1] = dual_stack->b->head->next->num;
-		arr[2] = dual_stack->b->head->next->next->num;
-		if ((arr[0] > arr[1] && arr[1] < arr[2] && arr[0] > arr[2])
-			|| (arr[0] < arr[1] && arr[1] > arr[2] && arr[0] > arr[2])
-			|| (arr[0] < arr[1] && arr[1] < arr[2] && arr[0] < arr[2]))
-		{
-			sb(dual_stack);
-			continue ;
-		}
-		if (arr[0] < arr[1] && arr[1] > arr[2])
-			rb(dual_stack, NULL);
-		else
-			rrb(dual_stack);
-	}
 }
