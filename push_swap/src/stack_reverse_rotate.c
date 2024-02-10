@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 01:29:00 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/09 15:24:13 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 12:10:44 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,17 @@ void	dual_stack_restore(t_dual_stack *dual_stack, int ra_cnt, int rb_cnt)
 	}
 	while (i < ra_cnt)
 	{
+		// print_stack(dual_stack->a);
+		// printf("%d \n", ra_cnt);
+		if (is_sorted(dual_stack, 'a', ra_cnt))
+			break ;
 		rra(dual_stack);
 		i++;
 	}
 	while (j < rb_cnt)
 	{
+		if (is_sorted(dual_stack, 'b', rb_cnt))
+			break ;
 		rrb(dual_stack);
 		j++;
 	}

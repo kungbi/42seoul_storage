@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:56:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/09 22:13:14 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 12:10:36 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,31 +35,19 @@ void	sort_dual_stack_a(t_dual_stack *dual_stack, int n)
 	{
 		head_num = dual_stack->a->head->num;
 		if (head_num > pivots[1])
-		{
-			ra(dual_stack);
-			oper_counter.ra_cnt++;
-		}
+			ra(dual_stack, &oper_counter);
 		else
 		{
-			pb(dual_stack);
-			oper_counter.pb_cnt++;
+			pb(dual_stack, &oper_counter);
 			if (head_num > pivots[0])
 			{
-				// rb(dual_stack);
-				// oper_counter.rb_cnt++;
-
-				if (i + 1 < n && dual_stack->a->size && dual_stack->a->head->num > pivots[1])// 만약 a스택의 헤더가 ra를 해야되면 
+				if (i + 1 < n && dual_stack->a->head && dual_stack->a->head->num > pivots[1])
 				{
-					rr(dual_stack);
+					rr(dual_stack, &oper_counter);
 					i++;
-					oper_counter.ra_cnt++;
-					oper_counter.rb_cnt++;
 				}
 				else
-				{
-					rb(dual_stack);
-					oper_counter.rb_cnt++;
-				}
+					rb(dual_stack, &oper_counter);
 			}
 		}
 		i++;
@@ -91,28 +79,19 @@ void	sort_dual_stack_b(t_dual_stack *dual_stack, int n)
 	{
 		head_num = dual_stack->b->head->num;
 		if (head_num < pivots[0])
-		{
-			rb(dual_stack);
-			oper_counter.rb_cnt++;
-		}
+			rb(dual_stack, &oper_counter);
 		else
 		{
-			pa(dual_stack);
-			oper_counter.pa_cnt++;
+			pa(dual_stack, &oper_counter);
 			if (head_num < pivots[1])
 			{
-				if (i + 1 < n && dual_stack->b->size && dual_stack->b->head->num < pivots[0])// 만약 a스택의 헤더가 ra를 해야되면 
+				if (i + 1 < n && dual_stack->b->size && dual_stack->b->head->num < pivots[0])
 				{
-					rr(dual_stack);
-					oper_counter.ra_cnt++;
-					oper_counter.rb_cnt++;
+					rr(dual_stack, &oper_counter);
 					i++;
 				}
 				else
-				{
-					ra(dual_stack);
-					oper_counter.ra_cnt++;
-				}
+					ra(dual_stack, &oper_counter);
 			}
 		}
 		i++;

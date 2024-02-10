@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 20:51:27 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/08 00:02:21 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 11:34:17 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "libft.h"
-# include "stack.h"
 # include "sort.h"
+# include "stack.h"
 
 # include <stdio.h>
 

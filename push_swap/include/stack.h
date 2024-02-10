@@ -6,13 +6,22 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 00:09:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/09 21:12:53 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 11:34:33 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
+# include "sort.h"
 # include <stdlib.h>
+
+typedef struct s_operation_counter
+{
+	int ra_cnt;
+	int rb_cnt;
+	int pa_cnt;
+	int pb_cnt;
+}   t_oper_counter;
 
 typedef struct s_dual_stack
 {
@@ -54,9 +63,9 @@ int		ss(t_dual_stack *dual_stack);
 
 void	dual_stack_restore(t_dual_stack *dual_stack, int i, int j);
 int		stack_rotate(t_stack *stack);
-int		ra(t_dual_stack *dual_stack);
-int		rb(t_dual_stack *dual_stack);
-int		rr(t_dual_stack *dual_stack);
+int		ra(t_dual_stack *dual_stack, t_oper_counter *oper_counter);
+int		rb(t_dual_stack *dual_stack, t_oper_counter *oper_counter);
+int		rr(t_dual_stack *dual_stack, t_oper_counter *oper_counter);
 
 int		stack_reverse_rotate(t_stack *stack);
 int		rra(t_dual_stack *dual_stack);
@@ -65,8 +74,8 @@ int		rrr(t_dual_stack *dual_stack);
 
 int		stack_pop(t_stack *stack_from, t_stack *stack_to);
 void	stack_pop_repeat(t_dual_stack *dual_stack, char pos, int n);
-int		pa(t_dual_stack *dual_stack);
-int		pb(t_dual_stack *dual_stack);
+int		pa(t_dual_stack *dual_stack, t_oper_counter *oper_counter);
+int		pb(t_dual_stack *dual_stack, t_oper_counter *oper_counter);
 
 void	print_stack(t_stack *stack);
 

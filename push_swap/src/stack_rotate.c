@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 01:29:05 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/09 21:07:12 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 12:01:38 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,32 @@ int	stack_rotate(t_stack *stack)
 	return (0);
 }
 
-int	ra(t_dual_stack *dual_stack)
+int	ra(t_dual_stack *dual_stack, t_oper_counter *oper_counter)
 {
+	if (dual_stack->a->size < 2)
+		return (0);
+	if (oper_counter != NULL)
+		oper_counter->ra_cnt++;
 	ft_putendl_fd("ra", 1);
 	stack_rotate(dual_stack->a);
 	return (0);
 }
 
-int	rb(t_dual_stack *dual_stack)
+int	rb(t_dual_stack *dual_stack, t_oper_counter *oper_counter)
 {
+	if (dual_stack->b->size < 2)
+		return (0); 
+	if (oper_counter != NULL)
+		oper_counter->rb_cnt++;
 	ft_putendl_fd("rb", 1);
 	stack_rotate(dual_stack->b);
 	return (0);
 }
 
-int	rr(t_dual_stack *dual_stack)
+int	rr(t_dual_stack *dual_stack, t_oper_counter *oper_counter)
 {
+	oper_counter->ra_cnt++;
+	oper_counter->rb_cnt++;
 	ft_putendl_fd("rr", 1);
 	stack_rotate(dual_stack->a);
 	stack_rotate(dual_stack->b);
