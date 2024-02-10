@@ -6,13 +6,12 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 00:09:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 12:18:59 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 15:53:27 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
-# include "sort.h"
 # include <stdlib.h>
 
 typedef struct s_operation_counter
@@ -76,7 +75,5 @@ int		stack_pop(t_stack *stack_from, t_stack *stack_to);
 void	stack_pop_repeat(t_dual_stack *dual_stack, char pos, int n);
 int		pa(t_dual_stack *dual_stack, t_oper_counter *oper_counter);
 int		pb(t_dual_stack *dual_stack, t_oper_counter *oper_counter);
-
-void	print_stack(t_stack *stack);
 
 #endif

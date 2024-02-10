@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:54:02 by woonshin          #+#    #+#              #
-#    Updated: 2024/02/10 15:09:30 by woonshin         ###   ########.fr        #
+#    Updated: 2024/02/10 16:52:13 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,22 +17,39 @@ SRC_DIR	= src/
 OBJ_DIR	= obj/
 # CFLAGS	= -Wall -Werror -Wextra
 
-STACK_FILES = stack stack_operation stack_cleaner stack_swap stack_rotate stack_reverse_rotate stack_pop
-SORT_FILES = sort_dual_stack sort_utils sort_utils2 sort_utils3
-SRC_FILES	= push_swap input_validate $(STACK_FILES) $(SORT_FILES)
+SRC_FILES	= push_swap input_validate
 SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+
+SORT_FILES	= sort_dual_stack sort_utils sort_utils2 sort_utils3
+SORT_SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SORT_FILES)))
+SORT_OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SORT_FILES)))
+
+STACK_FILES	= stack stack_operation stack_cleaner stack_swap stack_rotate stack_reverse_rotate stack_pop
+STACK_SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(STACK_FILES)))
+STACK_OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(STACK_FILES)))
 
 LIBFT = libft
 LIBFT_TARGET = libft.a
 
+BONUS_NAME	= checker
+BONUS_FILES	= bonus_checker
+BONUS_SRC	= $(addprefix $(SRC_DIR), $(addsuffix .c, $(BONUS_FILES)))
+BONUS_OBJ	= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(BONUS_FILES)))
+
+GET_NEXT_LINE_DIR = get_next_line/
+GET_NEXT_LINE_NAME = get_next_line.a
+GET_NEXT_LINE_FILES = get_next_line get_next_line_utils
+GET_NEXT_LINE_SRC	= $(addprefix $(GET_NEXT_LINE_DIR), $(addsuffix .c, $(GET_NEXT_LINE_FILES)))
+GET_NEXT_LINE_OBJ	= $(addprefix $(GET_NEXT_LINE_DIR), $(addsuffix .o, $(GET_NEXT_LINE_FILES)))
+
 all: $(NAME)
 
-$(NAME): $(LIBFT_TARGET) $(OBJ_DIR) $(OBJ) 
-	$(CC) $(LIBFT_TARGET) $(OBJ_DIR)*.o -o $(NAME)
+$(NAME): $(LIBFT_TARGET) $(OBJ_DIR) $(OBJ) $(STACK_OBJ) $(SORT_OBJ)
+	$(CC) $(LIBFT_TARGET) $(OBJ) $(STACK_OBJ) $(SORT_OBJ) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -c $< -o $@ 
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
 
 $(LIBFT_TARGET): 
 	make -C libft
@@ -44,12 +61,24 @@ $(OBJ_DIR):
 clean:
 	rm -rf $(OBJ_DIR)
 	make clean -C $(LIBFT)
+	rm -rf $(GET_NEXT_LINE_OBJ)
+	rm -rf $(BONUS_OBJ)
 
 fclean:	clean
 	rm -f $(NAME)
 	rm -f $(LIBFT_TARGET)
+	rm -f $(GET_NEXT_LINE_NAME)
+	rm -f $(BONUS_NAME)
 	make fclean -C $(LIBFT)
 
 re: fclean all
+
+$(GET_NEXT_LINE_NAME): $(GET_NEXT_LINE_OBJ)
+	ar rsu $(GET_NEXT_LINE_NAME) $(GET_NEXT_LINE_OBJ) 
+
+bonus: $(BONUS_NAME) 
+
+$(BONUS_NAME) : $(BONUS_OBJ) $(GET_NEXT_LINE_NAME) 
+	$(CC) $(BONUS_OBJ) $(GET_NEXT_LINE_OBJ) $(LIBFT_TARGET) $(SORT_OBJ) $(STACK_OBJ) -o $(BONUS_NAME)
 
 .PHONY:	all clean fclean re

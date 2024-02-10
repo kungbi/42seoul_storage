@@ -6,11 +6,16 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:00:50 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 15:13:28 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 15:43:55 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	hard_sort_three_a(t_dual_stack *dual_stack);
+void	hard_sort_three_a_fit(t_dual_stack *dual_stack);
+void	hard_sort_three_b(t_dual_stack *dual_stack);
+void	hard_sort_three_b_fit(t_dual_stack *dual_stack);
 
 void	init_oper_counter(t_oper_counter *oper_counter)
 {
@@ -39,7 +44,7 @@ int	is_sorted(t_dual_stack *dual_stack, char pos, int n)
 	while (node != NULL)
 	{
 		if ((pos == 'a' && prev_num > node->num)
-			|| pos == 'b' && prev_num < node->num)
+			|| (pos == 'b' && prev_num < node->num))
 			return (0);
 		prev_num = node->num;
 		node = node->next;
@@ -68,8 +73,6 @@ void	hard_sort_a(t_dual_stack *dual_stack, int n)
 
 void	hard_sort_b(t_dual_stack *dual_stack, int n)
 {
-	int	i;
-
 	if (n == 0)
 		return ;
 	if (n == 2)

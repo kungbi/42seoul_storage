@@ -6,18 +6,20 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:56:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 15:26:04 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 17:42:03 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	sort_dual_stack_a_core(t_dual_stack *dual_stack,
+			t_oper_counter *oper_counter, int pivots[], int n);
+void	sort_dual_stack_b_core(t_dual_stack *dual_stack,
+			t_oper_counter *oper_counter, int pivots[], int n);
+
 void	sort_dual_stack_a(t_dual_stack *dual_stack, int n)
 {
-	int				i;
-	int				j;
 	int				pivots[2];
-	int				head_num;
 	t_oper_counter	oper_counter;
 
 	if (is_sorted(dual_stack, 'a', n))
@@ -63,10 +65,7 @@ void	sort_dual_stack_a_core(t_dual_stack *dual_stack,
 
 void	sort_dual_stack_b(t_dual_stack *dual_stack, int n)
 {
-	int				i;
-	int				j;
 	int				pivots[2];
-	int				head_num;
 	t_oper_counter	oper_counter;
 
 	if (is_sorted(dual_stack, 'b', n))

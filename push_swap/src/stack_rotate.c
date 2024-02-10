@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 01:29:05 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 12:56:01 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/10 17:07:58 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,10 @@ int	rb(t_dual_stack *dual_stack, t_oper_counter *oper_counter)
 
 int	rr(t_dual_stack *dual_stack, t_oper_counter *oper_counter)
 {
-	oper_counter->ra_cnt++;
-	oper_counter->rb_cnt++;
+	if (oper_counter != NULL)
+		oper_counter->ra_cnt++;
+	if (oper_counter != NULL)
+		oper_counter->rb_cnt++;
 	ft_putendl_fd("rr", 1);
 	stack_rotate(dual_stack->a);
 	stack_rotate(dual_stack->b);
