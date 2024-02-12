@@ -6,13 +6,12 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:50:11 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/11 16:43:35 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/12 21:28:39 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-#include <stdio.h>
 int	main(int argc, char *argv[])
 {
 	t_dual_stack	*dual_stack;
@@ -27,17 +26,16 @@ int	main(int argc, char *argv[])
 	command = get_next_line(0);
 	while (command != NULL)
 	{
-		if (5 <= ft_strlen(command))
-			return_error();
+		if (command[ft_strlen(command) - 1] != '\n')
+		{
+			command_execute(dual_stack, command);
+			break ;
+		}
 		command_execute(dual_stack, command);
-		command = get_next_line(0);
 		free(command);
+		command = get_next_line(0);
 	}
-	if (check_stack(dual_stack) == 0)
-		ft_putendl_fd("OK", 1);
-	else
-		ft_putendl_fd("KO", 1);
-	return (0);
+	check_stack(dual_stack);
 }
 
 void	return_error(void)
@@ -48,54 +46,17 @@ void	return_error(void)
 
 int	check_stack(t_dual_stack *dual_stack)
 {
-	if (dual_stack->b->size != 0)
-		return (-1);
-	if (is_sorted(dual_stack, 'a', dual_stack->a->size) != 1)
-		return (-1);
-	return (0);
-}
-
-int	command_execute(t_dual_stack *dual_stack, char *command)
-{
-	if (3 < ft_strlen(command))
-		return (command_execute_len3(dual_stack, command));
-	if (ft_strncmp(command, "sa", 2) == 0)
-		stack_swap(dual_stack->a);
-	else if (ft_strncmp(command, "sb", 2) == 0)
-		stack_swap(dual_stack->b);
-	else if (ft_strncmp(command, "ss", 2) == 0)
-	{
-		stack_swap(dual_stack->a);
-		stack_swap(dual_stack->b);
-	}
-	else if (ft_strncmp(command, "pa", 2) == 0)
-		stack_pop(dual_stack->b, dual_stack->a);
-	else if (ft_strncmp(command, "pb", 2) == 0)
-		stack_pop(dual_stack->a, dual_stack->b);
-	else if (ft_strncmp(command, "ra", 2) == 0)
-		stack_rotate(dual_stack->a);
-	else if (ft_strncmp(command, "rb", 2) == 0)
-		stack_rotate(dual_stack->b);
-	else if (ft_strncmp(command, "rr", 2) == 0)
-	{
-		stack_rotate(dual_stack->a);
-		stack_rotate(dual_stack->b);
-	}
-	return (0);
-}
-
-int	command_execute_len3(t_dual_stack *dual_stack, char *command)
-{
 	int	result;
 
-	if (ft_strncmp(command, "rrr", 3) == 0)
-	{
-		stack_reverse_rotate(dual_stack->a);
-		stack_reverse_rotate(dual_stack->b);
-	}
-	else if (ft_strncmp(command, "rra", 3) == 0)
-		stack_reverse_rotate(dual_stack->a);
-	else if (ft_strncmp(command, "rrb", 3) == 0)
-		stack_reverse_rotate(dual_stack->b);
-	return (result);
+	result = 0;
+	if (dual_stack->b->size != 0)
+		result = 1;
+	if (is_sorted(dual_stack, 'a', dual_stack->a->size) != 1)
+		result = 1;
+
+	if (result == 1)
+		ft_putendl_fd("KO", 1);
+	else if (result == 0)
+		ft_putendl_fd("OK", 1);
+	exit(0);
 }

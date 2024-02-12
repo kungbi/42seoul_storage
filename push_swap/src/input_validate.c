@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 21:38:02 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/11 16:47:12 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/12 21:04:54 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,17 @@ int	input_validate(int n, char *arr[])
 			return (1);
 		if (arr[i][0] == '\0')
 			return (1);
-		if (1 < ft_strlen(arr[i]) && arr[i][0] == (char) '0')
+		if (2 <= ft_strlen(arr[i]) && arr[i][0] == (char) '0')
 			return (1);
-		if (2 < ft_strlen(arr[i])
+		if (2 <= ft_strlen(arr[i])
 			&& arr[i][0] == (char) '-' && arr[i][1] == (char) '0')
+			return (1);
+		if (2 <= ft_strlen(arr[i])
+			&& arr[i][0] == (char) '+' && arr[i][1] == (char) '0')
 			return (1);
 		i++;
 	}
-	if (duplicate_check(n, arr) != 0)
-		return (1);
-	if (int_range_check(n, arr) != 0)
+	if (duplicate_check(n, arr) != 0 || int_range_check(n, arr) != 0)
 		return (1);
 	return (0);
 }
