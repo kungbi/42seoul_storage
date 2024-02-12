@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:00:50 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 15:43:55 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/12 22:33:39 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	is_sorted(t_dual_stack *dual_stack, char pos, int n)
 		node = node->next;
 		if (n <= ++i)
 			return (1);
-	}	
+	}
 	return (1);
 }
 

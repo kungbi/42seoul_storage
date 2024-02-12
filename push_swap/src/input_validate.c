@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 21:38:02 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/12 21:04:54 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/12 22:31:27 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	input_validate(int n, char *arr[])
 {
 	int	i;
 
-	if (n == 0)
-		return (0);
 	i = 0;
 	while (i < n)
 	{
@@ -98,12 +96,13 @@ int	int_range_check(int n, char *arr[])
 	i = 0;
 	while (i < n)
 	{
+		sign_bit = 0;
 		if (arr[i][0] == '-')
 			sign_bit = 1;
 		if (sign_bit == 0)
-			overflow_result = overflow_check(arr[i], 0);
+			overflow_result = overflow_check(arr[i], sign_bit);
 		else
-			overflow_result = overflow_check(arr[i] + 1, 1);
+			overflow_result = overflow_check(arr[i] + 1, sign_bit);
 		if (overflow_result != 0)
 			return (overflow_result);
 		i++;

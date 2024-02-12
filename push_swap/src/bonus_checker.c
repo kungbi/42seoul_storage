@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:50:11 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/12 21:28:39 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/12 22:32:29 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	main(int argc, char *argv[])
 	t_dual_stack	*dual_stack;
 	char			*command;
 
+	if (argc == 1)
+		return (0);
 	if (input_validate(argc - 1, argv + 1) != 0)
 		return_error();
 	if (new_dual_stack(&dual_stack) != 0)
@@ -26,11 +28,6 @@ int	main(int argc, char *argv[])
 	command = get_next_line(0);
 	while (command != NULL)
 	{
-		if (command[ft_strlen(command) - 1] != '\n')
-		{
-			command_execute(dual_stack, command);
-			break ;
-		}
 		command_execute(dual_stack, command);
 		free(command);
 		command = get_next_line(0);
@@ -53,7 +50,6 @@ int	check_stack(t_dual_stack *dual_stack)
 		result = 1;
 	if (is_sorted(dual_stack, 'a', dual_stack->a->size) != 1)
 		result = 1;
-
 	if (result == 1)
 		ft_putendl_fd("KO", 1);
 	else if (result == 0)
