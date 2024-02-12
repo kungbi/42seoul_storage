@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:50:42 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 16:39:34 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/11 16:34:06 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "get_next_line.h"
 # include "sort.h"
 # include "libft.h"
+# include "push_swap.h"
 
 # include <stdio.h>
 

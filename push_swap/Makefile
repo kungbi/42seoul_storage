@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:54:02 by woonshin          #+#    #+#              #
-#    Updated: 2024/02/10 16:52:13 by woonshin         ###   ########.fr        #
+#    Updated: 2024/02/11 16:33:58 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,12 @@ SRC_DIR	= src/
 OBJ_DIR	= obj/
 # CFLAGS	= -Wall -Werror -Wextra
 
-SRC_FILES	= push_swap input_validate
+SRC_FILES	= push_swap
 SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+
+INPUT_VALI_SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, input_validate))
+INPUT_VALI_OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, input_validate))
 
 SORT_FILES	= sort_dual_stack sort_utils sort_utils2 sort_utils3
 SORT_SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SORT_FILES)))
@@ -45,8 +48,8 @@ GET_NEXT_LINE_OBJ	= $(addprefix $(GET_NEXT_LINE_DIR), $(addsuffix .o, $(GET_NEXT
 
 all: $(NAME)
 
-$(NAME): $(LIBFT_TARGET) $(OBJ_DIR) $(OBJ) $(STACK_OBJ) $(SORT_OBJ)
-	$(CC) $(LIBFT_TARGET) $(OBJ) $(STACK_OBJ) $(SORT_OBJ) -o $(NAME)
+$(NAME): $(LIBFT_TARGET) $(OBJ_DIR) $(OBJ) $(STACK_OBJ) $(SORT_OBJ) $(INPUT_VALI_OBJ) 
+	$(CC) $(LIBFT_TARGET) $(INPUT_VALI_OBJ) $(OBJ) $(STACK_OBJ) $(SORT_OBJ) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
@@ -63,6 +66,13 @@ clean:
 	make clean -C $(LIBFT)
 	rm -rf $(GET_NEXT_LINE_OBJ)
 	rm -rf $(BONUS_OBJ)
+	@rm -rf .BONUS_FLAG
+
+$(BONUS_NAME): $(BONUS_OBJ) $(GET_NEXT_LINE_NAME) 
+	$(CC) $(BONUS_OBJ) $(INPUT_VALI_OBJ) $(GET_NEXT_LINE_OBJ) $(LIBFT_TARGET) $(SORT_OBJ) $(STACK_OBJ) -o $(BONUS_NAME)
+	@touch .BONUS_FLAG
+
+bonus: all $(BONUS_NAME)
 
 fclean:	clean
 	rm -f $(NAME)
@@ -75,10 +85,5 @@ re: fclean all
 
 $(GET_NEXT_LINE_NAME): $(GET_NEXT_LINE_OBJ)
 	ar rsu $(GET_NEXT_LINE_NAME) $(GET_NEXT_LINE_OBJ) 
-
-bonus: $(BONUS_NAME) 
-
-$(BONUS_NAME) : $(BONUS_OBJ) $(GET_NEXT_LINE_NAME) 
-	$(CC) $(BONUS_OBJ) $(GET_NEXT_LINE_OBJ) $(LIBFT_TARGET) $(SORT_OBJ) $(STACK_OBJ) -o $(BONUS_NAME)
-
-.PHONY:	all clean fclean re
+	
+.PHONY:	all bonus clean fclean re 

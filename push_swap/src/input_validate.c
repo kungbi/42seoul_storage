@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 21:38:02 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/09 15:35:39 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/11 16:47:12 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,14 @@ int	input_validate(int n, char *arr[])
 	i = 0;
 	while (i < n)
 	{
-		if (is_validation(arr[i]) == 0)
+		if (is_validation(arr[i]) != 0)
+			return (1);
+		if (arr[i][0] == '\0')
+			return (1);
+		if (1 < ft_strlen(arr[i]) && arr[i][0] == (char) '0')
+			return (1);
+		if (2 < ft_strlen(arr[i])
+			&& arr[i][0] == (char) '-' && arr[i][1] == (char) '0')
 			return (1);
 		i++;
 	}
@@ -45,14 +52,14 @@ int	is_validation(char *str)
 	if (str[i] == '-')
 		i++;
 	if (!ft_isdigit(str[i]))
-		return (0);
+		return (1);
 	while (str[i] != 0)
 	{
 		if (!ft_isdigit(str[i]))
-			return (0);
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int	duplicate_check(int n, char *arr[])

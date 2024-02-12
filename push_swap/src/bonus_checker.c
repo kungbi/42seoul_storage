@@ -6,17 +6,20 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:50:11 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 17:41:01 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/11 16:43:35 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
+#include <stdio.h>
 int	main(int argc, char *argv[])
 {
 	t_dual_stack	*dual_stack;
 	char			*command;
 
+	if (input_validate(argc - 1, argv + 1) != 0)
+		return_error();
 	if (new_dual_stack(&dual_stack) != 0)
 		return_error();
 	if (dual_stack_init(dual_stack, argc - 1, argv + 1) != 0)
