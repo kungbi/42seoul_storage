@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:25:34 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/12 22:32:18 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/12 22:43:23 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ int	main(int argc, char *argv[])
 
 void	return_error(void)
 {
-	ft_putendl_fd("Error", 1);
+	ft_putendl_fd("Error", 2);
 	exit(1);
 }
