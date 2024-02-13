@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:54:02 by woonshin          #+#    #+#              #
-#    Updated: 2024/02/12 22:34:24 by woonshin         ###   ########.fr        #
+#    Updated: 2024/02/13 21:41:18 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ LIBFT = libft
 LIBFT_TARGET = libft.a
 
 BONUS_NAME	= checker
-BONUS_FILES	= bonus_checker bonus_command_execution
+BONUS_FILES	= checker_bonus command_execution_bonus
 BONUS_SRC	= $(addprefix $(SRC_DIR), $(addsuffix .c, $(BONUS_FILES)))
 BONUS_OBJ	= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(BONUS_FILES)))
 
@@ -67,10 +67,10 @@ clean:
 	rm -rf $(GET_NEXT_LINE_OBJ)
 	rm -rf $(BONUS_OBJ)
 
-$(BONUS_NAME): $(BONUS_OBJ) $(GET_NEXT_LINE_NAME) 
+$(BONUS_NAME): $(BONUS_OBJ) $(INPUT_VALI_OBJ) $(GET_NEXT_LINE_OBJ) $(LIBFT_TARGET) $(SORT_OBJ) $(STACK_OBJ)
 	$(CC) $(BONUS_OBJ) $(INPUT_VALI_OBJ) $(GET_NEXT_LINE_OBJ) $(LIBFT_TARGET) $(SORT_OBJ) $(STACK_OBJ) -o $(BONUS_NAME)
 
-bonus: all $(BONUS_NAME)
+bonus: $(BONUS_NAME)  
 
 fclean:	clean
 	rm -f $(NAME)
