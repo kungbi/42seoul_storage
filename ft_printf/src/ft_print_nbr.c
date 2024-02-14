@@ -6,12 +6,11 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 17:08:34 by woonshin          #+#    #+#             */
-/*   Updated: 2023/12/26 00:07:49 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/14 12:53:22 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_putnbr(int n);
 int	get_digit(int n);
