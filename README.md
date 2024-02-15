@@ -183,6 +183,11 @@ Bonus를 적용한 `get_next_line()`은 다음과 같이 사용됩니다.
 
 ---
 
+<br/>
+<img src="img/get_next_line_score.png">
+
+---
+
 <br/><br/><br/>
 <a name="ft_printf"></a>
 
@@ -212,7 +217,9 @@ Prototype: `int ft_printf(const char *, ...›`
 
 ---
 
-<br/>
 <img src="img/ft_printf_paco.png">
 
 ---
+
+<br/>
+<img src="img/ft_printf_score.png">
