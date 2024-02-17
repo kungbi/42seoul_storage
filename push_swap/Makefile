@@ -6,12 +6,12 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:54:02 by woonshin          #+#    #+#              #
-#    Updated: 2024/02/13 21:41:18 by woonshin         ###   ########.fr        #
+#    Updated: 2024/02/16 00:54:02 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		= gcc
-NAME	= push_swap
+CC			= cc
+NAME		= push_swap
 INCLUDE	= include
 SRC_DIR	= src/
 OBJ_DIR	= obj/

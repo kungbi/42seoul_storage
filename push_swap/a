@@ -1,0 +1,4545 @@
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+make -C libft
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+
+# Make data base, printed on Fri Feb 16 00:53:54 2024
+
+# Variables
+
+# environment
+VSCODE_GIT_ASKPASS_MAIN = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `Makefile', line 11)
+SRCS_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+# default
+CWEAVE = cweave
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# default
+PC = pc
+# makefile
+CURDIR := /Users/woongbishin/Woongbi_File/42seoul/42seoul_storage/push_swap/libft
+# environment
+RBENV_SHELL = zsh
+# default
+RM = rm -f
+# default
+CO = co
+# environment
+_ = /usr/bin/make
+# default
+PREPROCESS.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -F
+# default
+LINK.m = $(LINK.c)
+# default
+LINK.o = $(CC) $(LDFLAGS) $(TARGET_ARCH)
+# default
+OUTPUT_OPTION = -o $@
+# environment
+_P9K_SSH_TTY = /dev/ttys007
+# default
+COMPILE.cpp = $(COMPILE.cc)
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+VSCODE_INJECTION = 1
+# makefile (from `Makefile', line 1)
+CC = cc
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+INFOPATH = /opt/homebrew/share/info:
+# default
+CHECKOUT,v = +$(if $(wildcard $@),,$(CO) $(COFLAGS) $< $@)
+# environment
+P9K_SSH = 0
+# default
+LEX.m = $(LEX) $(LFLAGS) -t
+# default
+CPP = $(CC) -E
+# default
+LINK.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+PATH = /Users/woongbishin/.rbenv/shims:/Users/woongbishin/.rbenv/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/X11/bin:/Library/Apple/usr/bin:/Library/TeX/texbin:/Applications/Wireshark.app/Contents/MacOS:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+# default
+LD = ld
+# default
+TEXI2DVI = texi2dvi
+# default
+YACC = yacc
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# default
+COMPILE.mod = $(M2C) $(M2FLAGS) $(MODFLAGS) $(TARGET_ARCH)
+# makefile (from `Makefile', line 2)
+CFLAGS = -Wall -Wextra -Werror
+# default
+ARFLAGS = rv
+# default
+LINK.r = $(FC) $(FFLAGS) $(RFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+LINT = lint
+# default
+COMPILE.f = $(FC) $(FFLAGS) $(TARGET_ARCH) -c
+# default
+LINT.c = $(LINT) $(LINTFLAGS) $(CPPFLAGS) $(TARGET_ARCH)
+# default
+YACC.m = $(YACC) $(YFLAGS)
+# default
+LINK.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+ZDOTDIR = /Users/woongbishin
+# default
+YACC.y = $(YACC) $(YFLAGS)
+# makefile (from `Makefile', line 16)
+AR = ar rsu
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# default
+TANGLE = tangle
+# environment
+LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.cgrt8Hxvn4/Listeners
+# default
+GET = get
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = /private/tmp/com.apple.launchd.IOftkuELNf/org.macosforge.xquartz:0
+# default
+COMPILE.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+CTANGLE = ctangle
+# default
+.LIBPATTERNS = lib%.so lib%.a
+# default
+LINK.C = $(LINK.cc)
+# environment
+PWD = /Users/woongbishin/Woongbi_File/42seoul/42seoul_storage/push_swap
+# environment
+HOMEBREW_CELLAR = /opt/homebrew/Cellar
+# default
+LINK.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_MACH)
+# default
+PREPROCESS.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -F
+# environment
+VSCODE_NONCE = 74102f61-be48-4473-b09f-b8330b81b55d
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+MANPATH = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/share/man:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/usr/share/man:/Applications/Xcode.app/Contents/Developer/usr/share/man:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/share/man:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/share/man:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/usr/share/man:/Applications/Xcode.app/Contents/Developer/usr/share/man:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/share/man:/opt/homebrew/share/man::
+# default
+LINK.s = $(CC) $(ASFLAGS) $(LDFLAGS) $(TARGET_MACH)
+# environment
+HOME = /Users/woongbishin
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# environment
+LOGNAME = woongbishin
+# environment
+ZSH = /Users/woongbishin/.oh-my-zsh
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 1
+# default
+COMPILE.m = $(COMPILE.c)
+# environment
+XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
+# default
+MAKE = $(MAKE_COMMAND)
+# makefile (from `Makefile', line 4)
+SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
+# environment
+SHLVL = 1
+# environment
+BLOCKSIZE = 512
+# default
+AS = as
+# default
+PREPROCESS.S = $(CC) -E $(CPPFLAGS)
+# default
+COMPILE.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = woongbishin
+# default
+FC = f77
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from `Makefile', line 3)
+NAME = libft.a
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+WEAVE = weave
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# default
+LINK.cpp = $(LINK.cc)
+# default
+F77 = $(FC)
+# environment
+OLDPWD = /Users/woongbishin/Woongbi_File/42seoul/42seoul_storage
+# environment
+VSCODE_GIT_ASKPASS_EXTRA_ARGS = 
+# environment
+TERM_PROGRAM = vscode
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/jq/tkf8cq8x63v2kw9lrbfjjt080000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_GIT_ASKPASS_NODE = /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)
+# environment
+MallocNanoZone = 0
+# default
+LEX = lex
+# makefile
+MAKEFLAGS = p
+# environment
+MFLAGS = -p
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+TERM_PROGRAM_VERSION = 1.86.1
+# default
+LEX.l = $(LEX) $(LFLAGS) -t
+# environment
+XPC_SERVICE_NAME = 0
+# environment
+HOMEBREW_PREFIX = /opt/homebrew
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# default
+COMPILE.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -c
+# makefile
+SHELL = /bin/sh
+# automatic
++F = $(notdir $+)
+# default
+M2C = m2c
+# environment
+HOMEBREW_REPOSITORY = /opt/homebrew
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# environment
+GIT_ASKPASS = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh
+# default
+MAKEFILES := 
+# default
+COMPILE.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# automatic
+<F = $(notdir $<)
+# default
+CXX = c++
+# environment
+USER_ZDOTDIR = /Users/woongbishin
+# default
+COFLAGS = 
+# environment
+PAGER = less
+# default
+COMPILE.def = $(M2C) $(M2FLAGS) $(DEFFLAGS) $(TARGET_ARCH)
+# makefile (from `Makefile', line 14)
+OBJS = ${SRCS:.c=.o}
+# default
+COMPILE.C = $(COMPILE.cc)
+# environment
+P9K_TTY = old
+# automatic
+^F = $(notdir $^)
+# default
+COMPILE.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(TARGET_MACH) -c
+# default
+LINK.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+SUFFIXES := .out .a .ln .o .c .cc .C .cpp .p .f .F .m .r .y .l .ym .lm .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el
+# default
+COMPILE.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+LINK.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+COMPILE.s = $(AS) $(ASFLAGS) $(TARGET_MACH)
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+VSCODE_GIT_IPC_HANDLE = /var/folders/jq/tkf8cq8x63v2kw9lrbfjjt080000gn/T/vscode-git-fed35a0e70.sock
+# default
+MAKEINFO = makeinfo
+# default
+TEX = tex
+# makefile (from `Makefile', line 15)
+OBJS_BONUS = ${SRCS_BONUS:.c=.o}
+# environment
+LANG = en_US.UTF-8
+# environment
+TERM = xterm-256color
+# default
+F77FLAGS = $(FFLAGS)
+# default
+LINK.f = $(FC) $(FFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+_P9K_TTY = /dev/ttys007
+# default
+GNUMAKE = YES
+# variable set hash-table stats:
+# Load=147/1024=14%, Rehash=0, Collisions=139/323=43%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# SCCS: could not be stat'd.
+# . (device 16777230, inode 24692699): 47 files, 122 impossibilities.
+# RCS: could not be stat'd.
+
+# 47 files, 122 impossibilities in 3 directories.
+
+# Implicit Rules
+
+%.out:
+
+%.a:
+
+%.ln:
+
+%.o:
+
+%: %.o
+#  commands to execute (built-in):
+	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.c:
+
+%: %.c
+#  commands to execute (built-in):
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.ln: %.c
+#  commands to execute (built-in):
+	$(LINT.c) -C$* $<
+
+%.o: %.c
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+%.cc:
+
+%: %.cc
+#  commands to execute (built-in):
+	$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.cc
+#  commands to execute (built-in):
+	$(COMPILE.cc) $(OUTPUT_OPTION) $<
+
+%.C:
+
+%: %.C
+#  commands to execute (built-in):
+	$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.C
+#  commands to execute (built-in):
+	$(COMPILE.C) $(OUTPUT_OPTION) $<
+
+%.cpp:
+
+%: %.cpp
+#  commands to execute (built-in):
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.cpp
+#  commands to execute (built-in):
+	$(COMPILE.cpp) $(OUTPUT_OPTION) $<
+
+%.p:
+
+%: %.p
+#  commands to execute (built-in):
+	$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.p
+#  commands to execute (built-in):
+	$(COMPILE.p) $(OUTPUT_OPTION) $<
+
+%.f:
+
+%: %.f
+#  commands to execute (built-in):
+	$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.f
+#  commands to execute (built-in):
+	$(COMPILE.f) $(OUTPUT_OPTION) $<
+
+%.F:
+
+%: %.F
+#  commands to execute (built-in):
+	$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.F
+#  commands to execute (built-in):
+	$(COMPILE.F) $(OUTPUT_OPTION) $<
+
+%.f: %.F
+#  commands to execute (built-in):
+	$(PREPROCESS.F) $(OUTPUT_OPTION) $<
+
+%.m:
+
+%: %.m
+#  commands to execute (built-in):
+	$(LINK.m) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.m
+#  commands to execute (built-in):
+	$(COMPILE.m) $(OUTPUT_OPTION) $<
+
+%.r:
+
+%: %.r
+#  commands to execute (built-in):
+	$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.r
+#  commands to execute (built-in):
+	$(COMPILE.r) $(OUTPUT_OPTION) $<
+
+%.f: %.r
+#  commands to execute (built-in):
+	$(PREPROCESS.r) $(OUTPUT_OPTION) $<
+
+%.y:
+
+%.ln: %.y
+#  commands to execute (built-in):
+	$(YACC.y) $< 
+	$(LINT.c) -C$* y.tab.c 
+	$(RM) y.tab.c
+
+%.c: %.y
+#  commands to execute (built-in):
+	$(YACC.y) $< 
+	mv -f y.tab.c $@
+
+%.l:
+
+%.ln: %.l
+#  commands to execute (built-in):
+	@$(RM) $*.c
+	$(LEX.l) $< > $*.c
+	$(LINT.c) -i $*.c -o $@
+	$(RM) $*.c
+
+%.c: %.l
+#  commands to execute (built-in):
+	@$(RM) $@ 
+	$(LEX.l) $< > $@
+
+%.r: %.l
+#  commands to execute (built-in):
+	$(LEX.l) $< > $@ 
+	mv -f lex.yy.r $@
+
+%.ym:
+
+%.m: %.ym
+#  commands to execute (built-in):
+	$(YACC.m) $< 
+	mv -f y.tab.c $@
+
+%.lm:
+
+%.m: %.lm
+#  commands to execute (built-in):
+	@$(RM) $@ 
+	$(LEX.m) $< > $@
+
+%.s:
+
+%: %.s
+#  commands to execute (built-in):
+	$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.s
+#  commands to execute (built-in):
+	$(COMPILE.s) -o $@ $<
+
+%.S:
+
+%: %.S
+#  commands to execute (built-in):
+	$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.S
+#  commands to execute (built-in):
+	$(COMPILE.S) -o $@ $<
+
+%.s: %.S
+#  commands to execute (built-in):
+	$(PREPROCESS.S) $< > $@
+
+%.mod:
+
+%: %.mod
+#  commands to execute (built-in):
+	$(COMPILE.mod) -o $@ -e $@ $^
+
+%.o: %.mod
+#  commands to execute (built-in):
+	$(COMPILE.mod) -o $@ $<
+
+%.sym:
+
+%.def:
+
+%.sym: %.def
+#  commands to execute (built-in):
+	$(COMPILE.def) -o $@ $<
+
+%.h:
+
+%.info:
+
+%.dvi:
+
+%.tex:
+
+%.dvi: %.tex
+#  commands to execute (built-in):
+	$(TEX) $<
+
+%.texinfo:
+
+%.info: %.texinfo
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.texinfo
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.texi:
+
+%.info: %.texi
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.texi
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.txinfo:
+
+%.info: %.txinfo
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.txinfo
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.w:
+
+%.c: %.w
+#  commands to execute (built-in):
+	$(CTANGLE) $< - $@
+
+%.tex: %.w
+#  commands to execute (built-in):
+	$(CWEAVE) $< - $@
+
+%.ch:
+
+%.web:
+
+%.p: %.web
+#  commands to execute (built-in):
+	$(TANGLE) $<
+
+%.tex: %.web
+#  commands to execute (built-in):
+	$(WEAVE) $<
+
+%.sh:
+
+%: %.sh
+#  commands to execute (built-in):
+	cat $< >$@ 
+	chmod a+x $@
+
+%.elc:
+
+%.el:
+
+(%): %
+#  commands to execute (built-in):
+	$(AR) $(ARFLAGS) $@ $<
+
+%.out: %
+#  commands to execute (built-in):
+	@rm -f $@ 
+	cp $< $@
+
+%.c: %.w %.ch
+#  commands to execute (built-in):
+	$(CTANGLE) $^ $@
+
+%.tex: %.w %.ch
+#  commands to execute (built-in):
+	$(CWEAVE) $^ $@
+
+%:: %,v
+#  commands to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: RCS/%,v
+#  commands to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: RCS/%
+#  commands to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: s.%
+#  commands to execute (built-in):
+	$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<
+
+%:: SCCS/s.%
+#  commands to execute (built-in):
+	$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<
+
+# 93 implicit rules, 5 (5.4%) terminal.
+
+# Files
+
+ft_strmapi.o: ft_strmapi.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strmapi'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_strmapi.o
+# automatic
+# % := 
+# automatic
+# * := ft_strmapi
+# automatic
+# + := ft_strmapi.c
+# automatic
+# | := 
+# automatic
+# < := ft_strmapi.c
+# automatic
+# ^ := ft_strmapi.c
+# automatic
+# ? := ft_strmapi.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+ft_strncmp.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.web.p:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TANGLE) $<
+
+# Not a target:
+ft_memchr.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ft_isalnum.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+ft_isalnum.o: ft_isalnum.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_isalnum'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_isalnum.o
+# automatic
+# % := 
+# automatic
+# * := ft_isalnum
+# automatic
+# + := ft_isalnum.c
+# automatic
+# | := 
+# automatic
+# < := ft_isalnum.c
+# automatic
+# ^ := ft_isalnum.c
+# automatic
+# ? := ft_isalnum.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+.l.r:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LEX.l) $< > $@ 
+	mv -f lex.yy.r $@
+
+ft_memcpy.o: ft_memcpy.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_memcpy'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_memcpy.o
+# automatic
+# % := 
+# automatic
+# * := ft_memcpy
+# automatic
+# + := ft_memcpy.c
+# automatic
+# | := 
+# automatic
+# < := ft_memcpy.c
+# automatic
+# ^ := ft_memcpy.c
+# automatic
+# ? := ft_memcpy.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+ft_itoa.o: ft_itoa.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_itoa'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_itoa.o
+# automatic
+# % := 
+# automatic
+# * := ft_itoa
+# automatic
+# + := ft_itoa.c
+# automatic
+# | := 
+# automatic
+# < := ft_itoa.c
+# automatic
+# ^ := ft_itoa.c
+# automatic
+# ? := ft_itoa.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+ft_strdup.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+ft_memcmp.o: ft_memcmp.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_memcmp'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_memcmp.o
+# automatic
+# % := 
+# automatic
+# * := ft_memcmp
+# automatic
+# + := ft_memcmp.c
+# automatic
+# | := 
+# automatic
+# < := ft_memcmp.c
+# automatic
+# ^ := ft_memcmp.c
+# automatic
+# ? := ft_memcmp.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+ft_strlen.o: ft_strlen.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strlen'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_strlen.o
+# automatic
+# % := 
+# automatic
+# * := ft_strlen
+# automatic
+# + := ft_strlen.c
+# automatic
+# | := 
+# automatic
+# < := ft_strlen.c
+# automatic
+# ^ := ft_strlen.c
+# automatic
+# ? := ft_strlen.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_memmove.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.ym:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ft_isdigit.o: ft_isdigit.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_isdigit'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_isdigit.o
+# automatic
+# % := 
+# automatic
+# * := ft_isdigit
+# automatic
+# + := ft_isdigit.c
+# automatic
+# | := 
+# automatic
+# < := ft_isdigit.c
+# automatic
+# ^ := ft_isdigit.c
+# automatic
+# ? := ft_isdigit.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+ft_strchr.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.F.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.F) $(OUTPUT_OPTION) $<
+
+all: libft.a
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/142=0%
+
+# Not a target:
+.m:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.m) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.y.ln:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(YACC.y) $< 
+	$(LINT.c) -C$* y.tab.c 
+	$(RM) y.tab.c
+
+# Not a target:
+.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+ft_memchr.o: ft_memchr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_memchr'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_memchr.o
+# automatic
+# % := 
+# automatic
+# * := ft_memchr
+# automatic
+# + := ft_memchr.c
+# automatic
+# | := 
+# automatic
+# < := ft_memchr.c
+# automatic
+# ^ := ft_memchr.c
+# automatic
+# ? := ft_memchr.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+.y:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_toupper.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.def.sym:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.def) -o $@ $<
+
+# Not a target:
+ft_lstnew_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: all bonus clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_lstadd_front_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_strnstr.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.p.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.p) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.p:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.txinfo.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+ft_tolower.o: ft_tolower.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_tolower'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_tolower.o
+# automatic
+# % := 
+# automatic
+# * := ft_tolower
+# automatic
+# + := ft_tolower.c
+# automatic
+# | := 
+# automatic
+# < := ft_tolower.c
+# automatic
+# ^ := ft_tolower.c
+# automatic
+# ? := ft_tolower.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+.a:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ft_strrchr.o: ft_strrchr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strrchr'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_strrchr.o
+# automatic
+# % := 
+# automatic
+# * := ft_strrchr
+# automatic
+# + := ft_strrchr.c
+# automatic
+# | := 
+# automatic
+# < := ft_strrchr.c
+# automatic
+# ^ := ft_strrchr.c
+# automatic
+# ? := ft_strrchr.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+ft_strjoin.o: ft_strjoin.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strjoin'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_strjoin.o
+# automatic
+# % := 
+# automatic
+# * := ft_strjoin
+# automatic
+# + := ft_strjoin.c
+# automatic
+# | := 
+# automatic
+# < := ft_strjoin.c
+# automatic
+# ^ := ft_strjoin.c
+# automatic
+# ? := ft_strjoin.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+ft_split.o: ft_split.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_split'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_split.o
+# automatic
+# % := 
+# automatic
+# * := ft_split
+# automatic
+# + := ft_split.c
+# automatic
+# | := 
+# automatic
+# < := ft_split.c
+# automatic
+# ^ := ft_split.c
+# automatic
+# ? := ft_split.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+.l.ln:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	@$(RM) $*.c
+	$(LEX.l) $< > $*.c
+	$(LINT.c) -i $*.c -o $@
+	$(RM) $*.c
+
+# Not a target:
+.w.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(CTANGLE) $< - $@
+
+# Not a target:
+.texi.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+.sh:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	cat $< >$@ 
+	chmod a+x $@
+
+# Not a target:
+.m.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.m) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+ft_isalpha.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ft_putchar_fd.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.cc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.cc) $(OUTPUT_OPTION) $<
+
+ft_strlcat.o: ft_strlcat.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strlcat'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_strlcat.o
+# automatic
+# % := 
+# automatic
+# * := ft_strlcat
+# automatic
+# + := ft_strlcat.c
+# automatic
+# | := 
+# automatic
+# < := ft_strlcat.c
+# automatic
+# ^ := ft_strlcat.c
+# automatic
+# ? := ft_strlcat.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+ft_atoi.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.def:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES: .out .a .ln .o .c .cc .C .cpp .p .f .F .m .r .y .l .ym .lm .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_strtrim.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+.c.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:23:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ft_lstsize_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.r.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.r) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.r:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.lm:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+libft.a: ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `libft'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := libft.a
+# automatic
+# % := 
+# automatic
+# * := libft
+# automatic
+# + := ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
+# automatic
+# | := 
+# automatic
+# < := ft_atoi.o
+# automatic
+# ^ := ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
+# automatic
+# ? := ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/150=1%
+#  commands to execute (from `Makefile', line 21):
+	@$(AR) $(NAME) $(OBJS)
+	
+
+# Not a target:
+ft_putstr_fd.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.ym.m:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(YACC.m) $< 
+	mv -f y.tab.c $@
+
+# Not a target:
+ft_lstlast_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_putendl_fd.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ft_strmapi.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+ft_striteri.o: ft_striteri.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_striteri'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_striteri.o
+# automatic
+# % := 
+# automatic
+# * := ft_striteri
+# automatic
+# + := ft_striteri.c
+# automatic
+# | := 
+# automatic
+# < := ft_striteri.c
+# automatic
+# ^ := ft_striteri.c
+# automatic
+# ? := ft_striteri.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+.info:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_lstmap_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.elc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.l.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	@$(RM) $@ 
+	$(LEX.l) $< > $@
+
+# Not a target:
+ft_memcpy.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ft_itoa.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.out:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_memcmp.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ft_strlen.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.C:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+ft_isdigit.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.r.f:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(PREPROCESS.r) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.S:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.texinfo.info:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.w.tex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(CWEAVE) $< - $@
+
+bonus: .BONUS_FLAG
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+.c.ln:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINT.c) -C$* $<
+
+# Not a target:
+.s.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.s) -o $@ $<
+
+# Not a target:
+.s:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 38):
+	@rm -rf $(NAME)
+	
+
+# Not a target:
+ft_memset.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+ft_bzero.o: ft_bzero.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_bzero'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_bzero.o
+# automatic
+# % := 
+# automatic
+# * := ft_bzero
+# automatic
+# + := ft_bzero.c
+# automatic
+# | := 
+# automatic
+# < := ft_bzero.c
+# automatic
+# ^ := ft_bzero.c
+# automatic
+# ? := ft_bzero.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+ft_calloc.o: ft_calloc.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_calloc'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_calloc.o
+# automatic
+# % := 
+# automatic
+# * := ft_calloc
+# automatic
+# + := ft_calloc.c
+# automatic
+# | := 
+# automatic
+# < := ft_calloc.c
+# automatic
+# ^ := ft_calloc.c
+# automatic
+# ? := ft_calloc.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+ft_substr.o: ft_substr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_substr'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_substr.o
+# automatic
+# % := 
+# automatic
+# * := ft_substr
+# automatic
+# + := ft_substr.c
+# automatic
+# | := 
+# automatic
+# < := ft_substr.c
+# automatic
+# ^ := ft_substr.c
+# automatic
+# ? := ft_substr.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+ft_tolower.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ft_strrchr.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.texinfo.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+ft_strjoin.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.el:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_split.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.texinfo:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ft_isprint.o: ft_isprint.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_isprint'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_isprint.o
+# automatic
+# % := 
+# automatic
+# * := ft_isprint
+# automatic
+# + := ft_isprint.c
+# automatic
+# | := 
+# automatic
+# < := ft_isprint.c
+# automatic
+# ^ := ft_isprint.c
+# automatic
+# ? := ft_isprint.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+ft_isalpha.o: ft_isalpha.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_isalpha'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_isalpha.o
+# automatic
+# % := 
+# automatic
+# * := ft_isalpha
+# automatic
+# + := ft_isalpha.c
+# automatic
+# | := 
+# automatic
+# < := ft_isalpha.c
+# automatic
+# ^ := ft_isalpha.c
+# automatic
+# ? := ft_isalpha.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+.lm.m:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	@$(RM) $@ 
+	$(LEX.m) $< > $@
+
+.BONUS_FLAG: ft_lstnew_bonus.o ft_lstadd_front_bonus.o ft_lstsize_bonus.o ft_lstlast_bonus.o ft_lstadd_back_bonus.o ft_lstdelone_bonus.o ft_lstclear_bonus.o ft_lstiter_bonus.o ft_lstmap_bonus.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 27):
+	@$(AR) $(NAME) $(OBJS_BONUS)
+	@touch .BONUS_FLAG
+	
+
+# Not a target:
+.y.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(YACC.y) $< 
+	mv -f y.tab.c $@
+
+# Not a target:
+.web.tex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(WEAVE) $<
+
+# Not a target:
+.texi.info:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_strlcat.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_bzero.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ft_lstdelone_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ft_strlcpy.o: ft_strlcpy.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strlcpy'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_strlcpy.o
+# automatic
+# % := 
+# automatic
+# * := ft_strlcpy
+# automatic
+# + := ft_strlcpy.c
+# automatic
+# | := 
+# automatic
+# < := ft_strlcpy.c
+# automatic
+# ^ := ft_strlcpy.c
+# automatic
+# ? := ft_strlcpy.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+ft_isprint.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ft_isascii.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+ft_strncmp.o: ft_strncmp.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strncmp'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_strncmp.o
+# automatic
+# % := 
+# automatic
+# * := ft_strncmp
+# automatic
+# + := ft_strncmp.c
+# automatic
+# | := 
+# automatic
+# < := ft_strncmp.c
+# automatic
+# ^ := ft_strncmp.c
+# automatic
+# ? := ft_strncmp.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+.tex.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TEX) $<
+
+# Not a target:
+.cpp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.cpp) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 33):
+	@rm -rf $(OBJS)
+	@rm -rf $(OBJS_BONUS)
+	@rm -rf .BONUS_FLAG
+	
+
+# Not a target:
+.C.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.C) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.ln:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_lstadd_back_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.texi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.txinfo:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ft_isascii.o: ft_isascii.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_isascii'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_isascii.o
+# automatic
+# % := 
+# automatic
+# * := ft_isascii
+# automatic
+# + := ft_isascii.c
+# automatic
+# | := 
+# automatic
+# < := ft_isascii.c
+# automatic
+# ^ := ft_isascii.c
+# automatic
+# ? := ft_isascii.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+.tex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ft_strdup.o: ft_strdup.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strdup'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_strdup.o
+# automatic
+# % := 
+# automatic
+# * := ft_strdup
+# automatic
+# + := ft_strdup.c
+# automatic
+# | := 
+# automatic
+# < := ft_strdup.c
+# automatic
+# ^ := ft_strdup.c
+# automatic
+# ? := ft_strdup.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+ft_lstiter_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.txinfo.info:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+ft_memmove.o: ft_memmove.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_memmove'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_memmove.o
+# automatic
+# % := 
+# automatic
+# * := ft_memmove
+# automatic
+# + := ft_memmove.c
+# automatic
+# | := 
+# automatic
+# < := ft_memmove.c
+# automatic
+# ^ := ft_memmove.c
+# automatic
+# ? := ft_memmove.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+ft_strchr.o: ft_strchr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strchr'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_strchr.o
+# automatic
+# % := 
+# automatic
+# * := ft_strchr
+# automatic
+# + := ft_strchr.c
+# automatic
+# | := 
+# automatic
+# < := ft_strchr.c
+# automatic
+# ^ := ft_strchr.c
+# automatic
+# ? := ft_strchr.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+.ch:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ft_toupper.o: ft_toupper.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_toupper'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_toupper.o
+# automatic
+# % := 
+# automatic
+# * := ft_toupper
+# automatic
+# + := ft_toupper.c
+# automatic
+# | := 
+# automatic
+# < := ft_toupper.c
+# automatic
+# ^ := ft_toupper.c
+# automatic
+# ? := ft_toupper.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+ft_strnstr.o: ft_strnstr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strnstr'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_strnstr.o
+# automatic
+# % := 
+# automatic
+# * := ft_strnstr
+# automatic
+# + := ft_strnstr.c
+# automatic
+# | := 
+# automatic
+# < := ft_strnstr.c
+# automatic
+# ^ := ft_strnstr.c
+# automatic
+# ? := ft_strnstr.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+ft_putstr_fd.o: ft_putstr_fd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_putstr_fd'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_putstr_fd.o
+# automatic
+# % := 
+# automatic
+# * := ft_putstr_fd
+# automatic
+# + := ft_putstr_fd.c
+# automatic
+# | := 
+# automatic
+# < := ft_putstr_fd.c
+# automatic
+# ^ := ft_putstr_fd.c
+# automatic
+# ? := ft_putstr_fd.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+ft_putnbr_fd.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.S.s:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(PREPROCESS.S) $< > $@
+
+# Not a target:
+.mod:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.mod) -o $@ -e $@ $^
+
+# Not a target:
+.mod.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.mod) -o $@ $<
+
+# Not a target:
+.F.f:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(PREPROCESS.F) $(OUTPUT_OPTION) $<
+
+# Not a target:
+ft_calloc.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ft_substr.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.w:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.S.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.S) -o $@ $<
+
+ft_memset.o: ft_memset.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_memset'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_memset.o
+# automatic
+# % := 
+# automatic
+# * := ft_memset
+# automatic
+# + := ft_memset.c
+# automatic
+# | := 
+# automatic
+# < := ft_memset.c
+# automatic
+# ^ := ft_memset.c
+# automatic
+# ? := ft_memset.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+ft_putchar_fd.o: ft_putchar_fd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_putchar_fd'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_putchar_fd.o
+# automatic
+# % := 
+# automatic
+# * := ft_putchar_fd
+# automatic
+# + := ft_putchar_fd.c
+# automatic
+# | := 
+# automatic
+# < := ft_putchar_fd.c
+# automatic
+# ^ := ft_putchar_fd.c
+# automatic
+# ? := ft_putchar_fd.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+ft_atoi.o: ft_atoi.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_atoi'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_atoi.o
+# automatic
+# % := 
+# automatic
+# * := ft_atoi
+# automatic
+# + := ft_atoi.c
+# automatic
+# | := 
+# automatic
+# < := ft_atoi.c
+# automatic
+# ^ := ft_atoi.c
+# automatic
+# ? := ft_atoi.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+ft_striteri.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ft_lstclear_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ft_strtrim.o: ft_strtrim.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strtrim'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_strtrim.o
+# automatic
+# % := 
+# automatic
+# * := ft_strtrim
+# automatic
+# + := ft_strtrim.c
+# automatic
+# | := 
+# automatic
+# < := ft_strtrim.c
+# automatic
+# ^ := ft_strtrim.c
+# automatic
+# ? := ft_strtrim.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+.l:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ft_putnbr_fd.o: ft_putnbr_fd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_putnbr_fd'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_putnbr_fd.o
+# automatic
+# % := 
+# automatic
+# * := ft_putnbr_fd
+# automatic
+# + := ft_putnbr_fd.c
+# automatic
+# | := 
+# automatic
+# < := ft_putnbr_fd.c
+# automatic
+# ^ := ft_putnbr_fd.c
+# automatic
+# ? := ft_putnbr_fd.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# Not a target:
+.F:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.web:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.sym:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.f:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+ft_strlcpy.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-04 23:16:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.f.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.f) $(OUTPUT_OPTION) $<
+
+ft_putendl_fd.o: ft_putendl_fd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_putendl_fd'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := ft_putendl_fd.o
+# automatic
+# % := 
+# automatic
+# * := ft_putendl_fd
+# automatic
+# + := ft_putendl_fd.c
+# automatic
+# | := 
+# automatic
+# < := ft_putendl_fd.c
+# automatic
+# ^ := ft_putendl_fd.c
+# automatic
+# ? := ft_putendl_fd.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 24):
+	@${CC} ${CFLAGS} -c $< -o $@ 
+	
+
+# files hash-table stats:
+# Load=158/1024=15%, Rehash=0, Collisions=707/2631=27%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Fri Feb 16 00:53:54 2024
+
+mv libft/libft.a ./
+mkdir obj/
+cc -Wall -Werror -Wextra -I include -I libft -I get_next_line/ -c src/push_swap.c -o obj/push_swap.o 
+cc -Wall -Werror -Wextra -I include -I libft -I get_next_line/ -c src/stack.c -o obj/stack.o 
+cc -Wall -Werror -Wextra -I include -I libft -I get_next_line/ -c src/stack_operation.c -o obj/stack_operation.o 
+cc -Wall -Werror -Wextra -I include -I libft -I get_next_line/ -c src/stack_cleaner.c -o obj/stack_cleaner.o 
+cc -Wall -Werror -Wextra -I include -I libft -I get_next_line/ -c src/stack_swap.c -o obj/stack_swap.o 
+cc -Wall -Werror -Wextra -I include -I libft -I get_next_line/ -c src/stack_rotate.c -o obj/stack_rotate.o 
+cc -Wall -Werror -Wextra -I include -I libft -I get_next_line/ -c src/stack_reverse_rotate.c -o obj/stack_reverse_rotate.o 
+cc -Wall -Werror -Wextra -I include -I libft -I get_next_line/ -c src/stack_pop.c -o obj/stack_pop.o 
+cc -Wall -Werror -Wextra -I include -I libft -I get_next_line/ -c src/sort_dual_stack.c -o obj/sort_dual_stack.o 
+cc -Wall -Werror -Wextra -I include -I libft -I get_next_line/ -c src/sort_utils.c -o obj/sort_utils.o 
+cc -Wall -Werror -Wextra -I include -I libft -I get_next_line/ -c src/sort_utils2.c -o obj/sort_utils2.o 
+cc -Wall -Werror -Wextra -I include -I libft -I get_next_line/ -c src/sort_utils3.c -o obj/sort_utils3.o 
+cc -Wall -Werror -Wextra -I include -I libft -I get_next_line/ -c src/input_validate.c -o obj/input_validate.o 
+cc libft.a obj/input_validate.o obj/push_swap.o obj/stack.o obj/stack_operation.o obj/stack_cleaner.o obj/stack_swap.o obj/stack_rotate.o obj/stack_reverse_rotate.o obj/stack_pop.o obj/sort_dual_stack.o obj/sort_utils.o obj/sort_utils2.o obj/sort_utils3.o -o push_swap
+
+# Make data base, printed on Fri Feb 16 00:53:55 2024
+
+# Variables
+
+# environment
+VSCODE_GIT_ASKPASS_MAIN = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `Makefile', line 22)
+OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+# makefile (from `Makefile', line 21)
+SRC = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
+# makefile (from `Makefile', line 39)
+BONUS_FILES = checker_bonus command_execution_bonus
+# makefile (from `Makefile', line 36)
+LIBFT_TARGET = libft.a
+# default
+CWEAVE = cweave
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from `Makefile', line 47)
+GET_NEXT_LINE_OBJ = $(addprefix $(GET_NEXT_LINE_DIR), $(addsuffix .o, $(GET_NEXT_LINE_FILES)))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# default
+PC = pc
+# makefile
+CURDIR := /Users/woongbishin/Woongbi_File/42seoul/42seoul_storage/push_swap
+# makefile
+SHELL = /bin/sh
+# default
+RM = rm -f
+# default
+CO = co
+# environment
+_ = /usr/bin/make
+# default
+PREPROCESS.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -F
+# default
+LINK.m = $(LINK.c)
+# default
+LINK.o = $(CC) $(LDFLAGS) $(TARGET_ARCH)
+# default
+OUTPUT_OPTION = -o $@
+# environment
+_P9K_SSH_TTY = /dev/ttys007
+# default
+COMPILE.cpp = $(COMPILE.cc)
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+VSCODE_INJECTION = 1
+# makefile (from `Makefile', line 17)
+OBJ_DIR = obj/
+# default
+CC = cc
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+INFOPATH = /opt/homebrew/share/info:
+# default
+CHECKOUT,v = +$(if $(wildcard $@),,$(CO) $(COFLAGS) $< $@)
+# environment
+P9K_SSH = 0
+# default
+LEX.m = $(LEX) $(LFLAGS) -t
+# default
+CPP = $(CC) -E
+# default
+LINK.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+PATH = /Users/woongbishin/.rbenv/shims:/Users/woongbishin/.rbenv/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/X11/bin:/Library/Apple/usr/bin:/Library/TeX/texbin:/Applications/Wireshark.app/Contents/MacOS:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+# default
+LD = ld
+# default
+TEXI2DVI = texi2dvi
+# default
+YACC = yacc
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# default
+COMPILE.mod = $(M2C) $(M2FLAGS) $(MODFLAGS) $(TARGET_ARCH)
+# makefile (from `Makefile', line 18)
+CFLAGS = -Wall -Werror -Wextra
+# default
+ARFLAGS = rv
+# default
+LINK.r = $(FC) $(FFLAGS) $(RFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+LINT = lint
+# default
+COMPILE.f = $(FC) $(FFLAGS) $(TARGET_ARCH) -c
+# default
+LINT.c = $(LINT) $(LINTFLAGS) $(CPPFLAGS) $(TARGET_ARCH)
+# default
+YACC.m = $(YACC) $(YFLAGS)
+# default
+LINK.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+ZDOTDIR = /Users/woongbishin
+# default
+YACC.y = $(YACC) $(YFLAGS)
+# default
+AR = ar
+# makefile (from `Makefile', line 33)
+STACK_OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(STACK_FILES)))
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# default
+TANGLE = tangle
+# makefile (from `Makefile', line 28)
+SORT_SRC = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SORT_FILES)))
+# environment
+LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.cgrt8Hxvn4/Listeners
+# default
+GET = get
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = /private/tmp/com.apple.launchd.IOftkuELNf/org.macosforge.xquartz:0
+# makefile (from `Makefile', line 25)
+INPUT_VALI_OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o, input_validate))
+# default
+COMPILE.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+CTANGLE = ctangle
+# default
+.LIBPATTERNS = lib%.so lib%.a
+# makefile (from `Makefile', line 44)
+GET_NEXT_LINE_NAME = get_next_line.a
+# default
+LINK.C = $(LINK.cc)
+# environment
+PWD = /Users/woongbishin/Woongbi_File/42seoul/42seoul_storage/push_swap
+# environment
+HOMEBREW_CELLAR = /opt/homebrew/Cellar
+# default
+LINK.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_MACH)
+# default
+PREPROCESS.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -F
+# environment
+VSCODE_NONCE = 74102f61-be48-4473-b09f-b8330b81b55d
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+MANPATH = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/share/man:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/usr/share/man:/Applications/Xcode.app/Contents/Developer/usr/share/man:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/share/man:/opt/homebrew/share/man::
+# default
+LINK.s = $(CC) $(ASFLAGS) $(LDFLAGS) $(TARGET_MACH)
+# environment
+HOME = /Users/woongbishin
+# makefile (from `Makefile', line 41)
+BONUS_OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(BONUS_FILES)))
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# environment
+LOGNAME = woongbishin
+# makefile (from `Makefile', line 15)
+INCLUDE = include
+# makefile (from `Makefile', line 27)
+SORT_FILES = sort_dual_stack sort_utils sort_utils2 sort_utils3
+# environment
+ZSH = /Users/woongbishin/.oh-my-zsh
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# default
+COMPILE.m = $(COMPILE.c)
+# environment
+XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
+# default
+MAKE = $(MAKE_COMMAND)
+# makefile (from `Makefile', line 46)
+GET_NEXT_LINE_SRC = $(addprefix $(GET_NEXT_LINE_DIR), $(addsuffix .c, $(GET_NEXT_LINE_FILES)))
+# environment
+SHLVL = 1
+# environment
+BLOCKSIZE = 512
+# makefile (from `Makefile', line 35)
+LIBFT = libft
+# default
+AS = as
+# default
+PREPROCESS.S = $(CC) -E $(CPPFLAGS)
+# default
+COMPILE.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = woongbishin
+# default
+FC = f77
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from `Makefile', line 14)
+NAME = push_swap
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# makefile (from `Makefile', line 43)
+GET_NEXT_LINE_DIR = get_next_line/
+# makefile (from `Makefile', line 32)
+STACK_SRC = $(addprefix $(SRC_DIR), $(addsuffix .c, $(STACK_FILES)))
+# default
+WEAVE = weave
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# default
+LINK.cpp = $(LINK.cc)
+# default
+F77 = $(FC)
+# environment
+OLDPWD = /Users/woongbishin/Woongbi_File/42seoul/42seoul_storage
+# environment
+VSCODE_GIT_ASKPASS_EXTRA_ARGS = 
+# environment
+TERM_PROGRAM = vscode
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/jq/tkf8cq8x63v2kw9lrbfjjt080000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_GIT_ASKPASS_NODE = /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)
+# environment
+MallocNanoZone = 0
+# default
+LEX = lex
+# makefile
+MAKEFLAGS = p
+# environment
+MFLAGS = -p
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+TERM_PROGRAM_VERSION = 1.86.1
+# makefile (from `Makefile', line 38)
+BONUS_NAME = checker
+# makefile (from `Makefile', line 45)
+GET_NEXT_LINE_FILES = get_next_line get_next_line_utils
+# default
+LEX.l = $(LEX) $(LFLAGS) -t
+# environment
+XPC_SERVICE_NAME = 0
+# environment
+HOMEBREW_PREFIX = /opt/homebrew
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# default
+COMPILE.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -c
+# automatic
++F = $(notdir $+)
+# default
+M2C = m2c
+# environment
+HOMEBREW_REPOSITORY = /opt/homebrew
+# makefile (from `Makefile', line 24)
+INPUT_VALI_SRC = $(addprefix $(SRC_DIR), $(addsuffix .c, input_validate))
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# environment
+GIT_ASKPASS = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh
+# default
+MAKEFILES := 
+# environment
+RBENV_SHELL = zsh
+# default
+COMPILE.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# makefile (from `Makefile', line 16)
+SRC_DIR = src/
+# automatic
+<F = $(notdir $<)
+# default
+CXX = c++
+# environment
+USER_ZDOTDIR = /Users/woongbishin
+# default
+COFLAGS = 
+# environment
+PAGER = less
+# default
+COMPILE.def = $(M2C) $(M2FLAGS) $(DEFFLAGS) $(TARGET_ARCH)
+# makefile (from `Makefile', line 40)
+BONUS_SRC = $(addprefix $(SRC_DIR), $(addsuffix .c, $(BONUS_FILES)))
+# default
+COMPILE.C = $(COMPILE.cc)
+# environment
+P9K_TTY = old
+# automatic
+^F = $(notdir $^)
+# default
+COMPILE.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(TARGET_MACH) -c
+# default
+LINK.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# makefile (from `Makefile', line 20)
+SRC_FILES = push_swap
+# default
+SUFFIXES := .out .a .ln .o .c .cc .C .cpp .p .f .F .m .r .y .l .ym .lm .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el
+# default
+COMPILE.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+LINK.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+COMPILE.s = $(AS) $(ASFLAGS) $(TARGET_MACH)
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+VSCODE_GIT_IPC_HANDLE = /var/folders/jq/tkf8cq8x63v2kw9lrbfjjt080000gn/T/vscode-git-fed35a0e70.sock
+# default
+MAKEINFO = makeinfo
+# default
+TEX = tex
+# environment
+LANG = en_US.UTF-8
+# environment
+TERM = xterm-256color
+# makefile (from `Makefile', line 29)
+SORT_OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SORT_FILES)))
+# default
+F77FLAGS = $(FFLAGS)
+# default
+LINK.f = $(FC) $(FFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+_P9K_TTY = /dev/ttys007
+# makefile (from `Makefile', line 31)
+STACK_FILES = stack stack_operation stack_cleaner stack_swap stack_rotate stack_reverse_rotate stack_pop
+# default
+GNUMAKE = YES
+# variable set hash-table stats:
+# Load=168/1024=16%, Rehash=0, Collisions=57/346=16%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# src/RCS: could not be stat'd.
+# SCCS: could not be stat'd.
+# obj (device 16777230, inode 25551321): 2 files, 20 impossibilities.
+# . (device 16777230, inode 24449738): 8 files, 20 impossibilities.
+# obj/SCCS: could not be stat'd.
+# obj/RCS: could not be stat'd.
+# src (device 16777230, inode 24454457): 17 files, 39 impossibilities.
+# RCS/obj: could not be stat'd.
+# src/SCCS: could not be stat'd.
+# RCS: could not be stat'd.
+
+# 27 files, 79 impossibilities in 10 directories.
+
+# Implicit Rules
+
+obj/%.o: src/%.c | obj/
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+%.out:
+
+%.a:
+
+%.ln:
+
+%.o:
+
+%: %.o
+#  commands to execute (built-in):
+	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.c:
+
+%: %.c
+#  commands to execute (built-in):
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.ln: %.c
+#  commands to execute (built-in):
+	$(LINT.c) -C$* $<
+
+%.o: %.c
+#  commands to execute (built-in):
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+
+%.cc:
+
+%: %.cc
+#  commands to execute (built-in):
+	$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.cc
+#  commands to execute (built-in):
+	$(COMPILE.cc) $(OUTPUT_OPTION) $<
+
+%.C:
+
+%: %.C
+#  commands to execute (built-in):
+	$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.C
+#  commands to execute (built-in):
+	$(COMPILE.C) $(OUTPUT_OPTION) $<
+
+%.cpp:
+
+%: %.cpp
+#  commands to execute (built-in):
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.cpp
+#  commands to execute (built-in):
+	$(COMPILE.cpp) $(OUTPUT_OPTION) $<
+
+%.p:
+
+%: %.p
+#  commands to execute (built-in):
+	$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.p
+#  commands to execute (built-in):
+	$(COMPILE.p) $(OUTPUT_OPTION) $<
+
+%.f:
+
+%: %.f
+#  commands to execute (built-in):
+	$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.f
+#  commands to execute (built-in):
+	$(COMPILE.f) $(OUTPUT_OPTION) $<
+
+%.F:
+
+%: %.F
+#  commands to execute (built-in):
+	$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.F
+#  commands to execute (built-in):
+	$(COMPILE.F) $(OUTPUT_OPTION) $<
+
+%.f: %.F
+#  commands to execute (built-in):
+	$(PREPROCESS.F) $(OUTPUT_OPTION) $<
+
+%.m:
+
+%: %.m
+#  commands to execute (built-in):
+	$(LINK.m) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.m
+#  commands to execute (built-in):
+	$(COMPILE.m) $(OUTPUT_OPTION) $<
+
+%.r:
+
+%: %.r
+#  commands to execute (built-in):
+	$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.r
+#  commands to execute (built-in):
+	$(COMPILE.r) $(OUTPUT_OPTION) $<
+
+%.f: %.r
+#  commands to execute (built-in):
+	$(PREPROCESS.r) $(OUTPUT_OPTION) $<
+
+%.y:
+
+%.ln: %.y
+#  commands to execute (built-in):
+	$(YACC.y) $< 
+	$(LINT.c) -C$* y.tab.c 
+	$(RM) y.tab.c
+
+%.c: %.y
+#  commands to execute (built-in):
+	$(YACC.y) $< 
+	mv -f y.tab.c $@
+
+%.l:
+
+%.ln: %.l
+#  commands to execute (built-in):
+	@$(RM) $*.c
+	$(LEX.l) $< > $*.c
+	$(LINT.c) -i $*.c -o $@
+	$(RM) $*.c
+
+%.c: %.l
+#  commands to execute (built-in):
+	@$(RM) $@ 
+	$(LEX.l) $< > $@
+
+%.r: %.l
+#  commands to execute (built-in):
+	$(LEX.l) $< > $@ 
+	mv -f lex.yy.r $@
+
+%.ym:
+
+%.m: %.ym
+#  commands to execute (built-in):
+	$(YACC.m) $< 
+	mv -f y.tab.c $@
+
+%.lm:
+
+%.m: %.lm
+#  commands to execute (built-in):
+	@$(RM) $@ 
+	$(LEX.m) $< > $@
+
+%.s:
+
+%: %.s
+#  commands to execute (built-in):
+	$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.s
+#  commands to execute (built-in):
+	$(COMPILE.s) -o $@ $<
+
+%.S:
+
+%: %.S
+#  commands to execute (built-in):
+	$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.S
+#  commands to execute (built-in):
+	$(COMPILE.S) -o $@ $<
+
+%.s: %.S
+#  commands to execute (built-in):
+	$(PREPROCESS.S) $< > $@
+
+%.mod:
+
+%: %.mod
+#  commands to execute (built-in):
+	$(COMPILE.mod) -o $@ -e $@ $^
+
+%.o: %.mod
+#  commands to execute (built-in):
+	$(COMPILE.mod) -o $@ $<
+
+%.sym:
+
+%.def:
+
+%.sym: %.def
+#  commands to execute (built-in):
+	$(COMPILE.def) -o $@ $<
+
+%.h:
+
+%.info:
+
+%.dvi:
+
+%.tex:
+
+%.dvi: %.tex
+#  commands to execute (built-in):
+	$(TEX) $<
+
+%.texinfo:
+
+%.info: %.texinfo
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.texinfo
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.texi:
+
+%.info: %.texi
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.texi
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.txinfo:
+
+%.info: %.txinfo
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.txinfo
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.w:
+
+%.c: %.w
+#  commands to execute (built-in):
+	$(CTANGLE) $< - $@
+
+%.tex: %.w
+#  commands to execute (built-in):
+	$(CWEAVE) $< - $@
+
+%.ch:
+
+%.web:
+
+%.p: %.web
+#  commands to execute (built-in):
+	$(TANGLE) $<
+
+%.tex: %.web
+#  commands to execute (built-in):
+	$(WEAVE) $<
+
+%.sh:
+
+%: %.sh
+#  commands to execute (built-in):
+	cat $< >$@ 
+	chmod a+x $@
+
+%.elc:
+
+%.el:
+
+(%): %
+#  commands to execute (built-in):
+	$(AR) $(ARFLAGS) $@ $<
+
+%.out: %
+#  commands to execute (built-in):
+	@rm -f $@ 
+	cp $< $@
+
+%.c: %.w %.ch
+#  commands to execute (built-in):
+	$(CTANGLE) $^ $@
+
+%.tex: %.w %.ch
+#  commands to execute (built-in):
+	$(CWEAVE) $^ $@
+
+%:: %,v
+#  commands to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: RCS/%,v
+#  commands to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: RCS/%
+#  commands to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: s.%
+#  commands to execute (built-in):
+	$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<
+
+%:: SCCS/s.%
+#  commands to execute (built-in):
+	$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<
+
+# 94 implicit rules, 5 (5.3%) terminal.
+
+# Files
+
+# Not a target:
+.web.p:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TANGLE) $<
+
+# Not a target:
+src/sort_utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-12 18:07:18
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.l.r:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LEX.l) $< > $@ 
+	mv -f lex.yy.r $@
+
+# Not a target:
+.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.ym:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/stack_cleaner.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-06 22:23:06
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.F.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.F) $(OUTPUT_OPTION) $<
+
+all: push_swap
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/114=0%
+
+# Not a target:
+.m:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.m) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.y.ln:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(YACC.y) $< 
+	$(LINT.c) -C$* y.tab.c 
+	$(RM) y.tab.c
+
+# Not a target:
+.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.y:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.def.sym:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.def) -o $@ $<
+
+.PHONY: all bonus clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/stack_swap.o: src/stack_swap.c | obj/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `stack_swap'
+#  Last modified 2024-02-16 00:53:55
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj/stack_swap.o
+# automatic
+# % := 
+# automatic
+# * := stack_swap
+# automatic
+# + := src/stack_swap.c
+# automatic
+# | := obj/
+# automatic
+# < := src/stack_swap.c
+# automatic
+# ^ := src/stack_swap.c
+# automatic
+# ? := src/stack_swap.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+# Not a target:
+src/stack_pop.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-10 13:52:11
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.p.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.p) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.p:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.txinfo.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+obj/checker_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/stack_rotate.o: src/stack_rotate.c | obj/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `stack_rotate'
+#  Last modified 2024-02-16 00:53:55
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj/stack_rotate.o
+# automatic
+# % := 
+# automatic
+# * := stack_rotate
+# automatic
+# + := src/stack_rotate.c
+# automatic
+# | := obj/
+# automatic
+# < := src/stack_rotate.c
+# automatic
+# ^ := src/stack_rotate.c
+# automatic
+# ? := src/stack_rotate.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+# Not a target:
+src/stack_reverse_rotate.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-12 18:07:18
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/sort_utils2.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-12 22:33:39
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.a:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/push_swap.o: src/push_swap.c | obj/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `push_swap'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj/push_swap.o
+# automatic
+# % := 
+# automatic
+# * := push_swap
+# automatic
+# + := src/push_swap.c
+# automatic
+# | := obj/
+# automatic
+# < := src/push_swap.c
+# automatic
+# ^ := src/push_swap.c
+# automatic
+# ? := src/push_swap.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+# Not a target:
+.l.ln:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	@$(RM) $*.c
+	$(LEX.l) $< > $*.c
+	$(LINT.c) -i $*.c -o $@
+	$(RM) $*.c
+
+# Not a target:
+.w.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(CTANGLE) $< - $@
+
+# Not a target:
+.texi.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+.sh:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	cat $< >$@ 
+	chmod a+x $@
+
+obj/sort_utils2.o: src/sort_utils2.c | obj/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `sort_utils2'
+#  Last modified 2024-02-16 00:53:55
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj/sort_utils2.o
+# automatic
+# % := 
+# automatic
+# * := sort_utils2
+# automatic
+# + := src/sort_utils2.c
+# automatic
+# | := obj/
+# automatic
+# < := src/sort_utils2.c
+# automatic
+# ^ := src/sort_utils2.c
+# automatic
+# ? := src/sort_utils2.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+# Not a target:
+.m.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.m) $(OUTPUT_OPTION) $<
+
+# Not a target:
+get_next_line/get_next_line_utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.cc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.cc) $(OUTPUT_OPTION) $<
+
+# Not a target:
+obj/command_execution_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.def:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES: .out .a .ln .o .c .cc .C .cpp .p .f .F .m .r .y .l .ym .lm .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.c.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-16 00:53:21
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.r.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.r) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.r:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.lm:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+libft.a:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `libft'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := libft.a
+# automatic
+# % := 
+# automatic
+# * := libft
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
+#  commands to execute (from `Makefile', line 58):
+	make -C libft
+	mv libft/libft.a ./
+	
+
+# Not a target:
+.ym.m:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(YACC.m) $< 
+	mv -f y.tab.c $@
+
+# Not a target:
+.info:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.elc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.l.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	@$(RM) $@ 
+	$(LEX.l) $< > $@
+
+# Not a target:
+src/stack_swap.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-12 22:34:46
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.out:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/stack_rotate.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-12 18:07:18
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.C:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+obj/stack_operation.o: src/stack_operation.c | obj/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `stack_operation'
+#  Last modified 2024-02-16 00:53:55
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj/stack_operation.o
+# automatic
+# % := 
+# automatic
+# * := stack_operation
+# automatic
+# + := src/stack_operation.c
+# automatic
+# | := obj/
+# automatic
+# < := src/stack_operation.c
+# automatic
+# ^ := src/stack_operation.c
+# automatic
+# ? := src/stack_operation.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+# Not a target:
+.r.f:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(PREPROCESS.r) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.S:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+src/push_swap.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-12 22:43:23
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.texinfo.info:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.w.tex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(CWEAVE) $< - $@
+
+bonus: checker
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+.c.ln:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINT.c) -C$* $<
+
+# Not a target:
+.s.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.s) -o $@ $<
+
+# Not a target:
+.s:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 76):
+	rm -f $(NAME)
+	rm -f $(LIBFT_TARGET)
+	rm -f $(GET_NEXT_LINE_NAME)
+	rm -f $(BONUS_NAME)
+	make fclean -C $(LIBFT)
+	
+
+# Not a target:
+obj/:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/sort_dual_stack.o: src/sort_dual_stack.c | obj/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `sort_dual_stack'
+#  Last modified 2024-02-16 00:53:55
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj/sort_dual_stack.o
+# automatic
+# % := 
+# automatic
+# * := sort_dual_stack
+# automatic
+# + := src/sort_dual_stack.c
+# automatic
+# | := obj/
+# automatic
+# < := src/sort_dual_stack.c
+# automatic
+# ^ := src/sort_dual_stack.c
+# automatic
+# ? := src/sort_dual_stack.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+obj:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  Last modified 2024-02-16 00:53:54
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
+#  commands to execute (from `Makefile', line 62):
+	mkdir $(OBJ_DIR)
+	
+
+# Not a target:
+.texinfo.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+.el:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.texinfo:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.lm.m:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	@$(RM) $@ 
+	$(LEX.m) $< > $@
+
+# Not a target:
+.y.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(YACC.y) $< 
+	mv -f y.tab.c $@
+
+# Not a target:
+.web.tex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(WEAVE) $<
+
+# Not a target:
+.texi.info:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/input_validate.o: src/input_validate.c | obj/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `input_validate'
+#  Last modified 2024-02-16 00:53:55
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj/input_validate.o
+# automatic
+# % := 
+# automatic
+# * := input_validate
+# automatic
+# + := src/input_validate.c
+# automatic
+# | := obj/
+# automatic
+# < := src/input_validate.c
+# automatic
+# ^ := src/input_validate.c
+# automatic
+# ? := src/input_validate.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+checker: obj/checker_bonus.o obj/command_execution_bonus.o obj/input_validate.o get_next_line/get_next_line.o get_next_line/get_next_line_utils.o libft.a obj/sort_dual_stack.o obj/sort_utils.o obj/sort_utils2.o obj/sort_utils3.o obj/stack.o obj/stack_operation.o obj/stack_cleaner.o obj/stack_swap.o obj/stack_rotate.o obj/stack_reverse_rotate.o obj/stack_pop.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 71):
+	$(CC) $(BONUS_OBJ) $(INPUT_VALI_OBJ) $(GET_NEXT_LINE_OBJ) $(LIBFT_TARGET) $(SORT_OBJ) $(STACK_OBJ) -o $(BONUS_NAME)
+	
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+obj/sort_utils3.o: src/sort_utils3.c | obj/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `sort_utils3'
+#  Last modified 2024-02-16 00:53:55
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj/sort_utils3.o
+# automatic
+# % := 
+# automatic
+# * := sort_utils3
+# automatic
+# + := src/sort_utils3.c
+# automatic
+# | := obj/
+# automatic
+# < := src/sort_utils3.c
+# automatic
+# ^ := src/sort_utils3.c
+# automatic
+# ? := src/sort_utils3.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+# Not a target:
+.tex.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TEX) $<
+
+# Not a target:
+.cpp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.cpp) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 65):
+	rm -rf $(OBJ_DIR)
+	make clean -C $(LIBFT)
+	rm -rf $(GET_NEXT_LINE_OBJ)
+	rm -rf $(BONUS_OBJ)
+	
+
+# Not a target:
+.C.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.C) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.ln:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/stack_operation.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-12 18:07:18
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/stack.o: src/stack.c | obj/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `stack'
+#  Last modified 2024-02-16 00:53:55
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj/stack.o
+# automatic
+# % := 
+# automatic
+# * := stack
+# automatic
+# + := src/stack.c
+# automatic
+# | := obj/
+# automatic
+# < := src/stack.c
+# automatic
+# ^ := src/stack.c
+# automatic
+# ? := src/stack.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+# Not a target:
+.texi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.txinfo:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.tex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+push_swap: libft.a obj obj/push_swap.o obj/stack.o obj/stack_operation.o obj/stack_cleaner.o obj/stack_swap.o obj/stack_rotate.o obj/stack_reverse_rotate.o obj/stack_pop.o obj/sort_dual_stack.o obj/sort_utils.o obj/sort_utils2.o obj/sort_utils3.o obj/input_validate.o
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  Last modified 2024-02-16 00:53:55
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := push_swap
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := libft.a obj obj/push_swap.o obj/stack.o obj/stack_operation.o obj/stack_cleaner.o obj/stack_swap.o obj/stack_rotate.o obj/stack_reverse_rotate.o obj/stack_pop.o obj/sort_dual_stack.o obj/sort_utils.o obj/sort_utils2.o obj/sort_utils3.o obj/input_validate.o
+# automatic
+# | := 
+# automatic
+# < := libft.a
+# automatic
+# ^ := libft.a obj obj/push_swap.o obj/stack.o obj/stack_operation.o obj/stack_cleaner.o obj/stack_swap.o obj/stack_rotate.o obj/stack_reverse_rotate.o obj/stack_pop.o obj/sort_dual_stack.o obj/sort_utils.o obj/sort_utils2.o obj/sort_utils3.o obj/input_validate.o
+# automatic
+# ? := libft.a obj obj/push_swap.o obj/stack.o obj/stack_operation.o obj/stack_cleaner.o obj/stack_swap.o obj/stack_rotate.o obj/stack_reverse_rotate.o obj/stack_pop.o obj/sort_dual_stack.o obj/sort_utils.o obj/sort_utils2.o obj/sort_utils3.o obj/input_validate.o
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/122=1%
+#  commands to execute (from `Makefile', line 52):
+	$(CC) $(LIBFT_TARGET) $(INPUT_VALI_OBJ) $(OBJ) $(STACK_OBJ) $(SORT_OBJ) -o $(NAME)
+	
+
+# Not a target:
+.txinfo.info:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+src/sort_dual_stack.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-12 18:07:18
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/sort_utils.o: src/sort_utils.c | obj/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `sort_utils'
+#  Last modified 2024-02-16 00:53:55
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj/sort_utils.o
+# automatic
+# % := 
+# automatic
+# * := sort_utils
+# automatic
+# + := src/sort_utils.c
+# automatic
+# | := obj/
+# automatic
+# < := src/sort_utils.c
+# automatic
+# ^ := src/sort_utils.c
+# automatic
+# ? := src/sort_utils.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+# Not a target:
+.ch:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.S.s:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(PREPROCESS.S) $< > $@
+
+# Not a target:
+.mod:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.mod) -o $@ -e $@ $^
+
+obj/stack_cleaner.o: src/stack_cleaner.c | obj/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `stack_cleaner'
+#  Last modified 2024-02-16 00:53:55
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj/stack_cleaner.o
+# automatic
+# % := 
+# automatic
+# * := stack_cleaner
+# automatic
+# + := src/stack_cleaner.c
+# automatic
+# | := obj/
+# automatic
+# < := src/stack_cleaner.c
+# automatic
+# ^ := src/stack_cleaner.c
+# automatic
+# ? := src/stack_cleaner.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+# Not a target:
+.mod.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.mod) -o $@ $<
+
+# Not a target:
+.F.f:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(PREPROCESS.F) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.w:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.S.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.S) -o $@ $<
+
+# Not a target:
+src/input_validate.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-12 22:47:37
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/stack_pop.o: src/stack_pop.c | obj/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `stack_pop'
+#  Last modified 2024-02-16 00:53:55
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj/stack_pop.o
+# automatic
+# % := 
+# automatic
+# * := stack_pop
+# automatic
+# + := src/stack_pop.c
+# automatic
+# | := obj/
+# automatic
+# < := src/stack_pop.c
+# automatic
+# ^ := src/stack_pop.c
+# automatic
+# ? := src/stack_pop.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+# Not a target:
+src/sort_utils3.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-12 18:07:18
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+get_next_line/get_next_line.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.l:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.F:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+src/stack.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-02-12 22:20:55
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.web:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.sym:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.f:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+obj/stack_reverse_rotate.o: src/stack_reverse_rotate.c | obj/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `stack_reverse_rotate'
+#  Last modified 2024-02-16 00:53:55
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := obj/stack_reverse_rotate.o
+# automatic
+# % := 
+# automatic
+# * := stack_reverse_rotate
+# automatic
+# + := src/stack_reverse_rotate.c
+# automatic
+# | := obj/
+# automatic
+# < := src/stack_reverse_rotate.c
+# automatic
+# ^ := src/stack_reverse_rotate.c
+# automatic
+# ? := src/stack_reverse_rotate.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+	
+
+get_next_line.a: get_next_line/get_next_line.o get_next_line/get_next_line_utils.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 85):
+	ar rsu $(GET_NEXT_LINE_NAME) $(GET_NEXT_LINE_OBJ) 
+	
+
+# Not a target:
+.f.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.f) $(OUTPUT_OPTION) $<
+
+# files hash-table stats:
+# Load=115/1024=11%, Rehash=0, Collisions=550/2137=26%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Fri Feb 16 00:53:55 2024
+

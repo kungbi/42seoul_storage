@@ -6,11 +6,11 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:54:02 by woonshin          #+#    #+#              #
-#    Updated: 2023/12/25 23:22:32 by woonshin         ###   ########.fr        #
+#    Updated: 2024/02/16 00:41:48 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		= gcc
+CC		= cc
 NAME	= libftprintf.a
 INCLUDE	= include
 SRC_DIR	= src/
