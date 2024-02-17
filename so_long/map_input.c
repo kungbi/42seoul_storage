@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 04:27:29 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/17 10:42:39 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/17 12:25:24 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,8 @@ void	remove_nl(char *str);
 void	map_input(t_map_info *map_info, char *filename)
 {
 	map_input_size(map_info, filename);
-	map_resize(map_info);
+	new_2d_array(&map_info->map, map_info->width, map_info->height);
 	map_input_getline(map_info, filename);
-}
-
-void	map_resize(t_map_info *map_info)
-{
-	size_t	i;
-
-	map_info->map = (char **)ft_calloc(map_info->height + 1, sizeof(char *));
-	if (map_info->map == NULL)
-		return_error();
-	i = 0;
-	while (i < map_info->height)
-	{
-		map_info->map[i] = (char *)ft_calloc(map_info->width + 1, sizeof(char));
-		if (map_info->map[i] == NULL)
-			return_error();
-		i++;
-	}
 }
 
 void	map_input_size(t_map_info *map_info, char *filename)

@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/16 00:39:58 by woonshin          #+#    #+#              #
-#    Updated: 2024/02/16 09:52:54 by woonshin         ###   ########.fr        #
+#    Updated: 2024/02/17 13:52:38 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ MLX					= mlx
 MLX_TARGET	= libmlx.a
 MLX_FLAGS		= -Lmlx -lmlx -framework OpenGL -framework AppKit
 
-SL_FILES	= so_long exit map_input map_checker
+SL_FILES	= so_long map_input map_checker utils
 GNL_FILES	= get_next_line get_next_line_utils
 LIBFT_FILES	= ft_atoi ft_calloc ft_putstr_fd ft_strlcpy ft_strlen ft_isdigit ft_memset ft_strncmp
 
