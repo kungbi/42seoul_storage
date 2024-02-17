@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 04:24:19 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/16 10:55:51 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/17 09:27:15 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ int dfs_counter(t_map_info *map_info, t_objects *objects, int **visited, t_pos c
 	{
 		nx = curr.x + dxs[i];
 		ny = curr.y + dys[i];
-		if (!(0 <= nx < ))
+		if (!(0 <= nx < map_info->width && 0 <= ny < map_info->height))
+			continue ;
+		
 	}
 }
 
