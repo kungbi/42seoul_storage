@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 04:27:29 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/16 10:50:48 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/17 10:42:39 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,19 @@ void	map_input(t_map_info *map_info, char *filename)
 	map_input_size(map_info, filename);
 	map_resize(map_info);
 	map_input_getline(map_info, filename);
-
-	// for(int y = 0; y < map_info->height; y++)
-	// {
-	// 	for(int x = 0; x < map_info->width + 2; x++)
-	// 	{
-	// 		printf("%c", map_info->map[y][x]);
-	// 	}
-	// 	printf("|\n");
-	// }
 }
 
 void	map_resize(t_map_info *map_info)
 {
 	size_t	i;
 
-	map_info->map = (char **) ft_calloc(map_info->height + 1, sizeof(char *));
+	map_info->map = (char **)ft_calloc(map_info->height + 1, sizeof(char *));
 	if (map_info->map == NULL)
 		return_error();
 	i = 0;
 	while (i < map_info->height)
 	{
-		map_info->map[i] = (char *) ft_calloc(map_info->width + 1, sizeof(char));
+		map_info->map[i] = (char *)ft_calloc(map_info->width + 1, sizeof(char));
 		if (map_info->map[i] == NULL)
 			return_error();
 		i++;
@@ -66,7 +57,7 @@ void	map_input_size(t_map_info *map_info, char *filename)
 	{
 		remove_nl(str);
 		len = ft_strlen(str);
-		if (map_info->width == (size_t) -1)
+		if (map_info->width == -1)
 			map_info->width = len;
 		else if (map_info->width != len)
 			return_error();
@@ -74,7 +65,7 @@ void	map_input_size(t_map_info *map_info, char *filename)
 		str = get_next_line(fd);
 		map_info->height++;
 	}
-	if (map_info->width == map_info->height 
+	if (map_info->width == map_info->height
 		|| map_info->width == 0 || map_info->height == 0)
 		return_error();
 }
