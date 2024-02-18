@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 03:29:35 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/17 18:28:07 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/17 18:32:35 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ typedef struct	s_textures
 	void	*exit;
 	void	*collection;
 }	t_textures;
-
 typedef struct	s_object_info
 {
 	int		x;
@@ -80,6 +79,7 @@ typedef struct	s_game_info
 	int				game_state;
 	int				moved_cnt;
 	t_textures		textures;
+	int				collection_cnt;
 }	t_game_info;
 
 int		map_check(t_map_info *map_info);

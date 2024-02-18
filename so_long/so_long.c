@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 01:17:14 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/17 18:27:57 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/17 18:35:05 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,17 @@ int	control(int keycode, t_game_info *game_info)
 		return (1);
 	if (game_info->map_info.map[next_pos.y][next_pos.x] == '1')
 		return (0);
+	else if (game_info->map_info.map[next_pos.y][next_pos.x] == 'C')
+	{
+		game_info->map_info.map[next_pos.y][next_pos.x] = '0';
+		game_info->collection_cnt++;
+	}
+	else if (game_info->map_info.map[next_pos.y][next_pos.x] == 'E')
+	{
+		if (game_info->collection_cnt == game_info->map_info.objects.collection_cnt)
+			exit(0);
+		return (0);
+	}
 	if (keycode == KEY_LEFT || keycode == KEY_RIGHT)
 		game_info->player_info.dir = keycode;
 	game_info->player_info.x = next_pos.x;
@@ -86,7 +97,6 @@ int	render(t_game_info *game_info)
 		else
 			player = game_info->textures.player_left_2;
 	}
-
 	mlx_put_image_to_window(game_info->mlx, game_info->win, player,
 		game_info->player_info.x * 64, game_info->player_info.y * 64);
 	return (0);
@@ -126,8 +136,8 @@ void	game_info_init(t_game_info *game_info)
 		64 * game_info->map_info.width,
 		64 * game_info->map_info.height, "so_long");
 	game_info->moved_cnt = 0;
+	game_info->collection_cnt = 0;
 	textures_init(game_info);
-	
 	game_info->player_info.dir = RIGHT;
 	game_info->player_info.x = game_info->map_info.objects.player.x;
 	game_info->player_info.y = game_info->map_info.objects.player.y;
