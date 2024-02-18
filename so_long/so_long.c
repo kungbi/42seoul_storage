@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 01:17:14 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/17 18:35:05 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/18 18:51:05 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,16 +86,16 @@ int	render(t_game_info *game_info)
 	if (player_info->dir == RIGHT)
 	{
 		if (0 <= player_info->img_state && player_info->img_state < 15)
-			player = game_info->textures.player_right_1;
+			player = game_info->textures.enemy_left;
 		else
-			player = game_info->textures.player_right_2;
+			player = game_info->textures.enemy_left;
 	}
 	else if (player_info->dir == LEFT)
 	{
 		if (0 <= player_info->img_state && player_info->img_state < 15)
-			player = game_info->textures.player_left_1;
+			player = game_info->textures.enemy_right;
 		else
-			player = game_info->textures.player_left_2;
+			player = game_info->textures.enemy_right;
 	}
 	mlx_put_image_to_window(game_info->mlx, game_info->win, player,
 		game_info->player_info.x * 64, game_info->player_info.y * 64);
@@ -169,4 +169,8 @@ void	textures_init(t_game_info *game_info)
 		mlx_xpm_file_to_image(game_info->mlx, "./textures/exit.xpm", &width, &height);
 	game_info->textures.collection = 
 		mlx_xpm_file_to_image(game_info->mlx, "./textures/collection.xpm", &width, &height);
+	game_info->textures.enemy_left = 
+		mlx_xpm_file_to_image(game_info->mlx, "./textures/enemy_left.xpm", &width, &height);
+	game_info->textures.enemy_right = 
+		mlx_xpm_file_to_image(game_info->mlx, "./textures/enemy_right.xpm", &width, &height);
 }

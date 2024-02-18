@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 03:29:35 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/17 18:32:35 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/18 18:50:12 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ typedef struct	s_textures
 	void	*enemy;
 	void	*exit;
 	void	*collection;
+	void	*enemy_left;
+	void	*enemy_right;
 }	t_textures;
 typedef struct	s_object_info
 {
