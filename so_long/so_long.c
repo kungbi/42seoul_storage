@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 01:17:14 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/18 18:51:05 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/18 18:54:33 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@ void	game_info_init(t_game_info *game_info);
 void	textures_init(t_game_info *game_info);
 void	map_info_init(t_map_info *map_info);
 
+int	on_destroy(void)
+{
+	exit(0);
+}
 
-int	control(int keycode, t_game_info *game_info)
+int	key_control(int keycode, t_game_info *game_info)
 {
 	t_pos	next_pos;
 
@@ -33,7 +37,11 @@ int	control(int keycode, t_game_info *game_info)
 	else if (keycode == KEY_DOWN)
 		next_pos.y++;
 	else if (keycode == KEY_ESC)
+	{
+		game_info->moved_cnt++;
+		ft_putnbr_fd(game_info->moved_cnt, 1);
 		exit(0);
+	}
 	else
 		return (1);
 	if (game_info->map_info.map[next_pos.y][next_pos.x] == '1')
@@ -53,7 +61,37 @@ int	control(int keycode, t_game_info *game_info)
 		game_info->player_info.dir = keycode;
 	game_info->player_info.x = next_pos.x;
 	game_info->player_info.y = next_pos.y;
+	game_info->moved_cnt++;
+	ft_putnbr_fd(game_info->moved_cnt, 1);
+	ft_putstr_fd("\n", 1);
 	return (0);
+}
+
+void	enemy_move(t_map_info *map_info, t_object_info *enemy_info, int n)
+{
+	int		i;
+	int		nx;
+
+	i = 0;
+	while (i < n)
+	{
+		nx = (enemy_info + i)->x;
+		if ((enemy_info + i)->dir == RIGHT)
+			nx++;
+		else if ((enemy_info + i)->dir == LEFT)
+			nx--;
+
+		if (map_info->map[(enemy_info + i)->y][nx] == '1')
+		{
+			if ((enemy_info + i)->dir == RIGHT)
+				(enemy_info + i)->dir = LEFT;
+			else if ((enemy_info + i)->dir == LEFT)
+				(enemy_info + i)->dir = RIGHT;
+		}
+		else
+			(enemy_info + i)->x = nx;
+		i++;
+	}
 }
 
 int	render(t_game_info *game_info)
@@ -86,19 +124,47 @@ int	render(t_game_info *game_info)
 	if (player_info->dir == RIGHT)
 	{
 		if (0 <= player_info->img_state && player_info->img_state < 15)
-			player = game_info->textures.enemy_left;
+			player = game_info->textures.player_right_1;
 		else
-			player = game_info->textures.enemy_left;
+			player = game_info->textures.player_right_2;
 	}
 	else if (player_info->dir == LEFT)
 	{
 		if (0 <= player_info->img_state && player_info->img_state < 15)
-			player = game_info->textures.enemy_right;
+			player = game_info->textures.player_left_1;
 		else
-			player = game_info->textures.enemy_right;
+			player = game_info->textures.player_left_2;
 	}
 	mlx_put_image_to_window(game_info->mlx, game_info->win, player,
 		game_info->player_info.x * 64, game_info->player_info.y * 64);
+
+	if (player_info->img_state % 5 == 0)
+		enemy_move(&game_info->map_info, game_info->enemy_info, game_info->enemy_cnt);
+
+
+	t_object_info *enemy_info;
+	void	*enemy;
+	for(int i = 0; i < game_info->enemy_cnt; i++)
+	{
+		enemy_info = game_info->enemy_info + i;
+		enemy_info->img_state = (enemy_info->img_state + 1) % 30;
+		if (enemy_info->dir == RIGHT)
+		{
+			if (0 <= enemy_info->img_state && enemy_info->img_state < 15)
+				enemy = game_info->textures.enemy_right;
+			else
+				enemy = game_info->textures.enemy_right;
+		}
+		else if (enemy_info->dir == LEFT)
+		{
+			if (0 <= enemy_info->img_state && enemy_info->img_state < 15)
+				enemy = game_info->textures.enemy_left;
+			else
+				enemy = game_info->textures.enemy_left;
+		}
+		mlx_put_image_to_window(game_info->mlx, game_info->win, enemy,
+			game_info->enemy_info[i].x * 64, game_info->enemy_info[i].y * 64);
+	}
 	return (0);
 }
 
@@ -115,9 +181,11 @@ int	main(int argc, char *argv[])
 	map_input(&game_info.map_info, argv[1]);
 	map_check(&game_info.map_info);
 	game_info_init(&game_info);
+	create_enemy(&game_info, 5);
 
-	mlx_key_hook(game_info.win, control, &game_info);
+	mlx_key_hook(game_info.win, key_control, &game_info);
 	mlx_loop_hook(game_info.mlx, render, &game_info);
+	mlx_hook(game_info.win, 17, 0, on_destroy, NULL);
 
 	mlx_loop(game_info.mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 03:29:35 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/18 18:50:12 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/18 18:53:25 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ typedef struct	s_game_info
 	t_map_info		map_info;
 	t_object_info	player_info;
 	t_object_info	*enemy_info;
+	int				enemy_cnt;
 	int				game_state;
 	int				moved_cnt;
 	t_textures		textures;
@@ -86,6 +87,8 @@ typedef struct	s_game_info
 
 int		map_check(t_map_info *map_info);
 void	map_input(t_map_info *map_info, char *filename);
+
+void	create_enemy(t_game_info *game_info, int n);
 
 void	return_error(void);
 void	new_2d_array(char ***arr, int width, int height);
