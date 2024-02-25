@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 04:24:19 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 13:14:53 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 15:12:48 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	map_check(t_map_info *map_info)
 	start.y = map_info->objects.player.y;
 	new_2d_array(&visited, map_info->width, map_info->height);
 	dfs_counter(map_info, &dfs_result, visited, &start);
+	free_2d_array(visited, map_info->height);
 	if (map_info->objects.collection_cnt != dfs_result.collection_cnt
 		|| map_info->objects.exit_cnt != dfs_result.exit_cnt)
 		return_error();
@@ -129,6 +130,9 @@ void	map_object_detect(t_map_info *map_info)
 				map_info->objects.player.x = x;
 				map_info->objects.player.y = y;
 			}
+			else if (map_info->map[y][x] != '0'
+				&& map_info->map[y][x] != '1')
+				return_error();
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 11:58:50 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 13:14:45 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 15:22:06 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	new_2d_array(char ***arr, int width, int height)
 	*arr = (char **) ft_calloc(height + 1, sizeof(char *));
 	if (*arr == NULL)
 		return_error();
-	while (i < height)
+	while (i < (size_t) height)
 	{
 		*((*arr) + i) = (char *) ft_calloc(width + 1, sizeof(char));
 		if (*((*arr) + i) == NULL)
@@ -35,22 +35,22 @@ void	return_error(void)
 	exit(1);
 }
 
-void	return_ok(t_game_info *game_info)
+void	return_ok(void)
 {
-	sleep(1);
 	ft_putstr_fd("OK\n", 1);
+	sleep(1);
 	exit(0);
 }
 
-void	return_ko(t_game_info *game_info)
+void	return_ko(void)
 {
-	sleep(1);
 	ft_putstr_fd("KO\n", 1);
+	sleep(1);
 	exit(0);
 }
 
 int	is_frame(t_map_info *map_info, int x, int y)
 {
-	return (0 <= x && x < map_info->width
-		&& 0 <= y && y < map_info->height);
+	return (0 <= x && (size_t)x < map_info->width
+		&& 0 <= y && (size_t)y < map_info->height);
 }

@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:02:51 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 14:34:05 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 15:23:05 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	player_render(t_game_info *game_info)
 	t_object_info	*player_info;
 	void			*player;
 
+	player = NULL;
 	player_info = &game_info->player_info;
 	player_info->img_state = (player_info->img_state + 1) % 30;
 	if (player_info->dir == RIGHT)
@@ -97,10 +98,10 @@ void	map_render(t_game_info *game_info)
 	int	y;
 
 	y = 0;
-	while (y < game_info->map_info.height)
+	while ((size_t) y < game_info->map_info.height)
 	{
 		x = 0;
-		while (x < game_info->map_info.width)
+		while ((size_t) x < game_info->map_info.width)
 		{
 			mlx_put_image_to_window(game_info->mlx, game_info->win,
 				game_info->textures.tile, x * 64, y * 64);
@@ -127,6 +128,6 @@ int	render(t_game_info *game_info)
 	enemy_render(game_info);
 	step_render(game_info, game_info->moved_cnt);
 	if (is_collision(game_info))
-		return_ko(game_info);
+		return_ko();
 	return (0);
 }

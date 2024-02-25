@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:04:43 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 14:16:38 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 15:15:44 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	step_render(t_game_info *game_info, int num)
 
 	x = 0;
 	str_num = ft_itoa(num);
+	if (str_num == NULL)
+		return_error();
 	while (str_num[x] != '\0')
 	{
 		if ('0' <= str_num[x] && str_num[x] <= '4')

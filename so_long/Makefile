@@ -6,13 +6,13 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/16 00:39:58 by woonshin          #+#    #+#              #
-#    Updated: 2024/02/25 14:18:11 by woonshin         ###   ########.fr        #
+#    Updated: 2024/02/25 15:19:20 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC					= cc
 NAME				= so_long
-# CFLAGS			= -Wall -Werror -Wextra
+CFLAGS			= -Wall -Werror -Wextra
 INCLUDES		= -I mlx
 
 MLX					= mlx

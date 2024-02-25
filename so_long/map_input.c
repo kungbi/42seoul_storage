@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 04:27:29 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/17 12:25:24 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 15:20:46 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	map_input_size(t_map_info *map_info, char *filename)
 	{
 		remove_nl(str);
 		len = ft_strlen(str);
-		if (map_info->width == -1)
+		if (map_info->width == (size_t)(-1))
 			map_info->width = len;
 		else if (map_info->width != len)
 			return_error();

@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 03:29:35 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 14:36:20 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 15:21:39 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,14 +105,16 @@ int		render(t_game_info *game_info);
 void	step_render(t_game_info *game_info, int num);
 
 void	return_error(void);
-void	return_ok(t_game_info *game_info);
-void	return_ko(t_game_info *game_info);
+void	return_ok(void);
+void	return_ko(void);
 void	new_2d_array(char ***arr, int width, int height);
 int		is_frame(t_map_info *map_info, int x, int y);
 
-int		on_destroy(void);
+int		on_destroy(t_game_info *game_info);
 void	textures_init(t_game_info *game_info);
 void	map_info_init(t_map_info *map_info);
 void	game_info_init(t_game_info *game_info);
+
+void	free_2d_array(char **array, int n);
 
 #endif

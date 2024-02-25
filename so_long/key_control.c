@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:17:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 14:27:54 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 15:23:18 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@ int	is_next_pos_available(t_game_info *game_info, t_pos *next_pos)
 	}
 	else if (game_info->map_info.map[next_pos->y][next_pos->x] == 'E')
 	{
-		game_info->moved_cnt++;
-		if (game_info->collection_cnt
+		if ((size_t) game_info->collection_cnt
 			== game_info->map_info.objects.collection_cnt)
-			return_ok(game_info);
+		{
+			game_info->moved_cnt++;
+			return_ok();
+		}
 		return (-1);
 	}
 	return (1);
@@ -62,10 +64,10 @@ int	key_control(int keycode, t_game_info *game_info)
 	}
 	else
 		return (1);
-	if (is_next_pos_available(game_info, &next_pos) != 1)
-		return (0);
 	if (keycode == KEY_LEFT || keycode == KEY_RIGHT)
 		game_info->player_info.dir = keycode;
+	if (is_next_pos_available(game_info, &next_pos) != 1)
+		return (0);
 	move(game_info, &next_pos);
 	return (0);
 }

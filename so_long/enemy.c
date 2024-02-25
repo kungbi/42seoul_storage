@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 15:35:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 14:34:27 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 15:22:43 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	put_enemy_to_map(t_game_info *game_info, int n);
 void	create_enemy(t_game_info *game_info, int n)
 {
 	int	i;
-	int	size;
 
 	game_info->enemy_info = ft_calloc(n, sizeof(t_object_info));
 	if (game_info->enemy_info == NULL)
@@ -36,12 +35,12 @@ int	put_enemy_to_map(t_game_info *game_info, int n)
 
 	y = -1;
 	i = 0;
-	while (++y < game_info->map_info.height && i < n)
+	while ((size_t)(++y) < game_info->map_info.height && i < n)
 	{
-		if (y == game_info->map_info.objects.player.y)
+		if ((size_t) y == game_info->map_info.objects.player.y)
 			continue ;
 		x = -1;
-		while (++x < game_info->map_info.width)
+		while ((size_t)(++x) < game_info->map_info.width)
 		{
 			if (game_info->map_info.map[y][x] == '0')
 			{

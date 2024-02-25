@@ -6,22 +6,17 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 13:16:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 13:48:45 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 15:18:15 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	on_destroy(void)
+int	on_destroy(t_game_info *game_info)
 {
+	ft_putnbr_fd(game_info->moved_cnt, 1);
+	ft_putchar_fd('\n', 1);
 	exit(0);
-}
-
-void	map_info_init(t_map_info *map_info)
-{
-	map_info->objects.collection_cnt = 0;
-	map_info->objects.exit_cnt = 0;
-	map_info->objects.player_cnt = 0;
 }
 
 void	game_info_init(t_game_info *game_info)
@@ -75,4 +70,17 @@ void	textures_init(t_game_info *game_info)
 	textures->number_7 = get_img(game_info, "./textures/number_7.xpm");
 	textures->number_8 = get_img(game_info, "./textures/number_8.xpm");
 	textures->number_9 = get_img(game_info, "./textures/number_9.xpm");
+}
+
+void	free_2d_array(char **array, int n)
+{
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
