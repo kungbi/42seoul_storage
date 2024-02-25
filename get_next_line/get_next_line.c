@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:45:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/01/19 17:12:59 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 12:34:16 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,27 +84,30 @@ t_flexlst	*flexlst_push(t_flexlst **flexlst, int fd)
 
 int	flexlst_getline(t_flexlst *flexlst, char **output)
 {
-	char		buffer[BUFFER_SIZE];
+	char		*buffer;
 	long		n;
 
 	if (flexstr_linepop(&(flexlst)->flexstr, output, 0) < 0)
 		return (-1);
 	if (*output != NULL)
 		return (0);
+	buffer = (char *)malloc(sizeof(char) * BUFFER_SIZE);
+	if (buffer == NULL)
+		return (-1);
 	while (1)
 	{
 		n = read((flexlst)->fd, buffer, BUFFER_SIZE);
 		if (n == 0)
 			break ;
 		if (n < 0)
-			return (-1);
+			return (free(buffer), -1);
 		if (flexstr_append(&(flexlst)->flexstr, buffer, n) != 0
 			|| flexstr_linepop(&(flexlst)->flexstr, output, 0) < 0)
-			return (-1);
+			return (free(buffer), -1);
 		if (*output != NULL)
-			return (0);
+			return (free(buffer), 0);
 	}
-	return (1);
+	return (free(buffer), 1);
 }
 
 char	*flexlst_clear(t_flexlst **flexlst, int fd)
