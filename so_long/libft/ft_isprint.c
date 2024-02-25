@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: woonshin <woonshin@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 16:48:36 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/16 04:50:26 by woonshin         ###   ########.fr       */
+/*   Created: 2023/10/06 16:45:59 by woonshin          #+#    #+#             */
+/*   Updated: 2023/10/06 16:48:08 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isprint(int c)
 {
-	size_t	count;
-
-	count = 0;
-	while (s[count] != '\0')
-		count++;
-	return (count);
+	return (32 <= c && c <= 126);
 }
