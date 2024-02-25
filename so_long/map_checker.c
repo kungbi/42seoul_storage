@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 04:24:19 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/17 12:25:11 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 13:14:53 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	map_object_detect(t_map_info *map_info);
 void	dfs_counter(t_map_info *map_info, t_objects *objects,
 			char **visited, t_pos *curr);
 void	dxdy_init(int *dxs, int *dys);
-int		is_frame(t_map_info *map_info, int x, int y);
 
 int	map_check(t_map_info *map_info)
 {
@@ -53,12 +52,6 @@ void	dxdy_init(int *dxs, int *dys)
 	dys[1] = -1;
 	dys[2] = 0;
 	dys[3] = 1;
-}
-
-int	is_frame(t_map_info *map_info, int x, int y)
-{
-	return (0 <= x && x < map_info->width
-		&& 0 <= y && y < map_info->height);
 }
 
 void	dfs_counter(t_map_info *map_info, t_objects *objects,

@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 11:58:50 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/18 17:44:31 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 13:14:45 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,24 @@ void	return_error(void)
 {
 	ft_putstr_fd("Error\n", 1);
 	exit(1);
+}
+
+void	return_ok(t_game_info *game_info)
+{
+	sleep(1);
+	ft_putstr_fd("OK\n", 1);
+	exit(0);
+}
+
+void	return_ko(t_game_info *game_info)
+{
+	sleep(1);
+	ft_putstr_fd("KO\n", 1);
+	exit(0);
+}
+
+int	is_frame(t_map_info *map_info, int x, int y)
+{
+	return (0 <= x && x < map_info->width
+		&& 0 <= y && y < map_info->height);
 }

@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 15:35:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/18 15:52:03 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 14:34:27 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	create_enemy(t_game_info *game_info, int n)
 int	put_enemy_to_map(t_game_info *game_info, int n)
 {
 	int	y;
-	int x;
+	int	x;
 	int	i;
 
 	y = -1;

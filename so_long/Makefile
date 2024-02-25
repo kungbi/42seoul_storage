@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/16 00:39:58 by woonshin          #+#    #+#              #
-#    Updated: 2024/02/18 17:47:23 by woonshin         ###   ########.fr        #
+#    Updated: 2024/02/25 14:18:11 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,9 @@ MLX					= mlx
 MLX_TARGET	= libmlx.a
 MLX_FLAGS		= -Lmlx -lmlx -framework OpenGL -framework AppKit
 
-SL_FILES	= so_long map_input map_checker utils enemy
+SL_FILES	= so_long map_input map_checker utils utils2 enemy render step_render key_control
 GNL_FILES	= get_next_line get_next_line_utils
-LIBFT_FILES	= ft_atoi ft_calloc ft_putstr_fd ft_strlcpy ft_strlen ft_isdigit ft_memset ft_strncmp ft_putnbr_fd ft_putchar_fd
+LIBFT_FILES	= ft_atoi ft_calloc ft_putstr_fd ft_strlcpy ft_strlen ft_isdigit ft_memset ft_strncmp ft_putnbr_fd ft_putchar_fd ft_itoa
 
 SL_SRC 		= $(addsuffix .c, $(SL_FILES))
 SL_OBJ 		= $(addsuffix .o, $(SL_FILES))

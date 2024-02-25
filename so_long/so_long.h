@@ -6,12 +6,13 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 03:29:35 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/18 18:53:25 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/25 14:36:20 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+# include <mlx.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
@@ -24,8 +25,6 @@
 # define LEFT 123
 # define RIGHT 124
 # define KEY_ESC 53
-
-# include <stdio.h>
 
 typedef struct s_pos
 {
@@ -49,7 +48,7 @@ typedef struct s_map_info
 	t_objects	objects;
 }	t_map_info;
 
-typedef struct	s_textures
+typedef struct s_textures
 {
 	void	*tile;
 	void	*wall;
@@ -62,8 +61,18 @@ typedef struct	s_textures
 	void	*collection;
 	void	*enemy_left;
 	void	*enemy_right;
+	void	*number_0;
+	void	*number_1;
+	void	*number_2;
+	void	*number_3;
+	void	*number_4;
+	void	*number_5;
+	void	*number_6;
+	void	*number_7;
+	void	*number_8;
+	void	*number_9;
 }	t_textures;
-typedef struct	s_object_info
+typedef struct s_object_info
 {
 	int		x;
 	int		y;
@@ -71,7 +80,7 @@ typedef struct	s_object_info
 	int		img_state;
 }	t_object_info;
 
-typedef struct	s_game_info
+typedef struct s_game_info
 {
 	void			*mlx;
 	void			*win;
@@ -87,10 +96,23 @@ typedef struct	s_game_info
 
 int		map_check(t_map_info *map_info);
 void	map_input(t_map_info *map_info, char *filename);
-
+int		is_collision(t_game_info *game_info);
 void	create_enemy(t_game_info *game_info, int n);
 
+int		key_control(int keycode, t_game_info *game_info);
+
+int		render(t_game_info *game_info);
+void	step_render(t_game_info *game_info, int num);
+
 void	return_error(void);
+void	return_ok(t_game_info *game_info);
+void	return_ko(t_game_info *game_info);
 void	new_2d_array(char ***arr, int width, int height);
+int		is_frame(t_map_info *map_info, int x, int y);
+
+int		on_destroy(void);
+void	textures_init(t_game_info *game_info);
+void	map_info_init(t_map_info *map_info);
+void	game_info_init(t_game_info *game_info);
 
 #endif
