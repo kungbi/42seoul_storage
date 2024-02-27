@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 03:29:35 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 15:21:39 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/27 14:30:31 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@
 # define LEFT 123
 # define RIGHT 124
 # define KEY_ESC 53
+
+# include <stdio.h>
 
 typedef struct s_pos
 {
@@ -97,7 +99,7 @@ typedef struct s_game_info
 int		map_check(t_map_info *map_info);
 void	map_input(t_map_info *map_info, char *filename);
 int		is_collision(t_game_info *game_info);
-void	create_enemy(t_game_info *game_info, int n);
+void	create_enemy(t_game_info *game_info);
 
 int		key_control(int keycode, t_game_info *game_info);
 
@@ -116,5 +118,6 @@ void	map_info_init(t_map_info *map_info);
 void	game_info_init(t_game_info *game_info);
 
 void	free_2d_array(char **array, int n);
+int		get_frame(int x);
 
 #endif

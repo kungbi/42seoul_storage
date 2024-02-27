@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/16 00:39:58 by woonshin          #+#    #+#              #
-#    Updated: 2024/02/25 16:12:15 by woonshin         ###   ########.fr        #
+#    Updated: 2024/02/27 14:35:47 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,4 +63,6 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:	all clean fclean re 
+bonus: all
+
+.PHONY:	all clean fclean re bonus
