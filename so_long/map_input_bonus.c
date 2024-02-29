@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_input.c                                        :+:      :+:    :+:   */
+/*   map_input_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 04:27:29 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 15:20:46 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:35:59 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	map_resize(t_map_info *map_info);
 void	map_input_size(t_map_info *map_info, char *filename);

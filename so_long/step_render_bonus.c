@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   step_render.c                                      :+:      :+:    :+:   */
+/*   step_render_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:04:43 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 15:15:44 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:36:10 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	step_render_low_num(t_game_info *game_info, int x, char c)
 {
