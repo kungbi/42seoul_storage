@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/16 00:39:58 by woonshin          #+#    #+#              #
-#    Updated: 2024/02/29 12:59:35 by woonshin         ###   ########.fr        #
+#    Updated: 2024/02/29 13:25:26 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,15 +55,12 @@ $(MLX_TARGET):
 	@make -C $(MLX)
 	cp $(MLX)/$(MLX_TARGET) ./
 
-
 clean:
 	$(RM) $(SL_OBJ)
 	$(RM) $(GNL_OBJ)
 	$(RM) $(SL_OBJ_BNS)
 	$(RM) $(GNL_OBJ_BNS)
 
-	$(RM) $(LIBFT_OBJ)
-	$(RM) $(LIBFT_TARGET)
 	@make clean -C $(MLX)
 	@make clean -C $(LIBFT)
 
@@ -71,6 +68,7 @@ fclean: clean
 	$(RM) $(NAME)
 	$(RM) $(NAME_BNS)
 	$(RM) $(MLX_TARGET)
+	$(RM) $(LIBFT_TARGET)
 	@make fclean -C $(LIBFT)
 
 re: fclean all
