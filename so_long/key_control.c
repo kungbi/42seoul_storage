@@ -6,11 +6,13 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:17:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 15:23:18 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:36:04 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	move(t_game_info *game_info, t_pos *next_pos);
 
 int	is_next_pos_available(t_game_info *game_info, t_pos *next_pos)
 {
@@ -26,7 +28,7 @@ int	is_next_pos_available(t_game_info *game_info, t_pos *next_pos)
 		if ((size_t) game_info->collection_cnt
 			== game_info->map_info.objects.collection_cnt)
 		{
-			game_info->moved_cnt++;
+			move(game_info, next_pos);
 			return_ok();
 		}
 		return (-1);

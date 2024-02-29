@@ -6,13 +6,12 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 04:27:29 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 15:20:46 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:32:59 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	map_resize(t_map_info *map_info);
 void	map_input_size(t_map_info *map_info, char *filename);
 void	map_input_getline(t_map_info *map_info, char *filename);
 void	remove_nl(char *str);
@@ -33,8 +32,6 @@ void	map_input_size(t_map_info *map_info, char *filename)
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 		return_error();
-	map_info->width = -1;
-	map_info->height = 0;
 	str = get_next_line(fd);
 	while (str != NULL)
 	{
@@ -48,6 +45,7 @@ void	map_input_size(t_map_info *map_info, char *filename)
 		str = get_next_line(fd);
 		map_info->height++;
 	}
+	close(fd);
 	if (map_info->width == map_info->height
 		|| map_info->width == 0 || map_info->height == 0)
 		return_error();
@@ -71,6 +69,7 @@ void	map_input_getline(t_map_info *map_info, char *filename)
 		str = get_next_line(fd);
 		i++;
 	}
+	close(fd);
 }
 
 void	remove_nl(char *str)

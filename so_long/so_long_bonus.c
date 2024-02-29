@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 01:17:14 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/29 14:36:04 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:32:52 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	main(int argc, char *argv[])
 
 void	map_info_init(t_map_info *map_info)
 {
+	map_info->width = -1;
+	map_info->height = 0;
 	map_info->objects.collection_cnt = 0;
 	map_info->objects.exit_cnt = 0;
 	map_info->objects.player_cnt = 0;

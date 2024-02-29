@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 03:29:35 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/29 13:30:04 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:40:02 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@
 # define LEFT 123
 # define RIGHT 124
 # define KEY_ESC 53
-
-# include <stdio.h>
 
 typedef struct s_pos
 {
