@@ -1,24 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 13:28:10 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 00:38:04 by woonshin         ###   ########.fr       */
+/*   Created: 2024/03/02 00:01:44 by woonshin          #+#    #+#             */
+/*   Updated: 2024/03/02 00:09:04 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
+#include <errno.h>
 
-int	main(int argc, char *argv[], char *envp[])
+void	close_all(int *fd, int *fd2)
 {
-	t_pipex_vars	vars;
+	close(fd[0]);
+	close(fd[1]);
+	close(fd2[0]);
+	close(fd2[1]);
+}
 
-	if (argc != 5)
-		return_error("Required 4 arguments");
-	input_validate(&vars, argc - 1, argv + 1, envp);
-	pipex_start(&vars, 0);
-	return (0);
+void	wait_all(size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		wait(NULL);
+		i++;
+	}
+}
+
+void	return_error(char *str)
+{
+	if (str != NULL)
+	{
+		ft_putstr_fd("pipex: ", 1);
+		ft_putstr_fd(str, 1);
+		ft_putchar_fd('\n', 1);
+		exit(1);
+	}
+	perror("pipex");
+	exit(errno);
 }
