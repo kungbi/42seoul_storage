@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:54:02 by woonshin          #+#    #+#              #
-#    Updated: 2024/02/16 00:54:02 by woonshin         ###   ########.fr        #
+#    Updated: 2024/03/01 21:54:01 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ LIBFT = libft
 LIBFT_TARGET = libft.a
 
 BONUS_NAME	= checker
-BONUS_FILES	= checker_bonus command_execution_bonus
+BONUS_FILES	= checker_bonus command_execution_bonus command_lst_bonus
 BONUS_SRC	= $(addprefix $(SRC_DIR), $(addsuffix .c, $(BONUS_FILES)))
 BONUS_OBJ	= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(BONUS_FILES)))
 

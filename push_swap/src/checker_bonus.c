@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus_checker.c                                    :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:50:11 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/12 22:44:54 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/01 22:15:09 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
+#include <stdio.h>
+
+void	input_commands(t_command_lst *command_lst);
+
 int	main(int argc, char *argv[])
 {
+	t_command_lst	command_lst;
+	t_command_lst	*command_lst_tmp;
 	t_dual_stack	*dual_stack;
-	char			*command;
 
 	if (argc == 1)
 		return (0);
@@ -25,14 +30,30 @@ int	main(int argc, char *argv[])
 		return_error();
 	if (dual_stack_init(dual_stack, argc - 1, argv + 1) != 0)
 		return_error();
+	input_commands(&command_lst);
+	command_lst_tmp = &command_lst;
+	while (command_lst_tmp != NULL)
+	{
+		command_execute(dual_stack, command_lst_tmp->command);
+		command_lst_tmp = command_lst_tmp->next;
+	}
+	check_stack(dual_stack);
+	clear_command_lst(&command_lst);
+}
+
+void	input_commands(t_command_lst *command_lst)
+{
+	char	*command;
+
+	command_lst->command = NULL;
+	command_lst->next = NULL;
+
 	command = get_next_line(0);
 	while (command != NULL)
 	{
-		command_execute(dual_stack, command);
-		free(command);
+		new_command(command_lst, command);
 		command = get_next_line(0);
 	}
-	check_stack(dual_stack);
 }
 
 void	return_error(void)
