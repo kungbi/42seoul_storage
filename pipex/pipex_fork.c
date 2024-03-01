@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:38:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 00:39:12 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/02 00:57:09 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	middle_child(t_pipex_vars *vars, int *fd, int *fd2, size_t i);
 void	wait_all(size_t n);
 void	close_all(int *fd, int *fd2);
 
-void	pipex_start(t_pipex_vars *vars, int bonus)
+void	pipex_start(t_pipex_vars *vars)
 {
 	int		fd[2][2];
 	pid_t	pid;
@@ -38,7 +38,7 @@ void	pipex_start(t_pipex_vars *vars, int bonus)
 			first_child(vars, fd[0], fd[1]);
 		else if (i == vars->command_cnt - 1 && pid == 0)
 			end_child(vars, fd[0], fd[1], i);
-		else if (bonus == 1 && pid == 0)
+		else if (vars->bonus == 1 && pid == 0)
 			middle_child(vars, fd[0], fd[1], i);
 	}
 	close_all(fd[0], fd[1]);

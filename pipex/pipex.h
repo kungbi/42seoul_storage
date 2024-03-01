@@ -6,13 +6,14 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:28:23 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/01 23:02:35 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:19:02 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 # include "libft.h"
+# include "get_next_line.h"
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -37,18 +38,22 @@ typedef struct s_pipex_vars
 	t_file		outfile;
 	t_command	*commands;
 	size_t		command_cnt;
+	int			bonus;
+	int			heredoc;
 }	t_pipex_vars;
 
 void	return_error(char *str);
 void	input_validate(t_pipex_vars *vars, int n, char *args[], char *envp[]);
-void	pipex_start(t_pipex_vars *vars, int bonus);
+void	pipex_start(t_pipex_vars *vars);
 
 void	input_validate(t_pipex_vars *vars, int n, char *args[], char *envp[]);
-void	check_outfile(t_file *outfile, char *filename);
+void	check_outfile(t_file *outfile, char *filename, int bonus);
 void	check_infile(t_file *file, char *filename);
 void	get_env_path(char *envp[], char **env_path);
 void	get_command_path(t_command *command, char **paths);
 void	check_commands(t_pipex_vars *vars, char **paths);
 void	init_commands(t_pipex_vars *vars, int n, char **command_name);
+
+void	heredoc(t_pipex_vars *vars, char *LIMITER);
 
 #endif

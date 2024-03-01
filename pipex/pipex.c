@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:28:10 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 00:38:04 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:01:38 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int argc, char *argv[], char *envp[])
 	if (argc != 5)
 		return_error("Required 4 arguments");
 	input_validate(&vars, argc - 1, argv + 1, envp);
-	pipex_start(&vars, 0);
+	vars.bonus = 0;
+	pipex_start(&vars);
 	return (0);
 }
