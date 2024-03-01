@@ -1,0 +1,7 @@
+total 232
+-rw-r--r--  1 woonshin  2023_seoul     61 Mar  1 17:23 infile
+-rw-r--r--  1 woonshin  2023_seoul      0 Mar  1 20:06 outfile
+-rwxr-xr-x  1 woonshin  2023_seoul  49896 Mar  1 20:06 test
+-rw-r--r--  1 woonshin  2023_seoul    853 Mar  1 20:05 test.c
+-rwxr-xr-x  1 woonshin  2023_seoul  49848 Mar  1 17:59 test2
+-rw-r--r--  1 woonshin  2023_seoul    553 Mar  1 17:59 test2.c
