@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:50:11 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/01 22:15:09 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/01 22:18:32 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	input_commands(t_command_lst *command_lst)
 
 	command_lst->command = NULL;
 	command_lst->next = NULL;
-
 	command = get_next_line(0);
 	while (command != NULL)
 	{

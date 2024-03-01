@@ -6,13 +6,13 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 21:42:24 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/01 22:11:28 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/01 22:19:12 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	new_command(t_command_lst *command_lst,  char *command)
+void	new_command(t_command_lst *command_lst, char *command)
 {
 	t_command_lst	*new_command;
 
@@ -23,7 +23,7 @@ void	new_command(t_command_lst *command_lst,  char *command)
 	}
 	while (command_lst->next != NULL)
 		command_lst = command_lst->next;
-	new_command = (t_command_lst*)ft_calloc(1, sizeof(t_command_lst));
+	new_command = (t_command_lst *)ft_calloc(1, sizeof(t_command_lst));
 	if (new_command == NULL)
 		return_error();
 	new_command->command = command;
