@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 13:19:28 by woonshin          #+#    #+#              #
-#    Updated: 2024/03/02 01:38:25 by woonshin         ###   ########.fr        #
+#    Updated: 2024/03/02 09:28:01 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,16 +14,16 @@ NAME			= pipex
 NAME_BNS		= pipex_bonus
 LIBFT			= libft
 LIBFT_TARGET	= libft.a
-CFLAGS			= -Wall -Werror -Wextra
+# CFLAGS			= -Wall -Werror -Wextra
 INCLUDES		= -I libft
 
-GNL_FILES	= get_next_line get_next_line_utils
+GNL_FILES	= gnl gnl_utils
 GNL_OBJ 	= $(addsuffix .o, $(GNL_FILES))
 
-PIPEX_FILES 	= pipex input_validate input_validate2 pipex_fork utils
+PIPEX_FILES 	= pipex input_validate input_validate2 pipex_fork utils command_split
 PIPEX_FILES_OBJ	= $(addsuffix .o, $(PIPEX_FILES))
 
-PIPEX_FILES_BNS 	= pipex_bonus input_validate input_validate2 pipex_fork utils heredoc_bonus
+PIPEX_FILES_BNS 	= pipex_bonus input_validate input_validate2 pipex_fork utils heredoc_bonus command_split
 PIPEX_FILES_OBJ_BNS	= $(addsuffix .o, $(PIPEX_FILES_BNS))
 
 all: $(NAME)

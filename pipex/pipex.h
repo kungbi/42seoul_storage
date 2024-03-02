@@ -6,14 +6,14 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:28:23 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 01:19:02 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/02 09:28:15 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 # include "libft.h"
-# include "get_next_line.h"
+# include "gnl.h"
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -55,5 +55,7 @@ void	check_commands(t_pipex_vars *vars, char **paths);
 void	init_commands(t_pipex_vars *vars, int n, char **command_name);
 
 void	heredoc(t_pipex_vars *vars, char *LIMITER);
+
+char	**command_split(char const *s);
 
 #endif
