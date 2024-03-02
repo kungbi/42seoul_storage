@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 22:44:56 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 09:51:45 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/02 09:59:32 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	split_core(const char *s, char **words, int start, int i)
 		else
 			*words = ft_substr(s, start, (i + 1) - start);
 		if (*words == NULL)
-			return_error(NULL);
+			return_error(NULL, 1);
 		return (1);
 	}
 	return (0);

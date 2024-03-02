@@ -6,12 +6,11 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 00:01:44 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 00:09:04 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/02 09:59:12 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-#include <errno.h>
 
 void	close_all(int *fd, int *fd2)
 {
@@ -33,7 +32,7 @@ void	wait_all(size_t n)
 	}
 }
 
-void	return_error(char *str)
+void	return_error(char *str, int code)
 {
 	if (str != NULL)
 	{
@@ -43,5 +42,5 @@ void	return_error(char *str)
 		exit(1);
 	}
 	perror("pipex");
-	exit(errno);
+	exit(code);
 }

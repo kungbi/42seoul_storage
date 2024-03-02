@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:38:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 00:57:09 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/02 10:00:35 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	pipex_start(t_pipex_vars *vars)
 	while (++i < vars->command_cnt)
 	{
 		if (i < vars->command_cnt - 1 && i % 2 == 0 && pipe(fd[0]) < 0)
-			return_error(NULL);
+			return_error(NULL, 1);
 		if (i < vars->command_cnt - 1 && i % 2 == 1 && pipe(fd[1]) < 0)
-			return_error(NULL);
+			return_error(NULL, 1);
 		pid = fork();
 		if (pid < 0)
-			return_error(NULL);
+			return_error(NULL, 1);
 		if (i == 0 && pid == 0)
 			first_child(vars, fd[0], fd[1]);
 		else if (i == vars->command_cnt - 1 && pid == 0)
@@ -62,7 +62,7 @@ void	middle_child(t_pipex_vars *vars, int *fd, int *fd2, size_t i)
 		close(fd[0]);
 	}
 	if (execve(vars->commands[i].path, vars->commands[i].args, NULL) < 0)
-		return_error(NULL);
+		return_error(NULL, 1);
 	close(fd2[1]);
 	close(fd[1]);
 }
@@ -73,7 +73,7 @@ void	first_child(t_pipex_vars *vars, int *fd, int *fd2)
 	dup2(vars->infile.fd, STDIN_FILENO);
 	dup2(fd[1], STDOUT_FILENO);
 	if (execve(vars->commands[0].path, vars->commands[0].args, NULL) < 0)
-		return_error(NULL);
+		return_error(NULL, 1);
 	close(vars->infile.fd);
 	close(fd[1]);
 	close(fd2[0]);
@@ -91,7 +91,7 @@ void	end_child(t_pipex_vars *vars, int *fd, int *fd2, size_t i)
 		dup2(fd[0], STDIN_FILENO);
 	dup2(vars->outfile.fd, STDOUT_FILENO);
 	if (execve(vars->commands[i].path, vars->commands[i].args, NULL) < 0)
-		return_error(NULL);
+		return_error(NULL, 1);
 	close(vars->outfile.fd);
 	close(fd[0]);
 	close(fd2[0]);

@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:28:23 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 09:28:15 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/02 09:59:19 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_pipex_vars
 	int			heredoc;
 }	t_pipex_vars;
 
-void	return_error(char *str);
+void	return_error(char *str, int code);
 void	input_validate(t_pipex_vars *vars, int n, char *args[], char *envp[]);
 void	pipex_start(t_pipex_vars *vars);
 

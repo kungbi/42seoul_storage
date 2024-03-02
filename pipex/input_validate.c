@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:35:02 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 01:35:08 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/02 10:00:08 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	check_infile(t_file *file, char *filename)
 	file->name = filename;
 	file->fd = open(filename, O_RDONLY);
 	if (file->fd < 0)
-		return_error("No such file or directory");
+		return_error("No such file or directory", 0);
 }
 
 void	check_outfile(t_file *outfile, char *filename, int bonus)
@@ -41,7 +41,7 @@ void	check_outfile(t_file *outfile, char *filename, int bonus)
 	else
 		outfile->fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (outfile->fd < 0)
-		return_error("No such file or directory");
+		return_error("No such file or directory", 0);
 }
 
 void	get_env_path(char *envp[], char **env_path)
@@ -55,7 +55,7 @@ void	get_env_path(char *envp[], char **env_path)
 		{
 			*env_path = ft_substr(envp[i], 5, ft_strlen(envp[i]));
 			if (*env_path == NULL)
-				return_error(NULL);
+				return_error(NULL, 0);
 			return ;
 		}
 		i++;
@@ -73,10 +73,10 @@ void	get_command_path(t_command *command, char **paths)
 	{
 		path_tmp = ft_strjoin(paths[i], "/");
 		if (path_tmp == NULL)
-			return_error(NULL);
+			return_error(NULL, 1);
 		path = ft_strjoin(path_tmp, command->name);
 		if (path == NULL)
-			return_error(NULL);
+			return_error(NULL, 1);
 		free(path_tmp);
 		if (access(path, F_OK) == 0 && access(path, X_OK) == 0)
 		{
@@ -84,9 +84,9 @@ void	get_command_path(t_command *command, char **paths)
 			return ;
 		}
 		if (access(path, F_OK) == 0 && access(path, X_OK) != 0)
-			return_error("Permission denied");
+			return_error("Permission denied", 1);
 		free(path);
 		i++;
 	}
-	return_error("No such file or directory");
+	return_error("No such file or directory", 0);
 }

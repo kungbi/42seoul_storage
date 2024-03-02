@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 00:43:44 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 09:46:21 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/02 09:59:36 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	heredoc(t_pipex_vars *vars, char *LIMITER)
 	if (fd < 0)
 	{
 		unlink(".tmp");
-		return_error(NULL);
+		return_error(NULL, 1);
 	}
 	line = get_next_line(STDIN_FILENO);
 	while (line != NULL)

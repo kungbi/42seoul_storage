@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:07:47 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 01:33:28 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/02 10:00:26 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	main(int argc, char *argv[], char *envp[])
 	int				i;
 
 	if (argc < 5)
-		return_error("Required 4 arguments");
+		return_error("Required 4 arguments", 1);
 	if (ft_strncmp(argv[1], "heredoc", 8) == 0)
 	{
 		if (argc < 6)
-			return_error("Required 4 arguments");
+			return_error("Required 4 arguments", 1);
 		ft_strlcpy(argv[1], ".tmp", 8);
 		heredoc(&vars, argv[2]);
 		i = 1;
