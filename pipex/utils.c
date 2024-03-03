@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 00:01:44 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 09:59:12 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/03 19:18:28 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ void	wait_all(size_t n)
 	i = 0;
 	while (i < n)
 	{
-		wait(NULL);
+		printf("waited: %d\n", wait(NULL));
 		i++;
 	}
+	printf("all waited\n");
 }
 
 void	return_error(char *str, int code)
