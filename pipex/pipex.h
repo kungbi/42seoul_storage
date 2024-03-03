@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:28:23 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 09:59:19 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/03 14:36:14 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,25 @@ typedef struct s_pipex_vars
 	int			heredoc;
 }	t_pipex_vars;
 
-void	return_error(char *str, int code);
-void	input_validate(t_pipex_vars *vars, int n, char *args[], char *envp[]);
-void	pipex_start(t_pipex_vars *vars);
+char	**command_split(char const *s);
 
 void	input_validate(t_pipex_vars *vars, int n, char *args[], char *envp[]);
-void	check_outfile(t_file *outfile, char *filename, int bonus);
-void	check_infile(t_file *file, char *filename);
+void	check_infile(t_pipex_vars *vars, char *filename);
+void	check_outfile(t_pipex_vars *vars, char *filename, int heredoc);
 void	get_env_path(char *envp[], char **env_path);
 void	get_command_path(t_command *command, char **paths);
 void	check_commands(t_pipex_vars *vars, char **paths);
 void	init_commands(t_pipex_vars *vars, int n, char **command_name);
 
-void	heredoc(t_pipex_vars *vars, char *LIMITER);
+void	pipex_start(t_pipex_vars *vars);
+void	middle_child(t_pipex_vars *vars, int *fd, int *fd2, size_t i);
+void	first_child(t_pipex_vars *vars, int *fd, int *fd2);
+void	end_child(t_pipex_vars *vars, int *fd, int *fd2, size_t i);
 
-char	**command_split(char const *s);
+void	close_all(int *fd, int *fd2);
+void	wait_all(size_t n);
+void	return_error(char *str, int code);
+
+void	heredoc(t_pipex_vars *vars, char *LIMITER);
 
 #endif

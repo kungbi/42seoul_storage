@@ -6,10 +6,11 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 13:19:28 by woonshin          #+#    #+#              #
-#    Updated: 2024/03/02 09:28:01 by woonshin         ###   ########.fr        #
+#    Updated: 2024/03/03 12:47:58 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CC				= cc
 NAME			= pipex
 NAME_BNS		= pipex_bonus
 LIBFT			= libft

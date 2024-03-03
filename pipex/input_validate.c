@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:35:02 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 10:00:08 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/03 15:02:36 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,30 @@ void	input_validate(t_pipex_vars *vars, int n, char *args[], char *envp[])
 	char	*env_path;
 	char	**paths;
 
-	check_infile(&vars->infile, args[0]);
-	check_outfile(&vars->outfile, args[n - 1], vars->heredoc);
+	check_infile(vars, args[0]);
+	check_outfile(vars, args[n - 1], vars->heredoc);
 	init_commands(vars, n - 2, args + 1);
 	get_env_path(envp, &env_path);
 	paths = ft_split(env_path, ':');
 	check_commands(vars, paths);
 }
 
-void	check_infile(t_file *file, char *filename)
+void	check_infile(t_pipex_vars *vars, char *filename)
 {
-	file->name = filename;
-	file->fd = open(filename, O_RDONLY);
-	if (file->fd < 0)
+	vars->infile.name = filename;
+	vars->infile.fd = open(filename, O_RDONLY);
+	if (vars->infile.fd < 0)
 		return_error("No such file or directory", 0);
 }
 
-void	check_outfile(t_file *outfile, char *filename, int bonus)
+void	check_outfile(t_pipex_vars *vars, char *filename, int heredoc)
 {
-	outfile->name = filename;
-	if (bonus == 1)
-		outfile->fd = open(filename, O_WRONLY | O_APPEND | O_CREAT, 0644);
+	vars->outfile.name = filename;
+	if (heredoc == 1)
+		vars->outfile.fd = open(filename, O_WRONLY | O_APPEND | O_CREAT, 0644);
 	else
-		outfile->fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-	if (outfile->fd < 0)
+		vars->outfile.fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	if (vars->outfile.fd < 0)
 		return_error("No such file or directory", 0);
 }
 

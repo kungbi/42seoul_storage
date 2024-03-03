@@ -6,17 +6,11 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:38:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 10:00:35 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/03 15:19:32 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-
-void	first_child(t_pipex_vars *vars, int *fd, int *fd2);
-void	end_child(t_pipex_vars *vars, int *fd, int *fd2, size_t i);
-void	middle_child(t_pipex_vars *vars, int *fd, int *fd2, size_t i);
-void	wait_all(size_t n);
-void	close_all(int *fd, int *fd2);
 
 void	pipex_start(t_pipex_vars *vars)
 {
@@ -97,3 +91,4 @@ void	end_child(t_pipex_vars *vars, int *fd, int *fd2, size_t i)
 	close(fd2[0]);
 	exit(0);
 }
+
