@@ -6,12 +6,12 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 03:29:35 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/29 15:39:58 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/03 20:28:23 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 # include <mlx.h>
 # include <unistd.h>
 # include <stdlib.h>
