@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:28:23 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/03 20:22:54 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/04 21:39:57 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,14 @@ void	get_command_path(t_command *command, char **paths);
 void	check_commands(t_pipex_vars *vars, char **paths);
 void	init_commands(t_pipex_vars *vars, int n, char **command_name);
 
-void	pipex_start(t_pipex_vars *vars);
+int		pipex_start(t_pipex_vars *vars);
 void	child_start(t_pipex_vars *vars, int *fd, int i);
 void	middle_child(t_pipex_vars *vars, int *fd);
 void	first_child(t_pipex_vars *vars, int *fd);
 void	end_child(t_pipex_vars *vars, int *fd);
 
 void	close_all(int *fd, int *fd2);
-void	wait_all(size_t n);
+int		wait_all(size_t n);
 void	return_error(char *str, int code);
 
 void	heredoc(t_pipex_vars *vars, char *LIMITER);

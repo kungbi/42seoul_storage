@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:35:02 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/03 15:02:36 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/04 21:52:41 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	check_infile(t_pipex_vars *vars, char *filename)
 	vars->infile.name = filename;
 	vars->infile.fd = open(filename, O_RDONLY);
 	if (vars->infile.fd < 0)
-		return_error("No such file or directory", 0);
+		return_error("No such file or directory", 1);
 }
 
 void	check_outfile(t_pipex_vars *vars, char *filename, int heredoc)
@@ -41,7 +41,7 @@ void	check_outfile(t_pipex_vars *vars, char *filename, int heredoc)
 	else
 		vars->outfile.fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	if (vars->outfile.fd < 0)
-		return_error("No such file or directory", 0);
+		return_error("No such file or directory", 1);
 }
 
 void	get_env_path(char *envp[], char **env_path)
@@ -55,7 +55,7 @@ void	get_env_path(char *envp[], char **env_path)
 		{
 			*env_path = ft_substr(envp[i], 5, ft_strlen(envp[i]));
 			if (*env_path == NULL)
-				return_error(NULL, 0);
+				return_error(NULL, 1);
 			return ;
 		}
 		i++;
@@ -88,5 +88,5 @@ void	get_command_path(t_command *command, char **paths)
 		free(path);
 		i++;
 	}
-	return_error("No such file or directory", 0);
+	return_error("command not found", 127);
 }

@@ -6,13 +6,13 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:38:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/03 20:23:28 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/04 21:51:57 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	pipex_start(t_pipex_vars *vars)
+int	pipex_start(t_pipex_vars *vars)
 {
 	int		fd[2];
 	pid_t	pid;
@@ -33,7 +33,7 @@ void	pipex_start(t_pipex_vars *vars)
 		close(fd[0]);
 		close(fd[1]);
 	}
-	wait_all(vars->command_cnt);
+	return (wait_all(vars->command_cnt));
 }
 
 void	child_start(t_pipex_vars *vars, int *fd, int i)
@@ -45,7 +45,7 @@ void	child_start(t_pipex_vars *vars, int *fd, int i)
 	else if (vars->bonus == 1)
 		middle_child(vars, fd);
 	if (execve(vars->commands[i].path, vars->commands[i].args, NULL) < 0)
-		return_error(NULL, 1);
+		return_error(NULL, 2);
 }
 
 void	middle_child(t_pipex_vars *vars, int *fd)

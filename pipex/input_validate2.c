@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:44:48 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/02 10:00:17 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/04 22:04:28 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	check_commands(t_pipex_vars *vars, char **paths)
 	while (i < vars->command_cnt)
 	{
 		if (vars->commands[i].name[0] == '/')
+			vars->commands[i].path = vars->commands[i].name;
+		else if (vars->commands[i].name[0] == '.')
 			vars->commands[i].path = vars->commands[i].name;
 		else
 			get_command_path(vars->commands + i, paths);

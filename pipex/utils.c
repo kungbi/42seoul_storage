@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 00:01:44 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/03 20:20:58 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/04 21:55:08 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,24 @@ void	close_all(int *fd, int *fd2)
 	close(fd2[1]);
 }
 
-void	wait_all(size_t n)
+int	wait_all(size_t n)
 {
 	size_t	i;
+	int		num;
+	int		result;
 
 	i = 0;
+	result = 0;
+	num = 0;
 	while (i < n)
 	{
+		// printf("wait reesult %d\n", waitpid(0, &num, 0));
+		// printf("num %d\n\n", num);
+		if (num != 0)
+			result = num;
 		i++;
 	}
+	return (result);
 }
 
 void	return_error(char *str, int code)
@@ -38,7 +47,7 @@ void	return_error(char *str, int code)
 		ft_putstr_fd("pipex: ", 1);
 		ft_putstr_fd(str, 1);
 		ft_putchar_fd('\n', 1);
-		exit(1);
+		exit(code);
 	}
 	perror("pipex");
 	exit(code);
