@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:50:11 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/01 22:18:32 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/04 09:04:41 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char *argv[])
 		return_error();
 	input_commands(&command_lst);
 	command_lst_tmp = &command_lst;
-	while (command_lst_tmp != NULL)
+	while (command_lst_tmp != NULL && command_lst.command != NULL)
 	{
 		command_execute(dual_stack, command_lst_tmp->command);
 		command_lst_tmp = command_lst_tmp->next;
