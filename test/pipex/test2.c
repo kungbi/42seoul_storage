@@ -5,26 +5,37 @@
 
 int main(int argc, char **argvv, char **env)
 {
-	char *argv[3];
-	int infile_fd;
-	int outfile_fd;
+	int fd = open("outfile", O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	int a[2];
+	char buf[100];
 
-	infile_fd = open("infile", O_RDONLY);
-	outfile_fd = open("outfile", O_WRONLY | O_CREAT | O_TRUNC, 0644);
-	printf("outfile_fd: %d\n", outfile_fd);
-
+	pipe(a);
 	if (fork() == 0)
 	{
-		dup2(infile_fd, STDIN_FILENO);
-		dup2(outfile_fd, STDOUT_FILENO);
-
-		argv[0] = "cat";
-		argv[1] = NULL;
-		execve("/bin/cat", argv, NULL);
+		printf("I am the child process with PID %d\n", getpid());
+		if (fork() == 0)
+		{
+			printf("I am the child process with PID %d\n", getpid());
+			if (fork() == 0)
+			{
+				if (fork() == 0)
+				{
+					close(a[0]);
+					write(a[1], "hello\n", 100);
+					printf("I am the child process with PID %d\n", getpid());
+					exit(0);
+				}
+				read(a[0], buf, 100);
+				printf("%s\n", buf);
+				exit(0);
+			}
+			exit(0);
+		}
 		exit(0);
 	}
 
 	wait(NULL);
-	close(infile_fd);
-	close(outfile_fd);
+	wait(NULL);
+	wait(NULL);
+	wait(NULL);
 }
