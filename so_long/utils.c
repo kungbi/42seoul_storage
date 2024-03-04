@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 11:58:50 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 15:22:06 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/04 19:58:20 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,17 @@ void	return_error(void)
 	exit(1);
 }
 
-void	return_ok(void)
+void	return_ok(t_game_info *game_info)
 {
+	game_free(game_info);
 	ft_putstr_fd("OK\n", 1);
 	sleep(1);
 	exit(0);
 }
 
-void	return_ko(void)
+void	return_ko(t_game_info *game_info)
 {
+	game_free(game_info);
 	ft_putstr_fd("KO\n", 1);
 	sleep(1);
 	exit(0);

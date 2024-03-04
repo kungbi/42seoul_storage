@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 13:16:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/25 15:18:15 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/04 19:05:19 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	on_destroy(t_game_info *game_info)
 {
+	game_free(game_info);
 	ft_putnbr_fd(game_info->moved_cnt, 1);
 	ft_putchar_fd('\n', 1);
 	exit(0);

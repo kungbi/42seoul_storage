@@ -6,14 +6,14 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/16 00:39:58 by woonshin          #+#    #+#              #
-#    Updated: 2024/02/29 15:38:13 by woonshin         ###   ########.fr        #
+#    Updated: 2024/03/04 12:50:36 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC				= cc
 NAME			= so_long
 NAME_BNS		= so_long_bonus
-CFLAGS			= -Wall -Werror -Wextra
+# CFLAGS			= -Wall -Werror -Wextra
 INCLUDES		= -I mlx -I libft
 
 MLX				= mlx
@@ -23,7 +23,7 @@ MLX_FLAGS		= -Lmlx -lmlx -framework OpenGL -framework AppKit
 LIBFT = libft
 LIBFT_TARGET = libft.a
 
-SL_FILES	= so_long map_input map_checker utils utils2 enemy render step_render key_control
+SL_FILES	= so_long map_input map_checker utils utils2 enemy render step_render key_control game_free
 SL_FILES_BNS= so_long_bonus map_input_bonus map_checker_bonus utils_bonus utils2_bonus enemy_bonus render_bonus step_render_bonus key_control_bonus
 GNL_FILES	= get_next_line get_next_line_utils
 

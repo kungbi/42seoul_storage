@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:02:51 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/27 14:36:40 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/04 20:12:51 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,22 @@ void	player_render(t_game_info *game_info)
 {
 	t_object_info	*player_info;
 	void			*player;
+	int				num;
 
+	num = get_frame(game_info->enemy_cnt);
 	player = NULL;
 	player_info = &game_info->player_info;
-	player_info->img_state = (player_info->img_state + 1) % 30;
+	player_info->img_state = (player_info->img_state + 1) % (num);
 	if (player_info->dir == RIGHT)
 	{
-		if (0 <= player_info->img_state && player_info->img_state < 15)
+		if (0 <= player_info->img_state && player_info->img_state < (num / 2))
 			player = game_info->textures.player_right_1;
 		else
 			player = game_info->textures.player_right_2;
 	}
 	else if (player_info->dir == LEFT)
 	{
-		if (0 <= player_info->img_state && player_info->img_state < 15)
+		if (0 <= player_info->img_state && player_info->img_state < (num / 2))
 			player = game_info->textures.player_left_1;
 		else
 			player = game_info->textures.player_left_2;
@@ -74,15 +76,10 @@ void	enemy_render(t_game_info *game_info)
 	while (i < game_info->enemy_cnt)
 	{
 		enemy_info = game_info->enemy_info + i;
-		enemy_info->img_state = (enemy_info->img_state + 1) % 30;
 		if (enemy_info->dir == RIGHT)
-		{
 			enemy = game_info->textures.enemy_right;
-		}
 		else if (enemy_info->dir == LEFT)
-		{
 			enemy = game_info->textures.enemy_left;
-		}
 		mlx_put_image_to_window(game_info->mlx, game_info->win, enemy,
 			game_info->enemy_info[i].x * 64, game_info->enemy_info[i].y * 64);
 		i++;
@@ -125,7 +122,7 @@ int	render(t_game_info *game_info)
 	enemy_render(game_info);
 	step_render(game_info, game_info->moved_cnt);
 	if (is_collision(game_info))
-		return_ko();
+		return_ko(game_info);
 	if (game_info->player_info.img_state
 		% (get_frame(game_info->enemy_cnt)) == 0)
 	{

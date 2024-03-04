@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 01:17:14 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/29 15:32:20 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/04 20:35:30 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ int	main(int argc, char *argv[])
 	create_enemy(&game_info);
 	mlx_key_hook(game_info.win, key_control, &game_info);
 	mlx_loop_hook(game_info.mlx, render, &game_info);
-	mlx_hook(game_info.win, 17, 0, on_destroy, &game_info);
+	mlx_hook(game_info.win, EXIT_EVENT, 0, on_destroy, &game_info);
 	mlx_loop(game_info.mlx);
+	exit(0);
 }
 
 void	map_info_init(t_map_info *map_info)

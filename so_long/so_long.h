@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 03:29:35 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/29 15:40:02 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/04 20:12:13 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 # include <fcntl.h>
 # include "get_next_line.h"
 # include "libft.h"
+
+# define RELEASE_EVENT 3
+# define EXIT_EVENT 17
+
 # define KEY_UP 126
 # define KEY_DOWN 125
 # define KEY_LEFT 123
@@ -25,6 +29,8 @@
 # define LEFT 123
 # define RIGHT 124
 # define KEY_ESC 53
+
+# include <stdio.h>
 
 typedef struct s_pos
 {
@@ -72,6 +78,7 @@ typedef struct s_textures
 	void	*number_8;
 	void	*number_9;
 }	t_textures;
+
 typedef struct s_object_info
 {
 	int		x;
@@ -103,10 +110,11 @@ int		key_control(int keycode, t_game_info *game_info);
 
 int		render(t_game_info *game_info);
 void	step_render(t_game_info *game_info, int num);
+void	player_render(t_game_info *game_info);
 
 void	return_error(void);
-void	return_ok(void);
-void	return_ko(void);
+void	return_ok(t_game_info *game_info);
+void	return_ko(t_game_info *game_info);
 void	new_2d_array(char ***arr, int width, int height);
 int		is_frame(t_map_info *map_info, int x, int y);
 
@@ -117,5 +125,7 @@ void	game_info_init(t_game_info *game_info);
 
 void	free_2d_array(char **array, int n);
 int		get_frame(int x);
+
+void	game_free(t_game_info *game_info);
 
 #endif
