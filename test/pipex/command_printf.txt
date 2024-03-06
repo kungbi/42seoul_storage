@@ -1,0 +1,9 @@
+
+	for(int i = 0; i < vars.command_cnt; i++)
+	{
+		printf("command: %s\n", vars.commands[i].name);
+		for(int j = 0; vars.commands[i].args[j] != NULL; j++)
+		{
+			printf("option: %s\n", vars.commands[i].args[j]);
+		}
+	}
