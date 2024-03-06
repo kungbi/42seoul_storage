@@ -1,4 +1,4 @@
-<img src="img/holy_graph.jpg" width="400"/>
+<img src="img/holy_graph.jpg" width="600"/>
 
 '42 Seoul'을 하면서 진행했던 프로젝트를 기록한 repository입니다.
 
