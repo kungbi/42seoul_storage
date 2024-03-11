@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:02:51 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/11 16:03:27 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:22:44 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,13 +127,13 @@ int	render(t_game_info *game_info)
 	enemy_render(game_info);
 	player_render(game_info);
 	step_render(game_info, game_info->moved_cnt);
-	// if (is_collision(game_info))
-	// 	return_ko(game_info);
-	// if (game_info->player_info.img_state
-	// 	% (get_frame(game_info->enemy_cnt)) == 0)
-	// {
-	// 	game_info->player_info.img_state++;
-	// 	enemy_move(game_info);
-	// }
+	if (is_collision(game_info))
+		return_ko(game_info);
+	if (game_info->player_info.img_state
+		% (get_frame(game_info->enemy_cnt)) == 0)
+	{
+		game_info->player_info.img_state++;
+		enemy_move(game_info);
+	}
 	return (0);
 }
