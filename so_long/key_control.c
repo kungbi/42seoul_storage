@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:17:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/04 19:47:06 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/11 11:33:01 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	is_next_pos_available(t_game_info *game_info, t_pos *next_pos)
 
 void	move(t_game_info *game_info, t_pos *next_pos)
 {
+	mlx_put_image_to_window(game_info->mlx, game_info->win, game_info->textures.tile,
+		game_info->player_info.x * 64, game_info->player_info.y * 64);
 	game_info->player_info.x = next_pos->x;
 	game_info->player_info.y = next_pos->y;
 	game_info->moved_cnt++;

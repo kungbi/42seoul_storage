@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 03:29:35 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/04 20:12:13 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/11 11:31:31 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ void	create_enemy(t_game_info *game_info);
 int		key_control(int keycode, t_game_info *game_info);
 
 int		render(t_game_info *game_info);
+void	map_render(t_game_info *game_info);
 void	step_render(t_game_info *game_info, int num);
 void	player_render(t_game_info *game_info);
 

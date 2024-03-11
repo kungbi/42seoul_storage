@@ -6,11 +6,13 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 15:35:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/04 20:32:54 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/11 11:29:51 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+#include <stdio.h>
 
 int	put_enemy_to_map(t_game_info *game_info, int n);
 int	set_enemy_count(t_map_info *map_info);
@@ -124,5 +126,5 @@ int	get_value_n_free(int *arr, int idx)
 
 	num = arr[idx];
 	free(arr);
-	return (idx);
+	return (num);
 }
