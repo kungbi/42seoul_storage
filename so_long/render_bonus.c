@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:02:51 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/11 16:22:44 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/12 17:17:19 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,22 @@ void	enemy_move(t_game_info *game_info)
 	i = 0;
 	while (i < game_info->enemy_cnt)
 	{
-		mlx_put_image_to_window(game_info->mlx, game_info->win, game_info->textures.tile,
-				(game_info->enemy_info + i)->x * 64, (game_info->enemy_info + i)->y * 64);
-		if (game_info->map_info.map[(game_info->enemy_info + i)->y][(game_info->enemy_info + i)->x] == 'C')
-			mlx_put_image_to_window(game_info->mlx, game_info->win, game_info->textures.collection,
-					(game_info->enemy_info + i)->x * 64 + 12, (game_info->enemy_info + i)->y * 64 + 12);
-		nx = (game_info->enemy_info + i)->x;
-		if ((game_info->enemy_info + i)->dir == RIGHT)
+		clean_enemy_pos(game_info, i);
+		nx = game_info->enemy_info[i].x;
+		if (game_info->enemy_info[i].dir == RIGHT)
 			nx++;
-		else if ((game_info->enemy_info + i)->dir == LEFT)
+		else if (game_info->enemy_info[i].dir == LEFT)
 			nx--;
-		if (game_info->map_info.map[(game_info->enemy_info + i)->y][nx] == '1' ||
-			game_info->map_info.map[(game_info->enemy_info + i)->y][nx] == 'E')
+		if (game_info->map_info.map[game_info->enemy_info[i].y][nx] == '1' ||
+			game_info->map_info.map[game_info->enemy_info[i].y][nx] == 'E')
 		{
-			if ((game_info->enemy_info + i)->dir == RIGHT)
-				(game_info->enemy_info + i)->dir = LEFT;
-			else if ((game_info->enemy_info + i)->dir == LEFT)
-				(game_info->enemy_info + i)->dir = RIGHT;
+			if (game_info->enemy_info[i].dir == RIGHT)
+				game_info->enemy_info[i].dir = LEFT;
+			else if (game_info->enemy_info[i].dir == LEFT)
+				game_info->enemy_info[i].dir = RIGHT;
 		}
 		else
-			(game_info->enemy_info + i)->x = nx;
+			game_info->enemy_info[i].x = nx;
 		i++;
 	}
 }
@@ -48,27 +44,26 @@ void	player_render(t_game_info *game_info)
 {
 	t_object_info	*player_info;
 	void			*player;
-	int				num;
 
-	num = get_frame(game_info->enemy_cnt);
 	player = NULL;
 	player_info = &game_info->player_info;
-	player_info->img_state = (player_info->img_state + 1) % (num);
+	player_info->img_state = (player_info->img_state + 1) % (30);
 	if (player_info->dir == RIGHT)
 	{
-		if (0 <= player_info->img_state && player_info->img_state < (num / 2))
+		if (0 <= player_info->img_state && player_info->img_state < (30 / 2))
 			player = game_info->textures.player_right_1;
 		else
 			player = game_info->textures.player_right_2;
 	}
 	else if (player_info->dir == LEFT)
 	{
-		if (0 <= player_info->img_state && player_info->img_state < (num / 2))
+		if (0 <= player_info->img_state && player_info->img_state < (30 / 2))
 			player = game_info->textures.player_left_1;
 		else
 			player = game_info->textures.player_left_2;
 	}
-	mlx_put_image_to_window(game_info->mlx, game_info->win, game_info->textures.tile,
+	mlx_put_image_to_window(game_info->mlx, game_info->win,
+		game_info->textures.tile,
 		game_info->player_info.x * 64, game_info->player_info.y * 64);
 	mlx_put_image_to_window(game_info->mlx, game_info->win, player,
 		game_info->player_info.x * 64, game_info->player_info.y * 64);

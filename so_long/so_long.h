@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 03:29:35 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/11 11:31:31 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/12 17:18:51 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,5 +128,6 @@ void	free_2d_array(char **array, int n);
 int		get_frame(int x);
 
 void	game_free(t_game_info *game_info);
+void	clean_enemy_pos(t_game_info *game_info, int i);
 
 #endif
