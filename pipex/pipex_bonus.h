@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:28:23 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/16 21:32:58 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/16 21:34:09 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#ifndef PIPEX_BONUS_H
+# define PIPEX_BONUS_H
 # include "libft.h"
-# include "gnl.h"
+# include "gnl_bonus.h"
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>

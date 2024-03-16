@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   command_split.c                                    :+:      :+:    :+:   */
+/*   command_split_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 22:44:56 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/16 21:28:01 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/16 21:17:57 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 int	get_word_count(char const *s);
 int	split_word(char const *s, char **words);

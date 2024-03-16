@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:28:10 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/04 22:15:51 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/16 21:17:11 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int	main(int argc, char *argv[], char *envp[])
 	vars.heredoc = 0;
 	input_validate(&vars, argc - 1, argv + 1, envp);
 	if (pipex_start(&vars) != 0)
-		return (2);
-	return (0);
+		exit(2);
+	exit(0);
 }

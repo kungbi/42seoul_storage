@@ -6,11 +6,11 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:07:47 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/03 17:33:04 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/16 21:42:18 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 int	main(int argc, char *argv[], char *envp[])
 {
@@ -21,7 +21,7 @@ int	main(int argc, char *argv[], char *envp[])
 		return_error("Required 4 arguments", 1);
 	vars.bonus = 1;
 	vars.heredoc = 0;
-	if (ft_strncmp(argv[1], "heredoc", 8) == 0)
+	if (ft_strncmp(argv[1], "here_doc", 9) == 0)
 	{
 		if (argc < 6)
 			return_error("Required 4 arguments", 1);
