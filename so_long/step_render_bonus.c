@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:04:43 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/11 16:04:58 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/16 21:00:25 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	step_render(t_game_info *game_info, int num)
 	str_num = ft_itoa(num);
 	if (str_num == NULL)
 		return_error();
-	while (x < ft_strlen(str_num))
+	while ((size_t) x < ft_strlen(str_num))
 	{
 		mlx_put_image_to_window(game_info->mlx, game_info->win,
 			game_info->textures.number_back, (x + 1) * 32, 32);
