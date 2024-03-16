@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_validate.c                                   :+:      :+:    :+:   */
+/*   input_validate_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 21:38:02 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/12 22:47:37 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/16 20:32:42 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	is_validation(char *str);
 int	duplicate_check(int n, char *arr[]);

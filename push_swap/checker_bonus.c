@@ -6,13 +6,11 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:50:11 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/04 09:04:41 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/16 20:32:04 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-#include <stdio.h>
 
 void	input_commands(t_command_lst *command_lst);
 

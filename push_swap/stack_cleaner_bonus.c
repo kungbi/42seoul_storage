@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_cleaner.c                                    :+:      :+:    :+:   */
+/*   stack_cleaner_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 00:29:56 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/06 22:23:06 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/16 20:33:35 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	clean_dual_stack(t_dual_stack **dual_stack)
 {

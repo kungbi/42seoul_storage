@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_dual_stack.c                                  :+:      :+:    :+:   */
+/*   sort_dual_stack_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:56:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 17:42:03 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/16 20:32:59 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	sort_dual_stack_a_core(t_dual_stack *dual_stack,
 			t_oper_counter *oper_counter, int pivots[], int n);

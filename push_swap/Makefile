@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:54:02 by woonshin          #+#    #+#              #
-#    Updated: 2024/03/16 20:16:23 by woonshin         ###   ########.fr        #
+#    Updated: 2024/03/16 20:20:11 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,9 +31,9 @@ INPUT_VALI_OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(INPUT_VALI_FILES)))
 STACK_OBJ 			= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(STACK_FILES)))
 
 # Bonus
-BONUS_NAME	= checker
-SRC_BNS_FILES	= checker_bonus command_execution_bonus command_lst_bonus 
-SORT_BNS_FILES	= sort_dual_stack_bonus sort_utils_bonus sort_utils2_bonus sort_utils3_bonus 
+BONUS_NAME				= checker
+SRC_BNS_FILES			= checker_bonus command_execution_bonus command_lst_bonus 
+SORT_BNS_FILES			= sort_dual_stack_bonus sort_utils_bonus sort_utils2_bonus sort_utils3_bonus 
 STACK_BNS_FILES			= stack_bonus stack_operation_bonus stack_cleaner_bonus stack_swap_bonus stack_rotate_bonus stack_reverse_rotate_bonus stack_pop_bonus 
 INPUT_BNS_VALI_FILES	= input_validate_bonus
 BNS_OBJ 				= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_BNS_FILES)))

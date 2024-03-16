@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_pop.c                                        :+:      :+:    :+:   */
+/*   stack_pop_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 01:29:12 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 12:59:09 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/16 20:33:44 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	stack_pop(t_stack *stack_from, t_stack *stack_to)
 {
