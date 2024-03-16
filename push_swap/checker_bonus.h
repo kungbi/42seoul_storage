@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:50:42 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/01 22:19:43 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/16 20:50:12 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
-# include "stack.h"
-# include "get_next_line.h"
-# include "sort.h"
+# include "stack_bonus.h"
+# include "get_next_line_bonus.h"
+# include "sort_bonus.h"
 # include "libft.h"
-# include "push_swap.h"
+# include "push_swap_bonus.h"
 
 typedef struct s_command_lst
 {
