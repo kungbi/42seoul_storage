@@ -6,53 +6,54 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/25 21:54:02 by woonshin          #+#    #+#              #
-#    Updated: 2024/03/01 21:54:01 by woonshin         ###   ########.fr        #
+#    Updated: 2024/03/16 20:16:23 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC			= cc
 NAME		= push_swap
-INCLUDE	= include
-SRC_DIR	= src/
-OBJ_DIR	= obj/
-CFLAGS	= -Wall -Werror -Wextra
+SRC_DIR		= ./
+OBJ_DIR		= obj/
+CFLAGS		= -Wall -Werror -Wextra
 
-SRC_FILES	= push_swap
-SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
-OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
-
-INPUT_VALI_SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, input_validate))
-INPUT_VALI_OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, input_validate))
-
-SORT_FILES	= sort_dual_stack sort_utils sort_utils2 sort_utils3
-SORT_SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SORT_FILES)))
-SORT_OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SORT_FILES)))
-
-STACK_FILES	= stack stack_operation stack_cleaner stack_swap stack_rotate stack_reverse_rotate stack_pop
-STACK_SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(STACK_FILES)))
-STACK_OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(STACK_FILES)))
-
+# Libft
 LIBFT = libft
 LIBFT_TARGET = libft.a
 
-BONUS_NAME	= checker
-BONUS_FILES	= checker_bonus command_execution_bonus command_lst_bonus
-BONUS_SRC	= $(addprefix $(SRC_DIR), $(addsuffix .c, $(BONUS_FILES)))
-BONUS_OBJ	= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(BONUS_FILES)))
+# Mandatory
+SRC_FILES			= push_swap
+SORT_FILES			= sort_dual_stack sort_utils sort_utils2 sort_utils3
+STACK_FILES			= stack stack_operation stack_cleaner stack_swap stack_rotate stack_reverse_rotate stack_pop
+INPUT_VALI_FILES	= input_validate
+OBJ 				= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+SORT_OBJ 			= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SORT_FILES)))
+INPUT_VALI_OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(INPUT_VALI_FILES)))
+STACK_OBJ 			= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(STACK_FILES)))
 
-GET_NEXT_LINE_DIR = get_next_line/
-GET_NEXT_LINE_NAME = get_next_line.a
-GET_NEXT_LINE_FILES = get_next_line get_next_line_utils
-GET_NEXT_LINE_SRC	= $(addprefix $(GET_NEXT_LINE_DIR), $(addsuffix .c, $(GET_NEXT_LINE_FILES)))
-GET_NEXT_LINE_OBJ	= $(addprefix $(GET_NEXT_LINE_DIR), $(addsuffix .o, $(GET_NEXT_LINE_FILES)))
+# Bonus
+BONUS_NAME	= checker
+SRC_BNS_FILES	= checker_bonus command_execution_bonus command_lst_bonus 
+SORT_BNS_FILES	= sort_dual_stack_bonus sort_utils_bonus sort_utils2_bonus sort_utils3_bonus 
+STACK_BNS_FILES			= stack_bonus stack_operation_bonus stack_cleaner_bonus stack_swap_bonus stack_rotate_bonus stack_reverse_rotate_bonus stack_pop_bonus 
+INPUT_BNS_VALI_FILES	= input_validate_bonus
+BNS_OBJ 				= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_BNS_FILES)))
+SORT_BNS_OBJ 			= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SORT_BNS_FILES)))
+INPUT_VALI_BNS_OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(INPUT_BNS_VALI_FILES)))
+STACK_BNS_OBJ 			= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(STACK_BNS_FILES)))
+
+# GNL
+GET_NEXT_LINE_FILES 	= get_next_line get_next_line_utils
+GET_NEXT_LINE_OBJ		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(GET_NEXT_LINE_FILES)))
+GET_NEXT_LINE_BNS_FILES = get_next_line_bonus get_next_line_utils_bonus
+GET_NEXT_LINE_BNS_OBJ	= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(GET_NEXT_LINE_FILES)))
 
 all: $(NAME)
 
-$(NAME): $(LIBFT_TARGET) $(OBJ_DIR) $(OBJ) $(STACK_OBJ) $(SORT_OBJ) $(INPUT_VALI_OBJ) 
-	$(CC) $(LIBFT_TARGET) $(INPUT_VALI_OBJ) $(OBJ) $(STACK_OBJ) $(SORT_OBJ) -o $(NAME)
+$(NAME): $(LIBFT_TARGET) $(OBJ) $(STACK_OBJ) $(SORT_OBJ) $(INPUT_VALI_OBJ) $(GET_NEXT_LINE_OBJ)
+	$(CC) $(LIBFT_TARGET) $(INPUT_VALI_OBJ) $(OBJ) $(STACK_OBJ) $(SORT_OBJ) $(GET_NEXT_LINE_OBJ) -o $(NAME)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -I $(INCLUDE) -I $(LIBFT) -I $(GET_NEXT_LINE_DIR) -c $< -o $@ 
+$(OBJ_DIR)%.o: %.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(LIBFT) 
 
 $(LIBFT_TARGET): 
 	make -C libft
@@ -61,27 +62,21 @@ $(LIBFT_TARGET):
 $(OBJ_DIR): 
 	mkdir $(OBJ_DIR)
 
-clean:
-	rm -rf $(OBJ_DIR)
-	make clean -C $(LIBFT)
-	rm -rf $(GET_NEXT_LINE_OBJ)
-	rm -rf $(BONUS_OBJ)
-
-$(BONUS_NAME): $(BONUS_OBJ) $(INPUT_VALI_OBJ) $(GET_NEXT_LINE_OBJ) $(LIBFT_TARGET) $(SORT_OBJ) $(STACK_OBJ)
-	$(CC) $(BONUS_OBJ) $(INPUT_VALI_OBJ) $(GET_NEXT_LINE_OBJ) $(LIBFT_TARGET) $(SORT_OBJ) $(STACK_OBJ) -o $(BONUS_NAME)
+$(BONUS_NAME): $(LIBFT_TARGET) $(BNS_OBJ) $(SORT_BNS_OBJ) $(INPUT_VALI_BNS_OBJ) $(STACK_BNS_OBJ) $(GET_NEXT_LINE_BNS_OBJ)
+	$(CC) $(LIBFT_TARGET) $(BNS_OBJ) $(SORT_BNS_OBJ) $(INPUT_VALI_BNS_OBJ) $(STACK_BNS_OBJ) $(GET_NEXT_LINE_BNS_OBJ) -o $(BONUS_NAME)
 
 bonus: $(BONUS_NAME)  
 
+clean:
+	make clean -C $(LIBFT)
+	rm -rf $(OBJ_DIR)
+
 fclean:	clean
 	rm -f $(NAME)
-	rm -f $(LIBFT_TARGET)
-	rm -f $(GET_NEXT_LINE_NAME)
 	rm -f $(BONUS_NAME)
+	rm -f $(LIBFT_TARGET)
 	make fclean -C $(LIBFT)
 
 re: fclean all
 
-$(GET_NEXT_LINE_NAME): $(GET_NEXT_LINE_OBJ)
-	ar rsu $(GET_NEXT_LINE_NAME) $(GET_NEXT_LINE_OBJ) 
-	
 .PHONY:	all bonus clean fclean re 

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:45:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/01/19 17:13:01 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:12:58 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
 # endif
@@ -43,8 +43,8 @@ int			flexstr_getline(t_flexstr **flexstr, char **output);
 int			flexstr_linepop(t_flexstr **flexstr, char **output, size_t i);
 int			flexstr_extend(t_flexstr **flexstr);
 int			flexstr_free(t_flexstr **flexstr, int exit_num);
+t_flexlst	*flexlst_push(t_flexlst **flexlst, int fd);
 int			flexlst_getline(t_flexlst *flexlst, char **output);
 char		*flexlst_clear(t_flexlst **flexlst, int fd);
-t_flexlst	*flexlst_push(t_flexlst **flexlst, int fd);
 
 #endif
