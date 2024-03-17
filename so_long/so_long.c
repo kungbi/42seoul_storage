@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 01:17:14 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/17 15:40:21 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:15:47 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char *argv[])
 	map_input(&game_info.map_info, argv[1]);
 	map_check(&game_info.map_info);
 	game_info_init(&game_info);
-	map_render(&game_info) ;
+	map_render(&game_info);
 	mlx_key_hook(game_info.win, key_control, &game_info);
 	mlx_loop_hook(game_info.mlx, render, &game_info);
 	mlx_hook(game_info.win, EXIT_EVENT, 0, on_destroy, &game_info);

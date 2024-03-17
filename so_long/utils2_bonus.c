@@ -6,17 +6,20 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 13:16:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/11 16:13:58 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:49:02 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-int	on_destroy(t_game_info *game_info)
+int	on_destroy(t_game_info *game_info, int print)
 {
 	game_free(game_info);
-	ft_putnbr_fd(game_info->moved_cnt, 1);
-	ft_putchar_fd('\n', 1);
+	if (print == 1)
+	{
+		ft_putnbr_fd(game_info->moved_cnt, 1);
+		ft_putchar_fd('\n', 1);
+	}
 	exit(0);
 }
 

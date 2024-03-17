@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:17:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/16 00:06:59 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:49:30 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	is_next_pos_available(t_game_info *game_info, t_pos *next_pos)
 		return (-1);
 	else if (game_info->map_info.map[next_pos->y][next_pos->x] == 'C')
 	{
-        game_info->map_info.map[next_pos->y][next_pos->x] = '0';
-        game_info->collection_cnt++;
-    }
+		game_info->map_info.map[next_pos->y][next_pos->x] = '0';
+		game_info->collection_cnt++;
+	}
 	else if (game_info->map_info.map[next_pos->y][next_pos->x] == 'E')
 	{
 		if ((size_t) game_info->collection_cnt
@@ -63,7 +63,7 @@ int	key_control(int keycode, t_game_info *game_info)
 	else if (keycode == KEY_DOWN)
 		next_pos.y++;
 	else if (keycode == KEY_ESC)
-		on_destroy(game_info);
+		on_destroy(game_info, 0);
 	else
 		return (1);
 	if (keycode == KEY_LEFT || keycode == KEY_RIGHT)

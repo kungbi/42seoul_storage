@@ -6,13 +6,11 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 15:35:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/11 14:42:39 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:42:59 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-
-#include <stdio.h>
 
 int	put_enemy_to_map(t_game_info *game_info, int n);
 int	set_enemy_count(t_map_info *map_info);
@@ -24,6 +22,7 @@ void	create_enemy(t_game_info *game_info)
 	int	d;
 	int	n;
 
+	srand((unsigned int)time(NULL));
 	n = set_enemy_count(&game_info->map_info);
 	game_info->enemy_info = ft_calloc(n, sizeof(t_object_info));
 	if (game_info->enemy_info == NULL)

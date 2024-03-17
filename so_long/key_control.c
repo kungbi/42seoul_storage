@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:17:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/12 17:23:05 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:33:30 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	key_control(int keycode, t_game_info *game_info)
 	else if (keycode == KEY_DOWN)
 		next_pos.y++;
 	else if (keycode == KEY_ESC)
-		on_destroy(game_info);
+		on_destroy(game_info, 0);
 	else
 		return (1);
 	if (keycode == KEY_LEFT || keycode == KEY_RIGHT)
