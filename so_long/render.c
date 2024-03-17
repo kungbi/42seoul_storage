@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:02:51 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/12 17:22:09 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/17 15:39:49 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,5 @@ void	map_render(t_game_info *game_info)
 int	render(t_game_info *game_info)
 {
 	player_render(game_info);
-	if (is_collision(game_info))
-		return_ko(game_info);
 	return (0);
 }
