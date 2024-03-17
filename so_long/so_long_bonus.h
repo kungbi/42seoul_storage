@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 03:29:35 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/12 17:17:05 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:49:13 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include <time.h>
 # include "get_next_line.h"
 # include "libft.h"
 
@@ -29,8 +30,6 @@
 # define LEFT 123
 # define RIGHT 124
 # define KEY_ESC 53
-
-# include <stdio.h>
 
 typedef struct s_pos
 {
@@ -120,7 +119,7 @@ void	return_ko(t_game_info *game_info);
 void	new_2d_array(char ***arr, int width, int height);
 int		is_frame(t_map_info *map_info, int x, int y);
 
-int		on_destroy(t_game_info *game_info);
+int		on_destroy(t_game_info *game_info, int print);
 void	textures_init(t_game_info *game_info);
 void	map_info_init(t_map_info *map_info);
 void	game_info_init(t_game_info *game_info);
