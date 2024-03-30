@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.h                                             :+:      :+:    :+:   */
+/*   sort_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 00:01:42 by woonshin          #+#    #+#             */
-/*   Updated: 2024/02/10 15:53:36 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/03/31 08:43:01 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORT_H
-# define SORT_H
-# include "stack.h"
+#ifndef SORT_BONUS_H
+# define SORT_BONUS_H
+# include "stack_bonus.h"
 
 void	get_two_pivots(t_stack *stack, int n, int pivots[]);
 void	lst_to_arr(t_stack *stack, int n, int *arr);
