@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:28:23 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/16 21:34:09 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/06 16:03:18 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,8 @@ int		wait_all(size_t n);
 void	return_error(char *str, int code);
 
 void	heredoc(t_pipex_vars *vars, char *LIMITER);
+
+void	free_2d_array(char **arr);
+void	free_commands(t_pipex_vars *vars);
 
 #endif

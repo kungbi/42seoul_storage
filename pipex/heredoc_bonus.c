@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 00:43:44 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/16 21:27:36 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:49:26 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void	heredoc(t_pipex_vars *vars, char *LIMITER)
 			&& line[limiter_len] == '\n')
 			break ;
 		write(fd, line, ft_strlen(line));
+		free(line);
 		line = get_next_line(STDIN_FILENO);
 	}
+	free(line);
 	close(fd);
 }

@@ -6,15 +6,15 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 22:44:56 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/16 21:28:01 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/06 16:15:00 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	get_word_count(char const *s);
-int	split_word(char const *s, char **words);
-int	split_core(const char *s, char **words, int start, int i);
+int		get_word_count(char const *s);
+int		split_word(char const *s, char **words);
+int		split_core(const char *s, char **words, int start, int i);
 void	delimiter_counter(char *delimiter, size_t *cnt, char c);
 void	remove_backslash(char **words);
 
@@ -105,15 +105,13 @@ int	split_word(char const *s, char **words)
 	{
 		if ((s[i] == '\'' || s[i] == '\"') && s[i - 1] != '\\')
 			delimiter_counter(&delimiter, &j, s[i]);
-		if (j % 2 == 1)
+		if (j % 2 == 0)
 		{
-			i++;
-			continue ;
+			if (s[i] == ' ' && s[i + 1] != ' ')
+				start = i + 1;
+			if (split_core(s, &words[x], start, i))
+				x++;
 		}
-		if (s[i] == ' ' && s[i + 1] != ' ')
-			start = i + 1;
-		if (split_core(s, &words[x], start, i))
-			x++;
 		i++;
 	}
 	return (0);
@@ -132,18 +130,4 @@ int	split_core(const char *s, char **words, int start, int i)
 		return (1);
 	}
 	return (0);
-}
-
-void	delimiter_counter(char *delimiter, size_t *cnt, char c)
-{
-	if (*delimiter == '\0')
-	{
-		*delimiter = c;
-		*cnt = 1;
-		return ;
-	}
-	else if (*delimiter == c)
-		*cnt = *cnt + 1;
-	if (*cnt % 2 == 0)
-		*delimiter = '\0';
 }

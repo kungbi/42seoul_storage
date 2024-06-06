@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:35:02 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/16 21:27:33 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/06 16:00:22 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ void	input_validate(t_pipex_vars *vars, int n, char *args[], char *envp[])
 	init_commands(vars, n - 2, args + 1);
 	get_env_path(envp, &env_path);
 	paths = ft_split(env_path, ':');
+	free(env_path);
 	check_commands(vars, paths);
+	free_2d_array(paths);
 }
 
 void	check_infile(t_pipex_vars *vars, char *filename)

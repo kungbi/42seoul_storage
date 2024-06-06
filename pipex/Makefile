@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 13:19:28 by woonshin          #+#    #+#              #
-#    Updated: 2024/03/16 21:15:28 by woonshin         ###   ########.fr        #
+#    Updated: 2024/06/06 16:15:37 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,10 @@ CFLAGS			= -Wall -Werror -Wextra
 INCLUDES		= -I libft
 
 GNL_FILES		= gnl gnl_utils
-PIPEX_FILES 	= pipex input_validate input_validate2 pipex_fork utils command_split
+PIPEX_FILES 	= pipex input_validate input_validate2 pipex_fork utils command_split delimiter_counter
 
 GNL_BNS_FILES	= gnl_bonus gnl_utils_bonus 
-PIPEX_FILES_BNS = pipex_bonus input_validate_bonus input_validate2_bonus pipex_fork_bonus utils_bonus heredoc_bonus command_split_bonus
+PIPEX_FILES_BNS = pipex_bonus input_validate_bonus input_validate2_bonus pipex_fork_bonus utils_bonus heredoc_bonus command_split_bonus delimiter_counter_bonus
 
 GNL_OBJ 			= $(addsuffix .o, $(GNL_FILES))
 GNL_BNS_OBJ 		= $(addsuffix .o, $(GNL_BNS_FILES))
@@ -46,6 +46,7 @@ clean:
 	$(RM) $(PIPEX_FILES_OBJ)
 	$(RM) $(PIPEX_FILES_OBJ_BNS)
 	$(RM) $(GNL_OBJ)
+	$(RM) $(GNL_BNS_OBJ)
 	@make clean -C $(LIBFT)
 
 fclean: clean
