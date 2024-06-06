@@ -6,11 +6,16 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:28:10 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/16 21:17:11 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/06 14:51:04 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
+
+void leaks()
+{
+    system("leaks pipex");
+}
 
 int	main(int argc, char *argv[], char *envp[])
 {

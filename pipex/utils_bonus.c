@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 00:01:44 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/16 21:17:18 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/06 14:12:45 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ int	wait_all(size_t n)
 	num = 0;
 	while (i < n)
 	{
-		// printf("wait reesult %d\n", waitpid(0, &num, 0));
-		// printf("num %d\n\n", num);
+		waitpid(0, &num, 0);
 		if (num != 0)
 			result = num;
 		i++;
