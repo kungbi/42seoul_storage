@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 22:44:56 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/06 16:17:34 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/07 21:44:49 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	split_word(char const *s, char **words)
 	{
 		if ((s[i] == '\'' || s[i] == '\"') && s[i - 1] != '\\')
 			delimiter_counter(&delimiter, &j, s[i]);
-		if (j % 2 == 1)
+		if (j % 2 == 0)
 		{
 			if (s[i] == ' ' && s[i + 1] != ' ')
 				start = i + 1;
