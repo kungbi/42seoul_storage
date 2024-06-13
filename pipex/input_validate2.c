@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:44:48 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/13 14:11:10 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/13 15:24:05 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	check_commands(t_pipex_vars *vars, char **paths, int i)
 {
-    if (vars->commands[i].name[0] == '/')
-        vars->commands[i].path = vars->commands[i].name;
-    else if (vars->commands[i].name[0] == '.')
-        vars->commands[i].path = vars->commands[i].name;
-    else
-        get_command_path(vars->commands + i, paths);
+	if (vars->commands[i].name[0] == '/')
+		vars->commands[i].path = vars->commands[i].name;
+	else if (vars->commands[i].name[0] == '.')
+		vars->commands[i].path = vars->commands[i].name;
+	else
+		get_command_path(vars->commands + i, paths);
 }
 
 void	init_commands(t_pipex_vars *vars, int n, char **command_name)

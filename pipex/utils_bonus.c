@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 00:01:44 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/13 14:18:54 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/13 15:22:00 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ int	wait_all(size_t n)
 	while (i < n)
 	{
 		waitpid(0, &num, 0);
+		num = WEXITSTATUS(num);
 		if (num != 0)
 			result = num;
+		if (num == 127)
+			ft_putstr_fd("pipex: command not found\n", 1);
 		i++;
 	}
 	return (result);
@@ -43,7 +46,7 @@ void	return_error(char *str, int code)
 {
 	if (str != NULL)
 	{
-        ft_putstr_fd("pipex: ", 1);
+		ft_putstr_fd("pipex: ", 1);
 		ft_putstr_fd(str, 1);
 		ft_putchar_fd('\n', 1);
 		exit(code);
@@ -63,4 +66,17 @@ void	free_2d_array(char **arr)
 		i++;
 	}
 	free(arr);
+}
+
+int	validation_commands(t_pipex_vars *vars, int i)
+{
+	char	*env_path;
+	char	**paths;
+
+	get_env_path(vars->envp, &env_path);
+	paths = ft_split(env_path, ':');
+	free(env_path);
+	check_commands(vars, paths, i);
+	free_2d_array(paths);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:38:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/12 23:11:19 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/13 15:21:10 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ int	pipex_start(t_pipex_vars *vars)
 		if (pid < 0)
 			return_error(NULL, 1);
 		if (pid == 0)
+		{
+			validation_commands(vars, i);
 			child_start(vars, fd, i);
+		}
 		dup2(fd[0], STDIN_FILENO);
 		close(fd[0]);
 		close(fd[1]);

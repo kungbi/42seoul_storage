@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:28:23 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/12 23:10:48 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/13 15:24:18 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	check_infile(t_pipex_vars *vars, char *filename);
 void	check_outfile(t_pipex_vars *vars, char *filename, int heredoc);
 void	get_env_path(char *envp[], char **env_path);
 void	get_command_path(t_command *command, char **paths);
-void	check_commands(t_pipex_vars *vars, char **paths);
+void	check_commands(t_pipex_vars *vars, char **paths, int i);
 void	init_commands(t_pipex_vars *vars, int n, char **command_name);
 
 int		pipex_start(t_pipex_vars *vars);
@@ -66,6 +66,6 @@ void	return_error(char *str, int code);
 void	heredoc(t_pipex_vars *vars, char *LIMITER);
 
 void	free_2d_array(char **arr);
-void	free_commands(t_pipex_vars *vars);
+int		validation_commands(t_pipex_vars *vars, int i);
 
 #endif

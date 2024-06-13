@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:07:47 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/12 23:10:56 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/13 15:13:10 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@ int	main(int argc, char *argv[], char *envp[])
 {
 	t_pipex_vars	vars;
 	int				i;
+	int				result;
 
 	if (argc < 5)
 		return_error("Required 4 arguments", 1);
 	vars.bonus = 1;
 	vars.heredoc = 0;
-    vars.envp = envp;
+	vars.envp = envp;
 	if (ft_strncmp(argv[1], "here_doc", 9) == 0)
 	{
 		if (argc < 6)
@@ -34,8 +35,8 @@ int	main(int argc, char *argv[], char *envp[])
 		argc--;
 	}
 	input_validate(&vars, argc - 1, argv + 1, envp);
-	pipex_start(&vars);
+	result = pipex_start(&vars);
 	if (vars.heredoc == 1)
 		unlink(".tmp");
-	exit(0);
+	exit(result);
 }
