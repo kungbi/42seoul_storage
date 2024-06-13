@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 00:01:44 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/06 15:43:23 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/13 14:43:39 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	wait_all(size_t n)
 	while (i < n)
 	{
 		waitpid(0, &num, 0);
+		num = WEXITSTATUS(num);
 		if (num != 0)
 			result = num;
 		i++;

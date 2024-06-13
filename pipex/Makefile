@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 13:19:28 by woonshin          #+#    #+#              #
-#    Updated: 2024/06/06 16:15:37 by woonshin         ###   ########.fr        #
+#    Updated: 2024/06/13 13:17:28 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME			= pipex
 NAME_BNS		= pipex_bonus
 LIBFT			= libft
 LIBFT_TARGET	= libft.a
-CFLAGS			= -Wall -Werror -Wextra
+# CFLAGS			= -Wall -Werror -Wextra
 INCLUDES		= -I libft
 
 GNL_FILES		= gnl gnl_utils
@@ -58,7 +58,7 @@ fclean: clean
 re: fclean all
 
 $(NAME_BNS): $(LIBFT_TARGET) $(PIPEX_FILES_OBJ_BNS) $(GNL_BNS_OBJ)
-	$(CC) $(LIBFT_TARGET) $(CFLAGS) $(GNL_BNS_OBJ) $(PIPEX_FILES_OBJ_BNS) -o $(NAME_BNS)
+	$(CC) $(LIBFT_TARGET) $(CFLAGS) $(GNL_BNS_OBJ) $(PIPEX_FILES_OBJ_BNS) -o $(NAME)
 
 bonus: $(NAME_BNS)
 

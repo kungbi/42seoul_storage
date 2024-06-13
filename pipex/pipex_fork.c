@@ -6,11 +6,24 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:38:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/16 21:32:46 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/13 14:44:44 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
+
+int	validation_commands(t_pipex_vars *vars, int i)
+{
+	char	*env_path;
+	char	**paths;
+	
+	get_env_path(vars->envp, &env_path);
+	paths = ft_split(env_path, ':');
+	free(env_path);
+	check_commands(vars, paths, i);
+	free_2d_array(paths);
+	return (0);
+}
 
 int	pipex_start(t_pipex_vars *vars)
 {
@@ -28,7 +41,10 @@ int	pipex_start(t_pipex_vars *vars)
 		if (pid < 0)
 			return_error(NULL, 1);
 		if (pid == 0)
+		{
+			validation_commands(vars, i);
 			child_start(vars, fd, i);
+		}
 		dup2(fd[0], STDIN_FILENO);
 		close(fd[0]);
 		close(fd[1]);
@@ -38,13 +54,15 @@ int	pipex_start(t_pipex_vars *vars)
 
 void	child_start(t_pipex_vars *vars, int *fd, size_t i)
 {
+	int	result;
 	if (i == 0)
 		first_child(vars, fd);
 	else if (i == vars->command_cnt - 1)
 		end_child(vars, fd);
 	else if (vars->bonus == 1)
 		middle_child(fd);
-	if (execve(vars->commands[i].path, vars->commands[i].args, NULL) < 0)
+	result = execve(vars->commands[i].path, vars->commands[i].args, vars->envp);
+	if (result < 0)
 		return_error(NULL, 127);
 }
 

@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:07:47 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/07 21:49:06 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/12 23:10:56 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int argc, char *argv[], char *envp[])
 		return_error("Required 4 arguments", 1);
 	vars.bonus = 1;
 	vars.heredoc = 0;
+    vars.envp = envp;
 	if (ft_strncmp(argv[1], "here_doc", 9) == 0)
 	{
 		if (argc < 6)

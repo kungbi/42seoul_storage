@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:28:23 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/07 21:47:08 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/12 23:10:48 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_pipex_vars
 	size_t		command_cnt;
 	int			bonus;
 	int			heredoc;
+	char		**envp;
 }	t_pipex_vars;
 
 char	**command_split(char const *s);

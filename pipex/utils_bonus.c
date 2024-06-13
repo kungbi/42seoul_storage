@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 00:01:44 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/06 16:12:05 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/13 14:18:54 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	return_error(char *str, int code)
 {
 	if (str != NULL)
 	{
-		ft_putstr_fd("pipex: ", 1);
+        ft_putstr_fd("pipex: ", 1);
 		ft_putstr_fd(str, 1);
 		ft_putchar_fd('\n', 1);
 		exit(code);

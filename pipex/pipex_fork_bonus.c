@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:38:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/03/16 21:33:53 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/12 23:11:19 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	child_start(t_pipex_vars *vars, int *fd, size_t i)
 		end_child(vars, fd);
 	else if (vars->bonus == 1)
 		middle_child(fd);
-	if (execve(vars->commands[i].path, vars->commands[i].args, NULL) < 0)
+	if (execve(vars->commands[i].path, vars->commands[i].args, vars->envp) < 0)
 		return_error(NULL, 127);
 }
 

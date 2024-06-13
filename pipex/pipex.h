@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:28:23 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/07 21:47:10 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/13 14:09:38 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_pipex_vars
 	size_t		command_cnt;
 	int			bonus;
 	int			heredoc;
+	char		**envp;
 }	t_pipex_vars;
 
 char	**command_split(char const *s);
@@ -49,7 +50,7 @@ void	check_infile(t_pipex_vars *vars, char *filename);
 void	check_outfile(t_pipex_vars *vars, char *filename, int heredoc);
 void	get_env_path(char *envp[], char **env_path);
 void	get_command_path(t_command *command, char **paths);
-void	check_commands(t_pipex_vars *vars, char **paths);
+void	check_commands(t_pipex_vars *vars, char **paths, int i);
 void	init_commands(t_pipex_vars *vars, int n, char **command_name);
 
 int		pipex_start(t_pipex_vars *vars);

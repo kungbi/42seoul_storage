@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:35:02 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/06 15:51:06 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/13 13:17:15 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 void	input_validate(t_pipex_vars *vars, int n, char *args[], char *envp[])
 {
-	char	*env_path;
-	char	**paths;
+	// char	*env_path;
+	// char	**paths;
 
 	check_infile(vars, args[0]);
 	check_outfile(vars, args[n - 1], vars->heredoc);
 	init_commands(vars, n - 2, args + 1);
-	get_env_path(envp, &env_path);
-	paths = ft_split(env_path, ':');
-	free(env_path);
-	check_commands(vars, paths);
-	free_2d_array(paths);
+	// get_env_path(envp, &env_path);
+	// paths = ft_split(env_path, ':');
+	// free(env_path);
+	// check_commands(vars, paths);
+	// free_2d_array(paths);
 }
 
 void	check_infile(t_pipex_vars *vars, char *filename)
