@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:19:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/15 05:42:24 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/15 06:00:45 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,13 @@ void tokenize(t_token **token_lst, char *line)
 				in_double_quote = !in_double_quote;
 			right++;
 		}
-		printf("%d %d\n", left, right);
 		if (right > left)
 		{
-			if (is_quotation_str(line, left, right))
-				token = new_token(line, left + 1, right - 1);
-			else
-				token = new_token(line, left, right);
+			token = new_token(line, left, right);
 			// 여기에서 dollar 처리. token_lst_back 이 HERE이 아니면.
 			add_token(token_lst, token);
 		}
 	}
+	if (in_single_quote || in_double_quote)
+		exit(0);
 }
