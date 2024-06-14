@@ -6,14 +6,14 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:19:17 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/15 06:00:45 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/15 06:37:19 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tokenize.h"
 
 
-void tokenize(t_token **token_lst, char *line)
+void	tokenize(t_token **token_lst, char *line)
 {
 	int left = 0, right = 0;
 	int in_single_quote = 0, in_double_quote = 0;
@@ -37,8 +37,8 @@ void tokenize(t_token **token_lst, char *line)
 		if (right > left)
 		{
 			token = new_token(line, left, right);
-			// 여기에서 dollar 처리. token_lst_back 이 HERE이 아니면.
-			add_token(token_lst, token);
+			if (tokenize_expend(token_lst, token) == 0)
+				add_token(token_lst, token);
 		}
 	}
 	if (in_single_quote || in_double_quote)
