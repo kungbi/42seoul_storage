@@ -4,6 +4,8 @@ CC = gcc
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
+INCLUDE = -I src/header
+
 # 소스 파일 설정
 SRC_FILES = $(shell find src -name "*.c")
 OBJ_FILES = $(SRC_FILES:.c=.o)
@@ -16,11 +18,11 @@ all: $(TARGET)
 
 # 타겟 빌드 규칙
 $(TARGET): $(OBJ_FILES) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ_FILES) -o $@ -L $(LIBFT_DIR) -lft -lreadline
+	$(CC) $(LIBFT) $(CFLAGS) $(OBJ_FILES) -o $@ -L $(LIBFT_DIR) $(INCLUDE) -lreadline
 
 # 개별 파일 빌드 규칙
 %.o: %.c
-	$(CC) $(CFLAGS) -I src/header -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDE) -I $(LIBFT_DIR) -c $< -o $@
 
 # libft 빌드 규칙
 $(LIBFT):

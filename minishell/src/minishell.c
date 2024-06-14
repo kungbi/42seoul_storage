@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:18:10 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/15 01:06:37 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/15 04:02:56 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ int	main(int argc, char **argv, char **envp)
 
 	while (1)
 	{
-		input = readline("minishell>");
+		input = readline("minishell> ");
 		if (input)
 			parse(input);
 		else
 			break ;
 		free(input);
+
+		//
 	}
 	return (0);
 }
