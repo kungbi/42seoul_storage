@@ -1,47 +1,40 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/29 13:19:28 by woonshin          #+#    #+#              #
-#    Updated: 2024/06/05 13:17:13 by woonshin         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+# 컴파일러와 플래그 설정
+CC = gcc
+# CFLAGS = -Wall -Wextra -Werror
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
-CC				= cc
-NAME			= minishell
-LIBFT			= libft
-LIBFT_TARGET	= libft.a
-CFLAGS			= -Wall -Werror -Wextra
-INCLUDES		= -I libft -I header 
+# 소스 파일 설정
+SRC_FILES = $(shell find src -name "*.c")
+OBJ_FILES = $(SRC_FILES:.c=.o)
 
+# 타겟 설정
+TARGET = minishell
 
+# 기본 빌드 규칙
+all: $(TARGET)
 
+# 타겟 빌드 규칙
+$(TARGET): $(OBJ_FILES) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJ_FILES) -o $@ -L $(LIBFT_DIR) -lft -lreadline
 
-all: $(NAME)
+# 개별 파일 빌드 규칙
+%.o: %.c
+	$(CC) $(CFLAGS) -I src/header -c $< -o $@
 
-$(LIBFT_TARGET):
-	@make -C libft
-	@mv libft/libft.a ./
+# libft 빌드 규칙
+$(LIBFT):
+	@make -C $(LIBFT_DIR)
 
-$(NAME): $(LIBFT_TARGET)
-	$(CC) $(LIBFT_TARGET) $(CFLAGS) -o $(NAME)
-
-%.o : %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c -o $@ $<
-
+# 클린업 규칙
 clean:
-	$(RM) $(PIPEX_FILES_OBJ)
-	@make clean -C $(LIBFT)
+	rm -f $(OBJ_FILES)
+	make -C $(LIBFT_DIR) clean
 
 fclean: clean
-	$(RM) $(LIBFT_TARGET)
-	$(RM) $(NAME)
-	@make fclean -C $(LIBFT)
+	rm -f $(TARGET)
+	make -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
-
-.PHONY:	all clean fclean re bonus
+.PHONY: all clean fclean re

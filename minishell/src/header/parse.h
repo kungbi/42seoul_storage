@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   parse.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 13:18:10 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/05 13:18:39 by woonshin         ###   ########.fr       */
+/*   Created: 2024/06/15 00:36:29 by woonshin          #+#    #+#             */
+/*   Updated: 2024/06/15 01:04:22 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-int main(int argc, char **argv, char **envp)
-{
+#ifndef PARSE_H
+# define PARSE_H
 
-}
+void	parse(char *input);
+
+#endif
