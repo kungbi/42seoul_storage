@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:35:02 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/22 16:04:25 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/22 23:03:01 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ void	get_env_path(char *envp[], char **env_path)
 		}
 		i++;
 	}
+	*env_path = ft_calloc(0, 1);
+	if (env_path == NULL)
+		return_error(NULL, 1);
 }
 
 void	get_command_path(t_command *command, char **paths)
