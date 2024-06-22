@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:38:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/13 15:22:56 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/22 16:04:10 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ int	pipex_start(t_pipex_vars *vars)
 
 void	child_start(t_pipex_vars *vars, int *fd, size_t i)
 {
-	int	result;
-
 	if (i == 0)
 		first_child(vars, fd);
 	else if (i == vars->command_cnt - 1)

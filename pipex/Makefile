@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 13:19:28 by woonshin          #+#    #+#              #
-#    Updated: 2024/06/13 13:17:28 by woonshin         ###   ########.fr        #
+#    Updated: 2024/06/22 16:06:12 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME			= pipex
 NAME_BNS		= pipex_bonus
 LIBFT			= libft
 LIBFT_TARGET	= libft.a
-# CFLAGS			= -Wall -Werror -Wextra
+CFLAGS			= -Wall -Werror -Wextra
 INCLUDES		= -I libft
 
 GNL_FILES		= gnl gnl_utils
@@ -37,30 +37,35 @@ $(LIBFT_TARGET):
 	@mv libft/libft.a ./
 
 $(NAME): $(LIBFT_TARGET) $(PIPEX_FILES_OBJ) $(GNL_OBJ)
+	@$(RM) $(PIPEX_FILES_OBJ_BNS)
+	@$(RM) $(GNL_BNS_OBJ)
 	$(CC) $(LIBFT_TARGET) $(CFLAGS) $(PIPEX_FILES_OBJ) $(GNL_OBJ) -o $(NAME)
+	@$(RM) .BONUS
 
 %.o : %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c -o $@ $<
 
 clean:
 	$(RM) $(PIPEX_FILES_OBJ)
-	$(RM) $(PIPEX_FILES_OBJ_BNS)
 	$(RM) $(GNL_OBJ)
+	$(RM) $(PIPEX_FILES_OBJ_BNS)
 	$(RM) $(GNL_BNS_OBJ)
 	@make clean -C $(LIBFT)
 
 fclean: clean
 	$(RM) $(LIBFT_TARGET)
 	$(RM) $(NAME)
-	$(RM) $(NAME_BNS)
 	@make fclean -C $(LIBFT)
 
 re: fclean all
 
-$(NAME_BNS): $(LIBFT_TARGET) $(PIPEX_FILES_OBJ_BNS) $(GNL_BNS_OBJ)
+.BONUS: $(LIBFT_TARGET) $(PIPEX_FILES_OBJ_BNS) $(GNL_BNS_OBJ)
+	$(RM) $(PIPEX_FILES_OBJ)
+	$(RM) $(GNL_OBJ)
 	$(CC) $(LIBFT_TARGET) $(CFLAGS) $(GNL_BNS_OBJ) $(PIPEX_FILES_OBJ_BNS) -o $(NAME)
+	@touch .BONUS
 
-bonus: $(NAME_BNS)
+bonus: .BONUS
 
 
 .PHONY:	all clean fclean re bonus

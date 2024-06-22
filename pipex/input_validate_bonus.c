@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:35:02 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/13 15:19:19 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/22 16:04:25 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	input_validate(t_pipex_vars *vars, int n, char *args[], char *envp[])
 {
+	(void)envp;
 	check_infile(vars, args[0]);
 	check_outfile(vars, args[n - 1], vars->heredoc);
 	init_commands(vars, n - 2, args + 1);
