@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 13:19:28 by woonshin          #+#    #+#              #
-#    Updated: 2024/06/22 16:06:12 by woonshin         ###   ########.fr        #
+#    Updated: 2024/06/22 16:07:00 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ clean:
 fclean: clean
 	$(RM) $(LIBFT_TARGET)
 	$(RM) $(NAME)
+	@$(RM) .BONUS
 	@make fclean -C $(LIBFT)
 
 re: fclean all
