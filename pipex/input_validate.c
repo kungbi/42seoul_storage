@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:35:02 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/22 23:04:32 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:43:45 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ void	check_infile(t_pipex_vars *vars, char *filename)
 	vars->infile.name = filename;
 	vars->infile.fd = open(filename, O_RDONLY);
 	if (vars->infile.fd < 0)
-		return_error("No such file or directory", 1);
+	{
+		ft_putstr_fd("pipex: ", 2);
+		ft_putstr_fd("No such file or directory", 2);
+		ft_putchar_fd('\n', 2);
+	}
 }
 
 void	check_outfile(t_pipex_vars *vars, char *filename, int heredoc)

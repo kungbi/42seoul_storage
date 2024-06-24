@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 22:38:15 by woonshin          #+#    #+#             */
-/*   Updated: 2024/06/13 15:21:10 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:43:06 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,12 @@ void	middle_child(int *fd)
 void	first_child(t_pipex_vars *vars, int *fd)
 {
 	close(fd[0]);
+	if (vars->infile.fd < 0)
+		exit(0);
 	dup2(vars->infile.fd, STDIN_FILENO);
+	close(vars->infile.fd);
 	dup2(fd[1], STDOUT_FILENO);
 	close(fd[1]);
-	close(vars->infile.fd);
 }
 
 void	end_child(t_pipex_vars *vars, int *fd)
