@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 16:23:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/02 16:06:10 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:47:23 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ void	philo_init(t_system *system)
 		system->philos[i].id = i;
 		system->philos[i].eat_count = 0;
 		system->philos[i].start_time = get_time() + i;
-		system->philos[i].last_eat = 0;
+		system->philos[i].last_eat = system->philos[i].start_time;
 		system->philos[i].left_fork = &system->forks[i];
 		system->philos[i].right_fork = \
 			&system->forks[(i + 1) % system->args.philo_num];
-		if (pthread_mutex_init(&system->philos[i].print, NULL))
+		if (pthread_mutex_init(&system->philos[i].eat_mutex, NULL))
 		{
 			free_system(system);
 			err_return(MUTEX_ERR);
@@ -71,7 +71,8 @@ void	fork_mutex_init(t_system *system)
 void	system_init(t_system *system)
 {
 	system->stop_flag = 0;
-	system->philos = (t_philo *)malloc(sizeof(t_philo) * system->args.philo_num);
+	system->philos = (t_philo *)malloc(sizeof(t_philo)
+			* system->args.philo_num);
 	if (!system->philos)
 		err_return(MALLOC_ERR);
 	system->forks = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t)
@@ -83,7 +84,15 @@ void	system_init(t_system *system)
 	}
 	fork_mutex_init(system);
 	philo_init(system);
-	system->threads = (pthread_t *)malloc(sizeof(pthread_t) * system->args.philo_num);
+	system->threads = (pthread_t *)malloc(sizeof(pthread_t)
+			* system->args.philo_num);
 	if (!system->threads)
 		err_return(MALLOC_ERR);
+	if (pthread_mutex_init(&system->stop_mutex, NULL)
+		|| pthread_mutex_init(&system->print_mutex, NULL))
+	{
+		free_system(system);
+		err_return(MUTEX_ERR);
+	}
+	system->start_time = get_time();
 }

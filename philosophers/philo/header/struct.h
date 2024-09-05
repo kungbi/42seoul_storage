@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 15:28:20 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/02 16:06:00 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:45:33 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,25 @@ typedef struct s_philo
 	long long		last_eat;
 	pthread_mutex_t	*left_fork;
 	pthread_mutex_t	*right_fork;
-	pthread_mutex_t	print;
+	pthread_mutex_t	eat_mutex;
 }	t_philo;
 
 typedef struct s_system
 {
+	long long		start_time;
 	t_args			args;
 	int				stop_flag;
 	t_philo			*philos;
-	pthread_mutex_t	*forks;
 	pthread_t		*threads;
+	pthread_mutex_t	*forks;
+	pthread_mutex_t	stop_mutex;
+	pthread_mutex_t	print_mutex;
 }	t_system;
+
+typedef struct s_philo_args
+{
+	t_system	*system;
+	t_philo		*philo;
+}	t_philo_args;
 
 #endif

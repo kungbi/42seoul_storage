@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 15:27:08 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/02 16:09:49 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/04 16:44:37 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	free_system(t_system *system)
 	i = 0;
 	while (i < system->args.philo_num)
 	{
-		pthread_mutex_destroy(&system->philos[i].print);
 		pthread_mutex_destroy(&system->forks[i]);
 		i++;
 	}
