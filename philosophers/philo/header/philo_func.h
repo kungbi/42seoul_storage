@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:43:58 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/07 16:37:53 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/07 22:23:15 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	check_philo(t_system *system);
 int	ft_usleep(long long time, t_system *system);
 int	philo_print(t_system *system, t_philo *philo, int status);
 int	check_stop(t_system *system);
-int stop_philo(t_system *system);
+int	stop_philo(t_system *system);
 
 int	philo_fork(t_system *system, t_philo *philo);
 int	philo_eating(t_system *system, t_philo *philo);
