@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 20:55:16 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/07 22:28:28 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/07 23:20:01 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	check_full(t_system *system, t_philo *philo)
 	pthread_mutex_lock(&philo->eat_mutex);
 	eat_count = philo->eat_count;
 	pthread_mutex_unlock(&philo->eat_mutex);
-	if (eat_count == system->args.eat_num)
+	if (eat_count >= system->args.eat_num)
 		return (1);
 	return (0);
 }
