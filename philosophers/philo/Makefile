@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 22:12:43 by woonshin          #+#    #+#              #
-#    Updated: 2024/08/11 16:21:31 by woonshin         ###   ########.fr        #
+#    Updated: 2024/09/07 17:35:57 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ CC				= cc
 NAME			= philo
 LIBFT			= libft
 LIBFT_TARGET	= libft.a
-# CFLAGS			= -Wall -Werror -Wextra
+CFLAGS			= -Wall -Werror -Wextra
+# CFLAGS			= -Wall -Werror -Wextra -fsanitize=thread -g -pthread
 INCLUDES		= -I libft -I header
 
 SRC_FILES = $(shell find ./ -name "*.c" -d 1)

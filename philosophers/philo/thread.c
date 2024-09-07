@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 13:48:53 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/07 13:19:16 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/07 18:29:49 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,14 @@ void	thread_func(void *data)
 	philo_args = (t_philo_args *)data;
 	system = philo_args->system;
 	philo = philo_args->philo;
-	while (!system->start_flag)
-		system->start_flag;
+	while (get_time() < philo->start_time)
+		usleep(100);
 	if (philo->id % 2)
 		ft_usleep(system->args.eat_time / 2, system);
 	while (1)
 	{
+		if (philo_fork(system, philo))
+			break ;
 		if (philo_eating(system, philo))
 			break ;
 		if (philo_sleeping(system, philo))
@@ -45,7 +47,7 @@ void	monitoring(t_system *system)
 			break ;
 		if (check_philo(system))
 			break ;
-		ft_usleep(1, system);
+		ft_usleep(10, system);
 	}
 }
 
@@ -68,7 +70,6 @@ void	thread_start(t_system *system)
 		i++;
 	}
 	system->start_time = get_time();
-	system->start_flag = 1;
 	monitoring(system);
 	i = 0;
 	while (i < system->args.philo_num)

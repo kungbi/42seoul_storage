@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 16:23:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/07 13:08:50 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/07 16:43:26 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	philo_init(t_system *system)
 	{
 		system->philos[i].id = i;
 		system->philos[i].eat_count = 0;
-		system->philos[i].start_time = get_time() + i;
+		system->philos[i].start_time = get_time() + system->args.philo_num;
 		system->philos[i].last_eat = system->philos[i].start_time;
 		system->philos[i].left_fork = &system->forks[i];
 		system->philos[i].right_fork = \
@@ -95,5 +95,4 @@ void	system_init(t_system *system)
 		free_system(system);
 		err_return(MUTEX_ERR);
 	}
-	system->start_time = get_time();
 }
