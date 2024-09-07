@@ -6,24 +6,11 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 13:48:53 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/05 13:56:49 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/07 13:19:16 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "thread.h"
-
-void	philo_stop(t_system *system)
-{
-	system->stop_flag = 1;
-}
-
-int	is_philo_stop(t_system *system)
-{
-	int	ret;
-
-	ret = system->stop_flag;
-	return (ret);
-}
 
 void	thread_func(void *data)
 {
@@ -34,10 +21,10 @@ void	thread_func(void *data)
 	philo_args = (t_philo_args *)data;
 	system = philo_args->system;
 	philo = philo_args->philo;
-	while (get_time() < philo->start_time)
-		usleep(100);
+	while (!system->start_flag)
+		system->start_flag;
 	if (philo->id % 2)
-		ft_usleep(100, system);
+		ft_usleep(system->args.eat_time / 2, system);
 	while (1)
 	{
 		if (philo_eating(system, philo))
@@ -54,11 +41,11 @@ void	monitoring(t_system *system)
 {
 	while (1)
 	{
-		if (is_philo_stop(system))
+		if (check_stop(system))
 			break ;
 		if (check_philo(system))
 			break ;
-		usleep(100);
+		ft_usleep(1, system);
 	}
 }
 
@@ -80,6 +67,8 @@ void	thread_start(t_system *system)
 			err_return(MALLOC_ERR);
 		i++;
 	}
+	system->start_time = get_time();
+	system->start_flag = 1;
 	monitoring(system);
 	i = 0;
 	while (i < system->args.philo_num)
