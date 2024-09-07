@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:43:50 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/07 19:44:07 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/07 20:13:18 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,13 @@ int	philo_fork(t_system *system, t_philo *philo)
 {
 	if (check_stop(system))
 		return (1);
-	if (system->args.philo_num == 1)
+	pthread_mutex_lock(philo->left_fork);
+	if (philo_print(system, philo, D_FORK))
 	{
-		pthread_mutex_lock(philo->left_fork);
-		philo_print(system, philo, D_FORK);
 		pthread_mutex_unlock(philo->left_fork);
 		return (1);
 	}
-	pthread_mutex_lock(philo->left_fork);
-	if (philo_print(system, philo, D_FORK))
+	if (system->args.philo_num == 1)
 	{
 		pthread_mutex_unlock(philo->left_fork);
 		return (1);
