@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 14:02:31 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/05 13:50:29 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/08 11:32:01 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PHILO_H
 # include <stdio.h>
 # include <pthread.h>
+# include <string.h>
 # include "error.h"
 # include "libft.h"
 # include "struct.h"
