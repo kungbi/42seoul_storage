@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 13:48:53 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/07 18:29:49 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/07 22:45:22 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	monitoring(t_system *system)
 			break ;
 		if (check_philo(system))
 			break ;
-		ft_usleep(10, system);
+		ft_usleep(5, system);
 	}
 }
 

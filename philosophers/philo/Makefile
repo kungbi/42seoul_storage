@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 22:12:43 by woonshin          #+#    #+#              #
-#    Updated: 2024/09/07 22:08:34 by woonshin         ###   ########.fr        #
+#    Updated: 2024/09/08 10:52:31 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ CC				= cc
 NAME			= philo
 LIBFT			= libft
 LIBFT_TARGET	= libft.a
-# CFLAGS			= -Wall -Werror -Wextra -fsanitize=thread
 CFLAGS			= -Wall -Werror -Wextra -pthread
 INCLUDES		= -I libft -I header
 
