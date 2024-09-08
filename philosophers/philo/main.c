@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 22:11:52 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/08 10:51:19 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/08 11:30:34 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_system	system;
 
+	memset(&system, 0, sizeof(t_system));
 	if (argc < 5 || 6 < argc)
 		err_return(ARGS_ERR);
 	args_init(argc, argv, &system.args);
