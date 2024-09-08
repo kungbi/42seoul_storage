@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:43:58 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/07 22:23:15 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/08 11:03:00 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PHILO_FUNC_H
 # include <stdio.h>
 # include <pthread.h>
+# include <unistd.h>
 # include "struct.h"
 # include "libft.h"
 

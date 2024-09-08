@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: woonshin <woonshin@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 16:45:59 by woonshin          #+#    #+#             */
-/*   Updated: 2023/10/06 16:48:08 by woonshin         ###   ########.fr       */
+/*   Created: 2024/09/08 10:57:56 by woonshin          #+#    #+#             */
+/*   Updated: 2024/09/08 11:02:20 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
+# include <stdio.h>
 
-int	ft_isprint(int c)
-{
-	return (32 <= c && c <= 126);
-}
+int	ft_atoi(const char *str);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int	ft_isdigit(int c);
+size_t	ft_strlen(const char *s);
+
+#endif
