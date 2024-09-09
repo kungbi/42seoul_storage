@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 15:28:20 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/07 13:08:39 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:40:16 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ typedef struct s_system
 {
 	long long		start_time;
 	t_args			args;
-	int				full_count;
 	int				stop_flag;
 	int				start_flag;
 	t_philo			*philos;
@@ -46,7 +45,6 @@ typedef struct s_system
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	stop_mutex;
 	pthread_mutex_t	print_mutex;
-	pthread_mutex_t	full_mutex;
 }	t_system;
 
 typedef struct s_philo_args

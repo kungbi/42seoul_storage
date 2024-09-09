@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 16:23:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/09 13:35:54 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:40:26 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,7 @@ int	system_init(t_system *system)
 	if (!system->threads)
 		return (err_return(MALLOC_ERR));
 	if (pthread_mutex_init(&system->stop_mutex, NULL)
-		|| pthread_mutex_init(&system->print_mutex, NULL)
-		|| pthread_mutex_init(&system->full_mutex, NULL))
+		|| pthread_mutex_init(&system->print_mutex, NULL))
 		return (free_system(system), err_return(MUTEX_ERR));
 	return (0);
 }

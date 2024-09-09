@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 15:27:08 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/09 13:19:22 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:40:29 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	free_system(t_system *system)
 	}
 	pthread_mutex_destroy(&system->stop_mutex);
 	pthread_mutex_destroy(&system->print_mutex);
-	pthread_mutex_destroy(&system->full_mutex);
 	free(system->philos);
 	free(system->forks);
 	free(system->threads);
