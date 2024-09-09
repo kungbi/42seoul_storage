@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 14:02:31 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/08 11:32:01 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:30:03 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include "philo_func.h"
 # include "thread.h"
 
-void	args_init(int ac, char **av, t_args *args);
-void	system_init(t_system *system);
+int	args_init(int ac, char **av, t_args *args);
+int	system_init(t_system *system);
 
 #endif

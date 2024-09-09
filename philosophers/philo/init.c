@@ -6,14 +6,14 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 16:23:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/07 16:43:26 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:35:54 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 #include "free.h"
 
-void	args_init(int argc, char **argv, t_args *args)
+int	args_init(int argc, char **argv, t_args *args)
 {
 	args->philo_num = ft_atoi(argv[1]);
 	args->life_time = ft_atoi(argv[2]);
@@ -24,12 +24,13 @@ void	args_init(int argc, char **argv, t_args *args)
 		args->eat_num = ft_atoi(argv[5]);
 	if (args->philo_num <= 0 || args->life_time <= 0
 		|| args->eat_time < 0 || args->sleep_time < 0)
-		err_return(ARGS_ERR);
+		return (err_return(ARGS_ERR));
 	if (argc == 6 && args->eat_num < 0)
-		err_return(ARGS_ERR);
+		return (err_return(ARGS_ERR));
+	return (0);
 }
 
-void	philo_init(t_system *system)
+int	philo_init(t_system *system)
 {
 	int	i;
 
@@ -46,13 +47,14 @@ void	philo_init(t_system *system)
 		if (pthread_mutex_init(&system->philos[i].eat_mutex, NULL))
 		{
 			free_system(system);
-			err_return(MUTEX_ERR);
+			return (err_return(MUTEX_ERR));
 		}
 		i++;
 	}
+	return (0);
 }
 
-void	fork_mutex_init(t_system *system)
+int	fork_mutex_init(t_system *system)
 {
 	int	i;
 
@@ -62,37 +64,33 @@ void	fork_mutex_init(t_system *system)
 		if (pthread_mutex_init(&system->forks[i], NULL))
 		{
 			free_system(system);
-			err_return(MUTEX_ERR);
+			return (err_return(MUTEX_ERR));
 		}
 		i++;
 	}
+	return (0);
 }
 
-void	system_init(t_system *system)
+int	system_init(t_system *system)
 {
 	system->stop_flag = 0;
 	system->philos = (t_philo *)malloc(sizeof(t_philo)
 			* system->args.philo_num);
 	if (!system->philos)
-		err_return(MALLOC_ERR);
+		return (err_return(MALLOC_ERR));
 	system->forks = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t)
 			* system->args.philo_num);
 	if (!system->forks)
-	{
-		free(system->philos);
-		err_return(MALLOC_ERR);
-	}
-	fork_mutex_init(system);
-	philo_init(system);
+		return (free(system->philos), err_return(MALLOC_ERR));
+	if (fork_mutex_init(system) || philo_init(system))
+		return (free_system(system), err_return(ERROR));
 	system->threads = (pthread_t *)malloc(sizeof(pthread_t)
 			* system->args.philo_num);
 	if (!system->threads)
-		err_return(MALLOC_ERR);
+		return (err_return(MALLOC_ERR));
 	if (pthread_mutex_init(&system->stop_mutex, NULL)
 		|| pthread_mutex_init(&system->print_mutex, NULL)
 		|| pthread_mutex_init(&system->full_mutex, NULL))
-	{
-		free_system(system);
-		err_return(MUTEX_ERR);
-	}
+		return (free_system(system), err_return(MUTEX_ERR));
+	return (0);
 }
