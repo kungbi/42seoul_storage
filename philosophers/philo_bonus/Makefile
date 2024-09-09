@@ -6,13 +6,13 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 22:12:43 by woonshin          #+#    #+#              #
-#    Updated: 2024/09/08 21:17:07 by woonshin         ###   ########.fr        #
+#    Updated: 2024/09/09 14:47:42 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC				= cc
 NAME			= philo
-# CFLAGS			= -Wall -Werror -Wextra -pthread
+CFLAGS			= -Wall -Werror -Wextra -pthread
 INCLUDES		=  -I header
 
 SRC_FILES = $(shell find ./ -name "*.c" -d 1)

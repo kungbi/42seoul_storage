@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 13:48:53 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/09 14:45:30 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/09 14:48:33 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	died_monitoring(void *args)
 		{
 			sem_wait(philo_args->system->print_sem);
 			printf("%lld %d died\n", get_time() - philo_args->philo->start_time, philo_args->philo->id);
-			stop_processes(philo_args->system, -1);
+			stop_processes(philo_args->system);
 			return ;
 		}
 		ft_usleep(10, philo_args->philo);
@@ -81,10 +81,10 @@ void	fulll_monitoring(void *args)
 	}
 	sem_wait(system->print_sem);
 	printf("All philosophers are full\n");
-	stop_processes(system, -1);
+	stop_processes(system);
 }
 
-void stop_processes(t_system *system, int exception_pid)
+void stop_processes(t_system *system)
 {
 	int	i;
 
@@ -99,11 +99,9 @@ void stop_processes(t_system *system, int exception_pid)
 
 void	process_monitoring(t_system *system)
 {
-	int pid;
-
 	pthread_create(&system->monitoring_thread, NULL, (void *)fulll_monitoring, (void *)system);
-	pid = waitpid(-1, NULL, 0);
-	stop_processes(system, pid);
+	waitpid(-1, NULL, 0);
+	stop_processes(system);
 }
 
 void	process_start(t_system *system)
