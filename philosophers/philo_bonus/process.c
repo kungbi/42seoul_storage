@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 13:48:53 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/08 22:13:10 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/09 14:45:30 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ void	died_monitoring(void *args)
 		if (get_time() - last_eat > philo_args->system->args.life_time)
 		{
 			sem_wait(philo_args->system->print_sem);
-			printf("%lld %d died\n", get_time() - philo_args->philo->start_time, philo_args->philo->id + 1);
-			exit(0);
+			printf("%lld %d died\n", get_time() - philo_args->philo->start_time, philo_args->philo->id);
+			stop_processes(philo_args->system, -1);
+			return ;
 		}
 		ft_usleep(10, philo_args->philo);
 	}
@@ -81,7 +82,6 @@ void	fulll_monitoring(void *args)
 	sem_wait(system->print_sem);
 	printf("All philosophers are full\n");
 	stop_processes(system, -1);
-	exit(0);
 }
 
 void stop_processes(t_system *system, int exception_pid)
@@ -91,7 +91,7 @@ void stop_processes(t_system *system, int exception_pid)
 	i = 0;
 	while (i < system->args.philo_num)
 	{
-		kill(system->pids[i], SIGKILL);
+		kill(system->pids[i], SIGINT);
 		i++;
 	}
 	exit(0);
