@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 13:48:53 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/09 14:48:33 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:09:20 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	died_monitoring(void *args)
 			stop_processes(philo_args->system);
 			return ;
 		}
-		ft_usleep(10, philo_args->philo);
+		usleep(10);
 	}
 }
 
@@ -45,13 +45,14 @@ void	process_func(t_system *system, int id)
 		err_return(MALLOC_ERR);
 	args->system = system;
 	args->philo = &system->philos[id];
-	sem_wait(system->full_sem);
-	pthread_create(&died_thread, NULL, (void *)died_monitoring, (void *)args);
 	philo = &system->philos[id];
+	pthread_create(&died_thread, NULL, (void *)died_monitoring, (void *)args);
+
 	while (get_time() < philo->start_time)
 		usleep(100);
 	if (philo->id % 2)
-		ft_usleep(system->args.eat_time / 2, philo);
+		usleep(system->args.eat_time / 2 * 1000);
+		
 	while (1)
 	{
 		if (philo_fork(system, philo))
@@ -108,9 +109,7 @@ void	process_start(t_system *system)
 {
 	int		i;
 	int		pid;
-	sem_t	*start_sem;
 
-	ft_sem_open(&start_sem, "start_sem", -1, 0);
 	i = 0;
 	while (i < system->args.philo_num)
 	{
@@ -119,19 +118,12 @@ void	process_start(t_system *system)
 			err_return(FORK_ERR);
 		if (pid == 0)
 		{
-			sem_wait(start_sem);
+			sem_wait(system->full_sem);
 			process_func(system, i);
 			exit(0);
 		}
 		system->pids[i] = pid;
 		i++;
 	}
-	i = 0;
-	while (i < system->args.philo_num)
-	{
-		sem_post(start_sem);
-		i++;
-	}
-	sem_close(start_sem);
-	sem_unlink("start_sem");
+	usleep(system->args.philo_num);
 }

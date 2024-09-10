@@ -6,34 +6,15 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 22:28:19 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/08 21:09:36 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:05:35 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_func.h"
 
-int	ft_usleep(long long time, t_philo *philo)
-{
-	long long	end_time;
-
-	end_time = get_time() + time;
-	while (get_time() < end_time)
-	{
-		if (check_stop(philo))
-			return (1);
-		usleep(100);
-	}
-	return (0);
-}
-
 int	philo_print(t_system *system, t_philo *philo, int status)
 {
 	sem_wait(system->print_sem);
-	if (check_stop(philo))
-	{
-		sem_post(system->print_sem);
-		return (1);
-	}
 	if (status == D_FORK)
 		printf("%lld %d has taken a fork\n",
 			get_time() - philo->start_time, philo->id);

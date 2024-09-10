@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 15:27:08 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/08 22:04:41 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/09 17:01:43 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	free_system(t_system *system)
 	while (i < system->args.philo_num)
 	{
 		sem_close(system->philos[i].eat_sem);
-		sem_close(system->philos[i].stop_sem);
 		sem_close(system->forks[i]);
 		i++;
 	}

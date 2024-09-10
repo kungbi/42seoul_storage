@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:43:58 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/08 21:09:42 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:05:28 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@
 # define D_THINKING 3
 # define D_DIED 4
 
-int	ft_usleep(long long time, t_philo *philo);
 int	philo_print(t_system *system, t_philo *philo, int status);
-int	check_stop(t_philo *philo);
-int	stop_philo(t_philo *philo);
 
 int	philo_fork(t_system *system, t_philo *philo);
 int	philo_eating(t_system *system, t_philo *philo);
