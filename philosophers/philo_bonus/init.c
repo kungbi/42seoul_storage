@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 16:23:09 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/09 17:01:38 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:38:36 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ void	philo_init(t_system *system)
 	{
 		system->philos[i].id = i;
 		system->philos[i].eat_count = 0;
-		system->philos[i].start_time = system->start_time + system->args.philo_num;
+		system->philos[i].start_time
+			= system->start_time + system->args.philo_num;
 		system->philos[i].last_eat = system->philos[i].start_time;
 		system->philos[i].life_time = system->args.life_time;
 		system->philos[i].left_fork = system->forks[i];
@@ -85,5 +86,5 @@ void	system_init(t_system *system)
 	fork_sem_init(system);
 	philo_init(system);
 	ft_sem_open(&system->print_sem, "print_sem", -1, 1);
-	ft_sem_open(&system->full_sem, "full_sem", -1, system->args.philo_num);	
+	ft_sem_open(&system->full_sem, "full_sem", -1, system->args.philo_num);
 }

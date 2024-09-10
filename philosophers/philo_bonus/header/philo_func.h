@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:43:58 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/10 17:05:28 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:40:34 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,19 @@
 # define D_THINKING 3
 # define D_DIED 4
 
-int	philo_print(t_system *system, t_philo *philo, int status);
+int		philo_print(t_system *system, t_philo *philo, int status);
+void	ft_usleep(int sleep_time);
+void	stop_processes(t_system *system);
 
-int	philo_fork(t_system *system, t_philo *philo);
-int	philo_eating(t_system *system, t_philo *philo);
-int	philo_sleeping(t_system *system, t_philo *philo);
-int	philo_thinking(t_system *system, t_philo *philo);
+int		philo_fork(t_system *system, t_philo *philo);
+int		philo_eating(t_system *system, t_philo *philo);
+int		philo_sleeping(t_system *system, t_philo *philo);
+int		philo_thinking(t_system *system, t_philo *philo);
 
 void	ft_sem_open(sem_t **sem, char *name, int num, int value);
+
+void	process_monitoring(t_system *system);
+void	fulll_monitoring(void *args);
+void	died_monitoring(void *args);
 
 #endif
