@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 17:36:08 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/10 17:36:40 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/17 20:54:35 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	fulll_monitoring(void *args)
 		i++;
 	}
 	sem_wait(system->print_sem);
-	printf("All philosophers are full\n");
 	stop_processes(system);
 }
 

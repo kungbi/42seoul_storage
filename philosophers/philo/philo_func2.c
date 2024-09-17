@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 20:55:16 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/07 23:20:01 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/17 20:54:29 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,6 @@ int	check_philo(t_system *system)
 	}
 	if (full_count == system->args.philo_num)
 	{
-		pthread_mutex_lock(&system->print_mutex);
-		printf("All philosophers are full\n");
-		pthread_mutex_unlock(&system->print_mutex);
 		stop_philo(system);
 		return (1);
 	}
