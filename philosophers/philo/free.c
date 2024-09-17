@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 15:27:08 by woonshin          #+#    #+#             */
-/*   Updated: 2024/09/09 13:40:29 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/09/17 20:37:35 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 #include "struct.h"
 
 void	free_system(t_system *system)
+{
+	if (system->philos)
+		free(system->philos);
+	if (system->forks)
+		free(system->forks);
+	if (system->threads)
+		free(system->threads);
+}
+
+void	mutex_destroy(t_system *system)
 {
 	int	i;
 
@@ -26,7 +36,4 @@ void	free_system(t_system *system)
 	}
 	pthread_mutex_destroy(&system->stop_mutex);
 	pthread_mutex_destroy(&system->print_mutex);
-	free(system->philos);
-	free(system->forks);
-	free(system->threads);
 }
