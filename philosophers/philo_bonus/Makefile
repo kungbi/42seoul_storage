@@ -6,12 +6,12 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 22:12:43 by woonshin          #+#    #+#              #
-#    Updated: 2024/09/10 17:51:09 by woonshin         ###   ########.fr        #
+#    Updated: 2024/09/20 20:46:00 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC				= cc
-NAME			= philo
+NAME			= philo_bonus
 CFLAGS			= -Wall -Werror -Wextra -pthread
 INCLUDES		=  -I header
 
