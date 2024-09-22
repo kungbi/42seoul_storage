@@ -7,7 +7,7 @@ int main(void) {
 
 	while (1) {
 		std::cout << "Enter a command: ";
-		std::cin >> input;
+		std::getline(std::cin, input);
 		
 		if (input == "EXIT") {
 			std::cout << "EXIT" << "\n";
