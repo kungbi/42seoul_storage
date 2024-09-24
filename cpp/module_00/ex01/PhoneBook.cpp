@@ -8,6 +8,7 @@ PhoneBook::~PhoneBook() {
 }
 
 void PhoneBook::add(Contact contact) {
+	contact.setIndex(this->size);
 	this->contact[this->size % 8] = contact;
 	size++;
 }
@@ -21,7 +22,7 @@ void PhoneBook::show() {
 	std::cout << "|" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
 
-	for (int i = 0; i < this->size; i++) {
+	for (int i = 0; i < this->size && i < 8; i++) {
 		std::string firstName = this->contact[i].getFirstName();
 		std::string lastName = this->contact[i].getLastName();
 		std::string nickName = this->contact[i].getNickName();
@@ -32,11 +33,11 @@ void PhoneBook::show() {
 		if (nickName.length() > 10)
 			nickName.replace(9, nickName.length() - 9, ".");
 		std::cout << "|";
-		std::cout << std::setw(10) << i + 1 << "|";
+		std::cout << std::setw(10) << this->contact[i].getIndex() << "|";
 		std::cout << std::setw(10) << firstName << "|";
 		std::cout << std::setw(10) << lastName << "|";
 		std::cout << std::setw(10) << nickName << "|";
-		std::cout << "\n";
+		std::cout << std::endl;
 	}
 	std::cout << "---------------------------------------------" << std::endl;
 }
