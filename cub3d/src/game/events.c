@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 12:47:52 by woonshin          #+#    #+#             */
-/*   Updated: 2024/10/12 19:28:50 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/10/27 23:49:25 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ void	move_hor(int dir, t_system *sys)
 	double	next_pos_x;
 	double	next_pos_y;
 
+	next_pos_x = 0;
+	next_pos_y = 0;
 	if (dir == LEFT)
 	{
 		next_pos_x = sys->player.pos_x - sys->player.plane_x * MOVE_SPEED;

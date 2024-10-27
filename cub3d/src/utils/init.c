@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 14:54:18 by woonshin          #+#    #+#             */
-/*   Updated: 2024/10/12 19:24:45 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/10/27 23:49:30 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,6 @@ void	put_mlx_img(t_system *sys, char *path, t_img *img)
 
 void	load_textures(t_system *sys)
 {
-	int		i;
-	void	*img;
-
 	put_mlx_img(sys, sys->components.no, &sys->graphics.textures[0]);
 	put_mlx_img(sys, sys->components.so, &sys->graphics.textures[1]);
 	put_mlx_img(sys, sys->components.we, &sys->graphics.textures[2]);

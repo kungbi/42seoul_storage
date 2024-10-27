@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 18:32:11 by wonyocho          #+#    #+#             */
-/*   Updated: 2024/10/12 16:53:12 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/10/27 23:49:38 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,8 @@ int	get_tex_x(t_system *sys, t_raycast *ray)
 			* ray->info.ray_dir_x;
 	wall_x -= floor(wall_x);
 	tex_x = (int)(wall_x * (double)TEXTURE_WIDTH);
-	if (ray->calc.side == 0 && ray->info.ray_dir_x > 0)
-		tex_x = tex_x;
 	if (ray->calc.side == 0 && ray->info.ray_dir_x < 0)
 		tex_x = TEXTURE_WIDTH - tex_x - 1;
-	if (ray->calc.side == 1 && ray->info.ray_dir_y < 0)
-		tex_x = tex_x;
 	if (ray->calc.side == 1 && ray->info.ray_dir_y > 0)
 		tex_x = TEXTURE_WIDTH - tex_x - 1;
 	return (tex_x);

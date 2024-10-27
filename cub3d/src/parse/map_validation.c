@@ -6,7 +6,7 @@
 /*   By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 18:34:40 by woonshin          #+#    #+#             */
-/*   Updated: 2024/10/12 17:06:35 by woonshin         ###   ########.fr       */
+/*   Updated: 2024/10/27 23:49:10 by woonshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ int	player_position(t_system *sys)
 
 int	map_closed(char **map, char **visited, int x, int y)
 {
-	if (x < 0 || y < 0 || ft_arrlen(map) <= y || ft_strlen(map[y]) <= x
+	if (x < 0 || y < 0 || ft_arrlen(map) <= y || ft_strlen(map[y]) <= (size_t) x
 		|| map[y][x] == '\0' || map[y][x] == ' ')
 		return (0);
 	if (map[y][x] == '1' || visited[y][x] == 1)

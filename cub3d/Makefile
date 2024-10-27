@@ -6,7 +6,7 @@
 #    By: woonshin <woonshin@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 13:38:46 by woonshin          #+#    #+#              #
-#    Updated: 2024/09/25 20:45:51 by woonshin         ###   ########.fr        #
+#    Updated: 2024/10/27 23:48:50 by woonshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RESET  = \033[0m
 
 CC				= cc
 NAME			= cub3D
-# CFLAGS			= -Wall -Werror -Wextra
+CFLAGS			= -Wall -Werror -Wextra
 
 SRC_FILES = $(shell find src -name "*.c")
 OBJ_FILES = $(SRC_FILES:.c=.o)
