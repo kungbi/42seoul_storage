@@ -63,7 +63,7 @@ int getIndex() {
 		std::cout << "Enter an index: ";
 		index = parseInt(getText());
 		if (index < 0) {
-			std::cout << "Not a number" << std::endl;
+			std::cout << "Index must be between 0 and 7" << std::endl;
 		} else {
 			break;
 		}
@@ -72,11 +72,18 @@ int getIndex() {
 }
 
 int parseInt(std::string input) {
-	for (size_t i = 0; i < input.size(); i++) {
-		if (!std::isdigit(input[i]))
-			return -1;
+	if (input.size() != 1) {
+		return -1;
 	}
-	return std::stoi(input);
+	if (!isdigit(input[0])) {
+		return -1;
+	}
+
+	int index = input[0] - '0';
+	if (index < 0 || index > 7) {
+		return -1;
+	}
+	return index;
 }
 
 std::string	getText() {
