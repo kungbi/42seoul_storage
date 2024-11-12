@@ -10,9 +10,8 @@ int main(void) {
 	std::string	input;
 
 	while (1) {
-		std::cout << "Enter a command: ";
-		std::getline(std::cin, input);
-		std::cout << std::endl;
+		std::cout << "Enter a command: " << std::endl;
+		input = getText();
 		
 		if (input == "EXIT") {
 			std::cout << "EXIT" << std::endl;
@@ -62,7 +61,7 @@ int getIndex() {
 	while (1) {
 		std::cout << "Enter an index: ";
 		index = parseInt(getText());
-		if (index < 0) {
+		if (index < 0 || index > 7) {
 			std::cout << "Index must be between 0 and 7" << std::endl;
 		} else {
 			break;
@@ -78,12 +77,7 @@ int parseInt(std::string input) {
 	if (!isdigit(input[0])) {
 		return -1;
 	}
-
-	int index = input[0] - '0';
-	if (index < 0 || index > 7) {
-		return -1;
-	}
-	return index;
+	return input[0] - '0';
 }
 
 std::string	getText() {
@@ -92,8 +86,10 @@ std::string	getText() {
 	while (1) {
 		std::cout << "> ";
 		std::getline(std::cin, text);
-		if (text.length() > 0)
+		if (!text.empty()) {
 			break;
+		}
+		
 		std::cout << "Invalid input" << std::endl;
 	}
 	return text;
