@@ -13,6 +13,8 @@ public:
 	~PhoneBook();
 	void add(Contact contact);
 	void show();
+	void showByIndex(int index);
+	int getSize();
 };
 
 #endif

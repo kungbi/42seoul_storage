@@ -8,7 +8,6 @@ PhoneBook::~PhoneBook() {
 }
 
 void PhoneBook::add(Contact contact) {
-	contact.setIndex(this->size);
 	this->contact[this->size % 8] = contact;
 	size++;
 }
@@ -33,11 +32,27 @@ void PhoneBook::show() {
 		if (nickName.length() > 10)
 			nickName.replace(9, nickName.length() - 9, ".");
 		std::cout << "|";
-		std::cout << std::setw(10) << this->contact[i].getIndex() << "|";
+		std::cout << std::setw(10) << i << "|";
 		std::cout << std::setw(10) << firstName << "|";
 		std::cout << std::setw(10) << lastName << "|";
 		std::cout << std::setw(10) << nickName << "|";
 		std::cout << std::endl;
 	}
 	std::cout << "---------------------------------------------" << std::endl;
+}
+
+void PhoneBook::showByIndex(int index) {
+	if (index < 0 || index >= this->size) {
+		std::cout << "Invalid index" << std::endl;
+		return;
+	}
+	std::cout << "first name: " << this->contact[index].getFirstName() << std::endl;
+	std::cout << "last name: " << this->contact[index].getLastName() << std::endl;
+	std::cout << "nick name: " << this->contact[index].getNickName() << std::endl;
+	std::cout << "phone number: " << this->contact[index].getPhoneNumber() << std::endl;
+	std::cout << "darkest secret: " << this->contact[index].getDarkestSecret() << std::endl;
+}
+
+int PhoneBook::getSize() {
+	return this->size;
 }

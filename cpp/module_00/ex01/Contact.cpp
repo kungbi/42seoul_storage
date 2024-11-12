@@ -1,11 +1,6 @@
 #include "Contact.hpp"
 
 Contact::Contact() {
-	this->index = 0;
-}
-
-int	Contact::getIndex() {
-	return this->index;
 }
 
 std::string Contact::getFirstName() {
@@ -26,10 +21,6 @@ std::string Contact::getPhoneNumber() {
 
 std::string Contact::getDarkestSecret() {
 	return this->darkset_secret;
-}
-
-void	Contact::setIndex(int index) {
-	this->index = index;
 }
 
 void	Contact::setFirstName(std::string firstName) {
