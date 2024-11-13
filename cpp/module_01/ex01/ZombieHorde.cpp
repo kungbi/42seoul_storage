@@ -1,4 +1,5 @@
 #include "Zombie.hpp"
+#include <sstream>
 
 void validate(int n) {
 	if (n <= 0)
@@ -8,6 +9,12 @@ void validate(int n) {
 	}
 }
 
+std::string intToString(int number) {
+    std::ostringstream oss;
+    oss << number;
+    return oss.str();
+}
+
 Zombie* zombieHorde(int n, std::string name)
 {
 	validate(n);
@@ -15,7 +22,9 @@ Zombie* zombieHorde(int n, std::string name)
 
 	for (int i = 0; i < n; i++)
 	{
-		zombies[i].setName(name + std::to_string(i)); 
+		zombies[i].setName(name + intToString(i)); 
 	}
 	return (zombies);
 }
+
+

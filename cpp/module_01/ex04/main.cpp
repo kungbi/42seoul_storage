@@ -38,13 +38,13 @@ int main(int argc, char **argv) {
     std::string s2 = argv[3];
 
 
-    std::ifstream infile(inFileName);
+    std::ifstream infile(inFileName.c_str());
     if (!infile.is_open()) {
         std::cout << "Error: Could not open input file\n";
         return 1;
     }
 
-    std::ofstream outfile(outFileName);
+    std::ofstream outfile(outFileName.c_str());
 	if (!outfile.is_open()) {
 		std::cout << "Error: Could not create output file\n";
 		return 1;
