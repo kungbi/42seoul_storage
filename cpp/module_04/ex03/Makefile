@@ -1,10 +1,10 @@
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-SRC = main.cpp Animal.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Cat.cpp Brain.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
-NAME = ex02
+NAME = a.out
 
 %.o : %.cpp $(INCLUDE)
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
