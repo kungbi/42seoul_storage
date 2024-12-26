@@ -5,12 +5,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoint
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src) {
-	this->_name = src.getName();
-	this->_hitPoints = src.getHitPoints();
-	this->_energyPoints = src.getEnergyPoints();
-	this->_attackDamage = src.getAttackDamage();
-	this->_maxHitPoints = src._maxHitPoints;
-
+	*this = src;
 	std::cout << "ClapTrap " << this->_name << " copy constructor called\n";
 }
 
@@ -29,12 +24,12 @@ ClapTrap::~ClapTrap() {
 }
 
 void ClapTrap::attack(std::string const &target) {
-	if (this->_energyPoints == 0) {
-		std::cout << "ClapTrap " << this->_name << " has no energy points left!" << std::endl;
-		return;
-	}
 	if (this->_hitPoints <= 0) {
 		std::cout << "ClapTrap " << this->_name << " is already dead!" << std::endl;
+		return;
+	}
+	if (this->_energyPoints == 0) {
+		std::cout << "ClapTrap " << this->_name << " has no energy points left!" << std::endl;
 		return;
 	}
 	
@@ -47,6 +42,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		std::cout << "ClapTrap " << this->_name << " is already dead!" << std::endl;
 		return;
 	}
+	
 	this->_hitPoints -= amount;
 	std::cout << "ClapTrap " << this->_name << " takes " << amount << " points of damage!" << std::endl;
 	if (this->_hitPoints <= 0) {

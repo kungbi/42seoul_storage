@@ -1,7 +1,6 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
-	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
@@ -10,11 +9,7 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src) {
-	this->_name = src.getName();
-	this->_hitPoints = src.getHitPoints();
-	this->_energyPoints = src.getEnergyPoints();
-	this->_attackDamage = src.getAttackDamage();
-	
+	*this = src;
 	std::cout << "ScavTrap " << this->getName() << " copy constructor called\n";
 }
 
@@ -42,12 +37,12 @@ void ScavTrap::guardGate(void) {
 }
 
 void ScavTrap::attack(std::string const &target) {
-	if (this->_energyPoints == 0) {
-		std::cout << "ScavTrap " << this->getName() << " has no energy points left!" << std::endl;
-		return;
-	}
 	if (this->_hitPoints <= 0) {
 		std::cout << "ScavTrap " << this->getName() << " is already dead!" << std::endl;
+		return;
+	}
+	if (this->_energyPoints == 0) {
+		std::cout << "ScavTrap " << this->getName() << " has no energy points left!" << std::endl;
 		return;
 	}
 	

@@ -1,7 +1,6 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(std::string name): ClapTrap(name) {
-	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
@@ -10,11 +9,7 @@ FragTrap::FragTrap(std::string name): ClapTrap(name) {
 }
 
 FragTrap::FragTrap(const FragTrap &src): ClapTrap(src) {
-	this->_name = src.getName();
-	this->_hitPoints = src.getHitPoints();
-	this->_energyPoints = src.getEnergyPoints();
-	this->_attackDamage = src.getAttackDamage();
-	
+	*this = src;
 	std::cout << "FragTrap " << this->getName() << " copy constructor called\n";
 }
 
@@ -33,10 +28,6 @@ FragTrap::~FragTrap() {
 }
 
 void FragTrap::highFivesGuys(void) {
-	if (this->_energyPoints == 0) {
-		std::cout << "FragTrap " << this->getName() << " has no energy points left!" << std::endl;
-		return;
-	}
 	if (this->_hitPoints <= 0) {
 		std::cout << "FragTrap " << this->getName() << " is already dead!" << std::endl;
 		return;
