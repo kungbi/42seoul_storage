@@ -1,4 +1,5 @@
 #include "Fixed.hpp"
+#include <cmath>
 
 Fixed::Fixed(void) : _flexedPointValue(0) {
 	std::cout << "Default constructor called" << std::endl;
