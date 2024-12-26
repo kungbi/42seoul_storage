@@ -28,7 +28,5 @@ int main( void ) {
 	
 	// std::cout << (c / 0) << std::endl;
 	// std::cout << (c / Fixed()) << std::endl;
-
-
 	return 0;
 }
