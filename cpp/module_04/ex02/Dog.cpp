@@ -12,7 +12,7 @@ Dog::~Dog() {
 }
 
 Dog::Dog(const Dog& dog) {
-	brain = 0;
+	brain = NULL;
 	*this = dog;
 }
 

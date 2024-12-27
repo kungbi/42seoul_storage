@@ -12,7 +12,7 @@ Cat::~Cat() {
 }
 
 Cat::Cat(const Cat& cat) {
-	brain = new Brain();
+	brain = NULL;
 	*this = cat;
 }
 
