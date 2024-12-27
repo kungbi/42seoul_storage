@@ -24,5 +24,9 @@ int main(void) {
 		<< " hit points left and " << clapTrap2.getEnergyPoints() << " energy points left" << std::endl;
 	std::cout << "[LOG] ClapTrap " << clapTrap3.getName() << " has " << clapTrap3.getHitPoints()
 		<< " hit points left and " << clapTrap3.getEnergyPoints() << " energy points left" << std::endl;
+
+	clapTrap.takeDamage(100);
+	std::cout << "[LOG] ClapTrap " << clapTrap.getName() << " has " << clapTrap.getHitPoints()
+		<< " hit points left and " << clapTrap.getEnergyPoints() << " energy points left" << std::endl;
 	return 0;
 }
