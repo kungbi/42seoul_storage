@@ -10,8 +10,8 @@ private:
 public:
 	Cat();
 	~Cat();
-	Cat(const Cat& c);
-	Cat& operator=(const Cat& c);
+	Cat(const Cat& cat);
+	Cat& operator=(const Cat& cat);
 	
 	void makeSound() const;
 	Brain* getBrain() const;

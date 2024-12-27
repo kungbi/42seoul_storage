@@ -1,4 +1,4 @@
-CXX = c++
+CXX = g++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp Animal.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Cat.cpp Brain.cpp
@@ -12,7 +12,7 @@ NAME = ex01
 all : $(NAME)
 
 $(NAME) : $(OBJ) $(INCLUDE)
-	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME) 
 
 clean :
 	rm -rf $(OBJ)

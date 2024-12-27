@@ -11,19 +11,19 @@ Dog::~Dog() {
 	std::cout << "Dog destructor called" << std::endl;
 }
 
-Dog::Dog(const Dog& c) {
-	brain = new Brain();
-	*this = c;
+Dog::Dog(const Dog& dog) {
+	brain = 0;
+	*this = dog;
 }
 
-Dog& Dog::operator=(const Dog& c) {
-	if (this == &c)
+Dog& Dog::operator=(const Dog& dog) {
+	if (this == &dog)
 		return *this;
 
-	type = c.type;
+	type = dog.type;
 	if (brain)
 		delete brain;
-	brain = new Brain(*(c.brain));
+	brain = new Brain(*(dog.brain));
 	return *this;
 }
 

@@ -25,9 +25,7 @@ int main() {
 
 	std::cout << "Dog's Brain: " << dog->getBrain()->getIdea(0) << std::endl;
 	std::cout << "Copied Dog's Brain: " << copiedDog->getBrain()->getIdea(0) << std::endl;
-
-
-	std::cout << std::endl << "-----" << std::endl;
+	
 	delete dog;
 	delete copiedDog;
 

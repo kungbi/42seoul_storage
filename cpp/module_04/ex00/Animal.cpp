@@ -8,16 +8,16 @@ Animal::~Animal() {
 	std::cout << "Animal destructor called" << std::endl;
 }
 
-Animal::Animal(const Animal& a) {
+Animal::Animal(const Animal& animal) {
 	std::cout << "Animal copy constructor called" << std::endl;
-	*this = a;
+	*this = animal;
 }
 
-Animal& Animal::operator=(const Animal& a) {
+Animal& Animal::operator=(const Animal& animal) {
 	std::cout << "Animal assignation operator called" << std::endl;
-	if (this == &a)
+	if (this == &animal)
 		return *this;
-	type = a.type;
+	type = animal.type;
 	return *this;
 }
 

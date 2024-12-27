@@ -8,8 +8,8 @@ protected:
 public:
 	Animal();
 	virtual ~Animal();
-	Animal(const Animal& a);
-	Animal& operator=(const Animal& a);
+	Animal(const Animal& animal);
+	Animal& operator=(const Animal& animal);
 	
 	std::string getType() const;
 	virtual void makeSound() const;

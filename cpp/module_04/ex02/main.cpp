@@ -3,9 +3,7 @@
 #include "Cat.hpp"
 
 int main() {
-	const Animal* dog = new Dog();
-	// const Animal animal;
-	dog->makeSound();
-	delete dog;
+	// Animal animal;
+
 	return 0;
 }

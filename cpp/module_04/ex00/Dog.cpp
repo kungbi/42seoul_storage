@@ -9,12 +9,12 @@ Dog::~Dog() {
 	std::cout << "Dog destructor called" << std::endl;
 }
 
-Dog::Dog(const Dog& c) {
-	*this = c;
+Dog::Dog(const Dog& dog) {
+	*this = dog;
 }
 
-Dog& Dog::operator=(const Dog& c) {
-	type = c.type;
+Dog& Dog::operator=(const Dog& dog) {
+	type = dog.type;
 	return *this;
 }
 

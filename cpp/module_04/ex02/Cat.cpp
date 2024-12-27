@@ -11,16 +11,19 @@ Cat::~Cat() {
 	std::cout << "Cat destructor called" << std::endl;
 }
 
-Cat::Cat(const Cat& c) {
+Cat::Cat(const Cat& cat) {
 	brain = new Brain();
-	*this = c;
+	*this = cat;
 }
 
-Cat& Cat::operator=(const Cat& c) {
-	type = c.type;
+Cat& Cat::operator=(const Cat& cat) {
+	if (this == &cat)
+		return *this;
+
+	type = cat.type;
 	if (brain)
 		delete brain;
-	brain = new Brain(*c.brain);
+	brain = new Brain(*cat.brain);
 	return *this;
 }
 

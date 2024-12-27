@@ -9,12 +9,12 @@ Cat::~Cat() {
 	std::cout << "Cat destructor called" << std::endl;
 }
 
-Cat::Cat(const Cat& c) {
-	*this = c;
+Cat::Cat(const Cat& cat) {
+	*this = cat;
 }
 
-Cat& Cat::operator=(const Cat& c) {
-	type = c.type;
+Cat& Cat::operator=(const Cat& cat) {
+	type = cat.type;
 	return *this;
 }
 
