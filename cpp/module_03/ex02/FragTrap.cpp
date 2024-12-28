@@ -33,6 +33,5 @@ void FragTrap::highFivesGuys(void) {
 		return;
 	}
 	
-	this->_energyPoints--;
 	std::cout << "FragTrap " << this->getName() << " high fives guys!" << std::endl;
 }
