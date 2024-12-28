@@ -3,7 +3,7 @@
 #include "Cat.hpp"
 
 int main() {
-	// Animal animal;
+	// Animal* animal = new Animal();
 
 	return 0;
 }
