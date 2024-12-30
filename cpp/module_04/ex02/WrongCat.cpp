@@ -9,7 +9,7 @@ WrongCat::~WrongCat() {
 	std::cout << "WrongCat destructor called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat& c) {
+WrongCat::WrongCat(const WrongCat& c): WrongAnimal(c) {
 	*this = c;
 }
 
