@@ -7,38 +7,39 @@
 
 int main(void) {
     Bureaucrat king("king", 1);
-    Bureaucrat jaeyojun("jaeyojun", 150);
+    Bureaucrat woonshin("woonshin", 150);
 	ShrubberyCreationForm form("hello");
 
 	king.signForm(form);
-	jaeyojun.executeForm(form);
-    std::cout << "[King] : " << king << "\n";
-    std::cout << "[jaeyojun] : " << jaeyojun << "\n";
+	woonshin.executeForm(form);
+    std::cout << "[King] : " << king;
+    std::cout << "[woonshin] : " << woonshin;
 
-    std::cout << "============= Shrubbery ============\n";
+    std::cout << "============= Shrubbery ============" << std::endl;
     ShrubberyCreationForm form1("home");
-    std::cout << "[Form]\n" << form1 << "\n";
+    std::cout << "[Form]" << std::endl << form1 << std::endl;
     king.signForm(form1);
     king.executeForm(form1);
-    jaeyojun.signForm(form1);
-    jaeyojun.executeForm(form1);
-    std::cout << "\n\n";
+    woonshin.signForm(form1);
+    woonshin.executeForm(form1);
+    std::cout << std::endl;
 
-    std::cout << "============= Robotomy ============\n";
+    std::cout << "============= Robotomy ============" << std::endl;
     RobotomyRequestForm form2("home");
-    std::cout << "[Form]\n" << form2 << "\n";
+    std::cout << "[Form]" << std::endl << form2 << std::endl;
     king.signForm(form2);
-    jaeyojun.signForm(form2);
+    woonshin.signForm(form2);
     king.executeForm(form2);
-    jaeyojun.executeForm(form2);
-    std::cout << "\n\n";
+    woonshin.executeForm(form2);
+    std::cout << std::endl;
 
-    std::cout << "============= Presidential ============\n";
+    std::cout << "============= Presidential ============" << std::endl;
     PresidentialPardonForm form3("home");
-    std::cout << "[Form]\n" << form3 << "\n";
-    king.signForm(form3);
-    jaeyojun.signForm(form3);
+    std::cout << "[Form]" << std::endl << form3 << std::endl;
     king.executeForm(form3);
-    jaeyojun.executeForm(form3);
-    std::cout << "\n\n";
+    king.signForm(form3);
+    woonshin.signForm(form3);
+    king.executeForm(form3);
+    woonshin.executeForm(form3);
+    std::cout << std::endl;
 }
