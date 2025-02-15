@@ -1,10 +1,5 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(void) 
-	:AForm("Unknown" , 72, 45), target("unknown") {
-	std::cout << this->getName() <<	 " Constructor called\n";
-}
-
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) 
 	:AForm("Robotomy" , 72, 45), target(target) {
 	std::cout << this->getName() <<	 " Constructor called\n";

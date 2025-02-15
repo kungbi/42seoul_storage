@@ -1,10 +1,5 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(void)
-	:AForm("Unknown" , 25, 5), target("unknown") {
-	std::cout << this->getName() <<	 " Constructor called\n";
-}
-
 PresidentialPardonForm::PresidentialPardonForm(const std::string target)
 	:AForm("Presidential" , 25, 5), target(target) {
 	std::cout << this->getName() <<	 " Constructor called\n";

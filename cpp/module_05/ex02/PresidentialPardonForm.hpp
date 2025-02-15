@@ -9,8 +9,9 @@ class PresidentialPardonForm : public AForm
 private:
 	std::string target;
 	
-public:
 	PresidentialPardonForm(void);
+	
+public:
 	PresidentialPardonForm(const std::string target);
 	PresidentialPardonForm(PresidentialPardonForm const &presidentialPardonForm);
 	~PresidentialPardonForm(void);
