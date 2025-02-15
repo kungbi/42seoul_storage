@@ -6,12 +6,12 @@ ShrubberyCreationForm::ShrubberyCreationForm(void)
 	std::cout << this->getName() <<	 " Constructor called\n";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string target)\
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string target)
 	:AForm("Shrubbery", 145, 137), target(target) {
 	std::cout << this->getName() <<	 " Constructor called\n";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &shrubberyCreationForm)\
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &shrubberyCreationForm)
 	:AForm(shrubberyCreationForm), target(shrubberyCreationForm.getTarget()) {
 	std::cout << this->getName() <<	 " copy Constructor called\n";
 }
