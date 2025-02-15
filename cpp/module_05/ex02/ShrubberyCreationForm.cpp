@@ -1,31 +1,26 @@
 #include "ShrubberyCreationForm.hpp"
 #include <string>
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) \
-	: AForm("Unknown", 145, 137), target("unknown")
-{
+ShrubberyCreationForm::ShrubberyCreationForm(void) 
+	: AForm("Unknown", 145, 137), target("unknown") {
 	std::cout << this->getName() <<	 " Constructor called\n";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string target)\
-	:AForm("Shrubbery", 145, 137), target(target)
-{
+	:AForm("Shrubbery", 145, 137), target(target) {
 	std::cout << this->getName() <<	 " Constructor called\n";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &shrubberyCreationForm)\
-	:AForm(shrubberyCreationForm), target(shrubberyCreationForm.getTarget())
-{
+	:AForm(shrubberyCreationForm), target(shrubberyCreationForm.getTarget()) {
 	std::cout << this->getName() <<	 " copy Constructor called\n";
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm(void) \
-{
+ShrubberyCreationForm::~ShrubberyCreationForm(void) {
 	std::cout << this->getName() <<	 " Destructor called\n";
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const &shrubberyCreationForm)
-{
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const &shrubberyCreationForm) {
 	if (this == &shrubberyCreationForm)
 		return (*this);
 	this->target = shrubberyCreationForm.getTarget();
