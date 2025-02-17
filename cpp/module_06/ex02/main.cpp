@@ -21,7 +21,6 @@ int main(void) {
 		std::cout << std::endl;
 	}
 
-
 	return 0;
 }
 
@@ -56,20 +55,17 @@ void identify_from_reference(Base& p) {
 		A& a = dynamic_cast<A&>(p);
 		(void)a;
 		std::cout << "A" << std::endl;
-	} catch (std::bad_cast) {
-	}
+	} catch (std::exception& e) {}
 
 	try {
 		B& b = dynamic_cast<B&>(p);
 		(void)b;
 		std::cout << "B" << std::endl;
-	} catch (std::bad_cast) {
-	}
+	} catch (std::exception& e) {}
 
 	try {
 		C& c = dynamic_cast<C&>(p);
 		(void)c;
 		std::cout << "C" << std::endl;
-	} catch (std::bad_cast) {
-	}
+	} catch (std::exception& e) {}
 }
