@@ -29,35 +29,41 @@ int main(void) {
 		++it;
 		// 5, 3, 5, 737, 0
 	}
-	std::stack<int> s(mstack);
 
-
-	std::cout << "=========List test=========" << std::endl;
-	std::list<int> list;
-	list.push_back(5);
-	list.push_back(17);
-
-	std::cout << list.back() << std::endl; // -> 17
-
-	list.pop_back();
-
-	std::cout << list.size() << std::endl; // -> 1
-
-	list.push_back(3);
-	list.push_back(5);
-	list.push_back(737);
-	list.push_back(0);
-
-	std::list<int>::iterator it2 = list.begin();
-	std::list<int>::iterator ite2 = list.end();
-
-	++it2;
-	--it2;
-	while (it2 != ite2){
-		std::cout << *it2 << std::endl;
-		++it2;
-		// 5, 3, 5, 737, 0
+	MutantStack<int> s = mstack;
+	mstack.pop();
+	for (MutantStack<int>::iterator it = s.begin(); it != s.end(); ++it) {
+		std::cout << *it << std::endl;
 	}
+
+
+
+	// std::cout << "=========List test=========" << std::endl;
+	// std::list<int> list;
+	// list.push_back(5);
+	// list.push_back(17);
+
+	// std::cout << list.back() << std::endl; // -> 17
+
+	// list.pop_back();
+
+	// std::cout << list.size() << std::endl; // -> 1
+
+	// list.push_back(3);
+	// list.push_back(5);
+	// list.push_back(737);
+	// list.push_back(0);
+
+	// std::list<int>::iterator it2 = list.begin();
+	// std::list<int>::iterator ite2 = list.end();
+
+	// ++it2;
+	// --it2;
+	// while (it2 != ite2){
+	// 	std::cout << *it2 << std::endl;
+	// 	++it2;
+	// 	// 5, 3, 5, 737, 0
+	// }
 
 
 	return 0;
