@@ -3,6 +3,7 @@
 
 # include <vector>
 # include <iterator>
+# include <algorithm>
 
 class Span {
 private:
