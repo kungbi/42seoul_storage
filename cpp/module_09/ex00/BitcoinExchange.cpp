@@ -20,41 +20,36 @@ BitcoinExchange & BitcoinExchange::operator=(BitcoinExchange const &bitcoinexcha
 	return *this;
 }
 
-void BitcoinExchange::showErrorMessage(std::string message) {
-	std::cout << message << std::endl;
-	std::exit(1);
-}
-
 BitcoinExchange::BitcoinExchange(const char *data) {
 	std::ifstream file;
 
 	file.open(data, std::ios::in);
 	if (!file.is_open())
-		showErrorMessage("Error: could not open file.");
+		throw std::invalid_argument("could not open file.");
 	
 	std::string line;
 	getline(file, line);
 	if (line.empty())
-		showErrorMessage("Error: coinMap is empty.");
+		throw std::invalid_argument("coinMap is empty.");
 
 	char *pos = NULL;
 	while (getline(file, line)) {
 
 		if(line.size() < 12 || csv_line_check(line))
-			showErrorMessage("Error: Invalid in csv file.");
+			throw std::invalid_argument("Invalid line in csv file.");
 
 		if (!isValidValue(line.substr(11)) || line[10] != ',')
-			showErrorMessage("Error: Invalid Value in csv file.");
+			throw std::invalid_argument("Invalid Value in csv file.");
 
 		if (!isValidDate(line.substr(0, 10)))
-			showErrorMessage("Error: Invalid Date in csv file.");
+			throw std::invalid_argument("Invalid Date in csv file.");
 		if (std::strtof(line.substr(11).c_str(), &pos) < 0)
-			showErrorMessage("Error: not a positive number\n");
+			throw std::invalid_argument("not a positive number\n");
 		fillCoinMap(line.substr(0, 10), std::strtof(line.substr(11).c_str(), &pos));
 	}
 
 	if (coinMap.empty())
-		showErrorMessage("Error: coinMap is empty.");
+		throw std::invalid_argument("coinMap is empty.");
 	this->first = coinMap.begin()->first;
 	this->last = coinMap.rbegin()->first;
 }
@@ -63,7 +58,7 @@ void BitcoinExchange::fillCoinMap(std::string date, float value) {
 	if (coinMap.find(date) == coinMap.end())
 		coinMap[date] = value;
 	else
-		showErrorMessage("Error: Already exists in map\n");
+		throw std::invalid_argument("Already exists in map\n");
 }
 
 int BitcoinExchange::csv_line_check(std::string line) {
@@ -173,13 +168,12 @@ void BitcoinExchange::calcBitcoin(const char *argv)
 	std::ifstream file;
 	file.open(argv, std::ios::in);
 	if (!file.is_open())
-		showErrorMessage("Error: could not open file.");
+		throw std::invalid_argument("could not open file.");
 
 	std::string line;
 	getline(file, line);
 	if (line.empty())
-		showErrorMessage("Error: coinMap is empty.");
-
+		throw std::invalid_argument("coinMap is empty.");
 	while (getline(file, line))
 	{
 		if (line.empty())
