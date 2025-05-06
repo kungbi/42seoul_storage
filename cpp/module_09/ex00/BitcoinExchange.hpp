@@ -20,7 +20,7 @@ private:
 	void isDateOutOfRange(const std::string &line);
 	void isInvalidValue(const std::string &line);
 
-	void hand`leError(std::string line);
+	void validate(std::string line);
 
 public:
 	BitcoinExchange();

@@ -184,7 +184,7 @@ void BitcoinExchange::calcBitcoin(const char *argv)
 	{
 		if (line.empty())
 			continue;
-		handleError(line);
+		validate(line);
 		findDate(line.substr(0, 10), std::atof(line.substr(13).c_str()));
 	}
 
@@ -202,7 +202,7 @@ void BitcoinExchange::printResult(std::map<std::string, float>::iterator iter, s
 	std::cout << date << " => " << value << " = " << iter->second * value << "\n";
 }
 
-void BitcoinExchange::handleError(std::string line)
+void BitcoinExchange::validate(std::string line)
 {
 	isLineTooShort(line);
 	isValidDateFormat(line);
