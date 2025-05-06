@@ -1,11 +1,8 @@
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange() { 
-	first = "1000-01-01";
-	last = "9999-12-31";
+BitcoinExchange::~BitcoinExchange(void) {
+	coinMap.clear();
 }
-
-BitcoinExchange::~BitcoinExchange() {}
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &bitcoinexchange) {
 	*this = bitcoinexchange;
@@ -20,39 +17,111 @@ BitcoinExchange & BitcoinExchange::operator=(BitcoinExchange const &bitcoinexcha
 	return *this;
 }
 
-BitcoinExchange::BitcoinExchange(const char *data) {
-	std::ifstream file;
+// 코인 데이터 파일을 읽어와서 coinMap에 저장
+BitcoinExchange::BitcoinExchange(const char *coinData) {
+	std::ifstream file = openFile(coinData);
+	parseHeaderLine(file);
+	parseCsvData(file);
+	validateCoinMap();
+	setDateRange();
+}
 
-	file.open(data, std::ios::in);
+
+void BitcoinExchange::calcBitcoin(const std::string &inputFile) {
+	std::ifstream file = openInputFile(inputFile);
+	skipHeaderLine(file);
+	processInputLines(file);
+}
+
+std::ifstream BitcoinExchange::openInputFile(const std::string &filename)
+{
+	std::ifstream file(filename);
 	if (!file.is_open())
 		throw std::invalid_argument("could not open file.");
-	
+	return file;
+}
+
+void BitcoinExchange::skipHeaderLine(std::ifstream &file)
+{
+	std::string header;
+	std::getline(file, header);
+	if (header.empty())
+		throw std::invalid_argument("input file is empty.");
+}
+
+void BitcoinExchange::processInputLines(std::ifstream &file)
+{
+	std::string line;
+	while (std::getline(file, line))
+	{
+		if (line.empty())
+			continue;
+
+		try
+		{
+			validate(line);
+
+			std::string date = line.substr(0, 10);
+			std::string valueStr = line.substr(13);
+			float value = std::atof(valueStr.c_str());
+
+			findDate(date, value);
+		}
+		catch (const std::exception &e)
+		{
+			std::cerr << "Error: " << e.what() << std::endl;
+		}
+	}
+}
+
+// private
+
+std::ifstream BitcoinExchange::openFile(const char *filename) {
+	std::ifstream file(filename, std::ios::in);
+	if (!file.is_open())
+		throw std::invalid_argument("could not open file.");
+	return file;
+}
+
+void BitcoinExchange::parseHeaderLine(std::ifstream &file) {
 	std::string line;
 	getline(file, line);
 	if (line.empty())
 		throw std::invalid_argument("coinMap is empty.");
+}
 
+void BitcoinExchange::parseCsvData(std::ifstream &file) {
+	std::string line;
 	char *pos = NULL;
-	while (getline(file, line)) {
 
-		if(line.size() < 12 || csv_line_check(line))
+	while (getline(file, line)) {
+		if (line.size() < 12 || csv_line_check(line))
 			throw std::invalid_argument("Invalid line in csv file.");
 
-		if (!isValidValue(line.substr(11)) || line[10] != ',')
-			throw std::invalid_argument("Invalid Value in csv file.");
+		std::string date = line.substr(0, 10);
+		std::string valueStr = line.substr(11);
 
-		if (!isValidDate(line.substr(0, 10)))
-			throw std::invalid_argument("Invalid Date in csv file.");
-		if (std::strtof(line.substr(11).c_str(), &pos) < 0)
+		if (line[10] != ',' || !isValidValue(valueStr) || !isValidDate(date))
+			throw std::invalid_argument("Invalid Value or Date in csv file.");
+
+		float value = std::strtof(valueStr.c_str(), &pos);
+		if (value < 0)
 			throw std::invalid_argument("not a positive number\n");
-		fillCoinMap(line.substr(0, 10), std::strtof(line.substr(11).c_str(), &pos));
-	}
 
+		fillCoinMap(date, value);
+	}
+}
+
+void BitcoinExchange::validateCoinMap() {
 	if (coinMap.empty())
 		throw std::invalid_argument("coinMap is empty.");
+}
+
+void BitcoinExchange::setDateRange() {
 	this->first = coinMap.begin()->first;
 	this->last = coinMap.rbegin()->first;
 }
+
 
 void BitcoinExchange::fillCoinMap(std::string date, float value) {
 	if (coinMap.find(date) == coinMap.end())
@@ -161,27 +230,6 @@ void BitcoinExchange::outputelement()
 	{
 		std::cout << iter->first << " " << iter->second << "\n";
 	}
-}
-
-void BitcoinExchange::calcBitcoin(const char *argv)
-{
-	std::ifstream file;
-	file.open(argv, std::ios::in);
-	if (!file.is_open())
-		throw std::invalid_argument("could not open file.");
-
-	std::string line;
-	getline(file, line);
-	if (line.empty())
-		throw std::invalid_argument("coinMap is empty.");
-	while (getline(file, line))
-	{
-		if (line.empty())
-			continue;
-		validate(line);
-		findDate(line.substr(0, 10), std::atof(line.substr(13).c_str()));
-	}
-
 }
 
 void BitcoinExchange::findDate(std::string line, float value)
