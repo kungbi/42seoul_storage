@@ -26,6 +26,8 @@ RPN &RPN::operator=(const RPN &rpn) {
 }
 
 int RPN::takePop() {
+    if (this->stack.empty())
+        showMessage("Error: Attempted to pop from empty stack");
     int num = this->stack.top();
     this->stack.pop();
     return num;
