@@ -29,7 +29,7 @@ BitcoinExchange::BitcoinExchange(const char *coinData) {
 
 
 void BitcoinExchange::calcBitcoin(const std::string &inputFile) {
-    std::ifstream file(inputFile);
+    std::ifstream file(inputFile.c_str());
     if (!file.is_open())
         throw std::invalid_argument("could not open file.");
     skipHeaderLine(file);
