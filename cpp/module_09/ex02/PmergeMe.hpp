@@ -84,8 +84,10 @@ void PmergeMe::binaryInsertSorted(T &container, typename T::value_type value) {
 
 template <typename T>
 void PmergeMe::pairAndSort(T &container, T &result) {
-    std::vector< std::pair<int, int> > pairs;
+    std::vector<std::pair<int, int> > pairs;
     typename T::iterator it = container.begin();
+    
+    // 1. 짝짓기 (큰 값, 작은 값)으로 저장
     while (it != container.end()) {
         int first = *it;
         ++it;
@@ -97,18 +99,34 @@ void PmergeMe::pairAndSort(T &container, T &result) {
         if (it != container.end()) ++it;
     }
 
+    // 2. 큰 값 기준 정렬
     std::sort(pairs.begin(), pairs.end());
 
+    // 3. 큰 값들로 초기 정렬 리스트 생성
     for (size_t i = 0; i < pairs.size(); ++i) {
         result.push_back(pairs[i].first);
     }
 
+    // 🔥 4. Jacobsthal 수열 생성 (삽입할 작은 값 수만큼)
+    generateJacobsthal(pairs.size());
+
+    // 5. 작은 값들을 Jacobsthal 순서로 이진 삽입
+    std::vector<bool> inserted(pairs.size(), false); // 중복 삽입 방지
+    for (size_t i = 0; i < jacobsthalSeq.size(); ++i) {
+        size_t idx = jacobsthalSeq[i];
+        if (idx >= pairs.size() || inserted[idx] || pairs[idx].second == -1)
+            continue;
+        binaryInsertSorted(result, pairs[idx].second);
+        inserted[idx] = true;
+    }
+
+    // 6. Jacobsthal 수열 외의 남은 인덱스들 삽입
     for (size_t i = 0; i < pairs.size(); ++i) {
-        if (pairs[i].second != -1) {
+        if (!inserted[i] && pairs[i].second != -1)
             binaryInsertSorted(result, pairs[i].second);
-        }
     }
 }
+
 
 template <typename T>
 void PmergeMe::runSort(T &container, T &sorted) {
