@@ -71,11 +71,6 @@ bool PmergeMe::isSorted(const T &container) {
     return true;
 }
 
-template <typename T>
-void PmergeMe::binaryInsertSorted(T &, typename T::value_type) {
-    static_assert(sizeof(T) == -1, "binaryInsertSorted is not supported for this container type.");
-}
-
 template <>
 inline void PmergeMe::binaryInsertSorted(std::vector<int> &container, int value) {
     std::vector<int>::iterator it = std::lower_bound(container.begin(), container.end(), value);
