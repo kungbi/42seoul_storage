@@ -45,7 +45,7 @@ void PmergeMe::generateJacobsthal(int size) {
 void PmergeMe::run(int argc, char **argv) {
     parseInput(argc, argv);
 
-    std::cout << "Before (vector): ";
+    std::cout << "Before: ";
     showContainer(vectorData, "");
 
     clock_t start = clock();
@@ -53,12 +53,8 @@ void PmergeMe::run(int argc, char **argv) {
     clock_t end = clock();
     double vectorTime1 = static_cast<double>(end - start) / CLOCKS_PER_SEC;
 
-    std::cout << "After (vector): ";
+    std::cout << "After: ";
     showContainer(sortedVector, "");
-
-    
-    std::cout << "Before (list): ";
-    showContainer(listData, "");
     
     start = clock();
     runSort(listData, sortedList);
