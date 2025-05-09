@@ -72,13 +72,26 @@ bool PmergeMe::isSorted(const T &container) {
 }
 
 template <typename T>
-void PmergeMe::binaryInsertSorted(T &container, typename T::value_type value) {
-    typename T::iterator it = container.begin();
-    while (it != container.end() && *it < value) {
-        ++it;
-    }
+void PmergeMe::binaryInsertSorted(T &, typename T::value_type) {
+    static_assert(sizeof(T) == -1, "binaryInsertSorted is not supported for this container type.");
+}
+
+template <>
+inline void PmergeMe::binaryInsertSorted(std::vector<int> &container, int value) {
+    std::vector<int>::iterator it = std::lower_bound(container.begin(), container.end(), value);
     container.insert(it, value);
 }
+
+template <>
+inline void PmergeMe::binaryInsertSorted(std::list<int> &container, int value) {
+    std::list<int>::iterator it = container.begin();
+    while (it != container.end() && *it < value)
+        ++it;
+    container.insert(it, value);
+}
+
+
+
 
 template <typename T>
 void PmergeMe::pairAndSort(T &container, T &result) {
@@ -88,12 +101,17 @@ void PmergeMe::pairAndSort(T &container, T &result) {
     while (it != container.end()) {
         int first = *it;
         ++it;
-        int second = (it != container.end()) ? *it : -1;
+        
+        int second = -1;
+        if (it != container.end()) {
+            second = *it;
+            ++it;
+        }
+
         if (second != -1 && first < second)
             pairs.push_back(std::make_pair(second, first));
         else
             pairs.push_back(std::make_pair(first, second));
-        if (it != container.end()) ++it;
     }
 
     std::sort(pairs.begin(), pairs.end());
@@ -106,7 +124,7 @@ void PmergeMe::pairAndSort(T &container, T &result) {
     std::vector<bool> inserted(pairs.size(), false); // 중복 삽입 방지
     for (size_t i = 0; i < jacobsthalSeq.size(); ++i) {
         size_t idx = jacobsthalSeq[i];
-        if (idx >= pairs.size() || inserted[idx] || pairs[idx].second == -1)
+        if (pairs.size() <= idx || inserted[idx] || pairs[idx].second == -1)
             continue;
         binaryInsertSorted(result, pairs[idx].second);
         inserted[idx] = true;
