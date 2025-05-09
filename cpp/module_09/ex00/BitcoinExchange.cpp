@@ -17,9 +17,10 @@ BitcoinExchange & BitcoinExchange::operator=(BitcoinExchange const &bitcoinexcha
     return *this;
 }
 
-// 코인 데이터 파일을 읽어와서 coinMap에 저장
 BitcoinExchange::BitcoinExchange(const char *coinData) {
-    std::ifstream file = openFile(coinData);
+    std::ifstream file(coinData);
+    if (!file.is_open())
+        throw std::invalid_argument("could not open file.");
     parseHeaderLine(file);
     parseCsvData(file);
     validateCoinMap();
@@ -28,17 +29,11 @@ BitcoinExchange::BitcoinExchange(const char *coinData) {
 
 
 void BitcoinExchange::calcBitcoin(const std::string &inputFile) {
-    std::ifstream file = openInputFile(inputFile);
-    skipHeaderLine(file);
-    processInputLines(file);
-}
-
-std::ifstream BitcoinExchange::openInputFile(const std::string &filename)
-{
-    std::ifstream file(filename);
+    std::ifstream file(inputFile);
     if (!file.is_open())
         throw std::invalid_argument("could not open file.");
-    return file;
+    skipHeaderLine(file);
+    processInputLines(file);
 }
 
 void BitcoinExchange::skipHeaderLine(std::ifstream &file)
@@ -47,6 +42,8 @@ void BitcoinExchange::skipHeaderLine(std::ifstream &file)
     std::getline(file, header);
     if (header.empty())
         throw std::invalid_argument("input file is empty.");
+    if (header != "date | value")
+        throw std::invalid_argument("Invalid header line.");
 }
 
 void BitcoinExchange::processInputLines(std::ifstream &file)
@@ -76,18 +73,13 @@ void BitcoinExchange::processInputLines(std::ifstream &file)
 
 // private
 
-std::ifstream BitcoinExchange::openFile(const char *filename) {
-    std::ifstream file(filename, std::ios::in);
-    if (!file.is_open())
-        throw std::invalid_argument("could not open file.");
-    return file;
-}
-
 void BitcoinExchange::parseHeaderLine(std::ifstream &file) {
     std::string line;
     getline(file, line);
     if (line.empty())
         throw std::invalid_argument("coinMap is empty.");
+    if (line != "date,exchange_rate")
+        throw std::invalid_argument("Invalid header line.");
 }
 
 void BitcoinExchange::parseCsvData(std::ifstream &file) {
@@ -95,7 +87,7 @@ void BitcoinExchange::parseCsvData(std::ifstream &file) {
     char *pos = NULL;
 
     while (getline(file, line)) {
-        if (line.size() < 12 || csv_line_check(line))
+        if (line.size() < 12 || isInvalidLine(line))
             throw std::invalid_argument("Invalid line in csv file.");
 
         std::string date = line.substr(0, 10);
@@ -118,6 +110,8 @@ void BitcoinExchange::validateCoinMap() {
 }
 
 void BitcoinExchange::setDateRange() {
+    if (coinMap.empty())
+        throw std::runtime_error("coinMap is empty. Cannot set date range.");
     this->first = coinMap.begin()->first;
     this->last = coinMap.rbegin()->first;
 }
@@ -130,7 +124,7 @@ void BitcoinExchange::fillCoinMap(std::string date, float value) {
         throw std::invalid_argument("Already exists in map\n");
 }
 
-int BitcoinExchange::csv_line_check(std::string line) {
+int BitcoinExchange::isInvalidLine(std::string line) {
     int i = 0;
 
     while (line[i]) {
@@ -198,31 +192,35 @@ int BitcoinExchange::isValidDate(std::string date) {
 
 int BitcoinExchange::isValidValue(std::string value)
 {
+    if (value.empty())
+        return false;
+
     int index = 0;
     int point = 0;
 
-    if (value.empty())
-        return true;
-    if (value[0] == '-' || value[0] == '+')
-        return true;
-    while (value[index] != '\0')
-    {
-        if (point > 1)
-            return false;
-        if (value[index] < '0' || value[index] > '9')
-        {
-            if (value[index] == '.')
-                point++;
-            else
-                return false;
-        }
+    // 첫 글자가 부호일 경우
+    if (value[0] == '+' || value[0] == '-') {
+        if (value.size() == 1)
+            return false; // 부호만 있는 경우는 허용 안 함
         index++;
     }
 
+    bool hasDigit = false;
 
-    return true;
+    for (; value[index]; ++index) {
+        if (value[index] == '.') {
+            point++;
+            if (point > 1)
+                return false;
+        } else if (value[index] >= '0' && value[index] <= '9') {
+            hasDigit = true;
+        } else {
+            return false;
+        }
+    }
+
+    return hasDigit;
 }
-
 
 void BitcoinExchange::outputelement()
 {
@@ -235,8 +233,10 @@ void BitcoinExchange::outputelement()
 void BitcoinExchange::findDate(std::string line, float value)
 {
     std::map<std::string, float>::iterator iter = coinMap.upper_bound(line);
-    iter--;
-    printResult(iter, line, value);
+    if (iter == coinMap.begin())
+        printResult(iter, line, value);
+    else
+        printResult(--iter, line, value);
 }
 
 void BitcoinExchange::printResult(std::map<std::string, float>::iterator iter, std::string date, float value)

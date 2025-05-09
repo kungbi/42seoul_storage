@@ -22,13 +22,11 @@ private:
 
     void validate(std::string line);
 
-    std::ifstream openFile(const char *filename);
     void parseHeaderLine(std::ifstream &file);
     void parseCsvData(std::ifstream &file);
     void validateCoinMap();
     void setDateRange();
 
-    std::ifstream openInputFile(const std::string &filename);
     void skipHeaderLine(std::ifstream &file);
     void processInputLines(std::ifstream &file);
 
@@ -40,7 +38,7 @@ public:
     BitcoinExchange &operator=(BitcoinExchange const &bitcoinexchange);
     BitcoinExchange(const char *data);
 
-    int csv_line_check(std::string line);
+    int isInvalidLine(std::string line);
     int isValidDate(std::string date);
     int isValidValue(std::string value);
 
