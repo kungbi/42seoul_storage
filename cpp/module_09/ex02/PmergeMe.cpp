@@ -1,4 +1,3 @@
-// PmergeMe.cpp
 #include "PmergeMe.hpp"
 
 PmergeMe::PmergeMe() {}
@@ -57,15 +56,15 @@ void PmergeMe::run(int argc, char **argv) {
     std::cout << "After (vector): ";
     showContainer(sortedVector, "");
 
-	
+    
     std::cout << "Before (list): ";
     showContainer(listData, "");
-	
+    
     start = clock();
     runSort(listData, sortedList);
     end = clock();
     double vectorTime2 = static_cast<double>(end - start) / CLOCKS_PER_SEC;
-	
+    
     std::cout << "Time to process a range of " << vectorData.size()
               << " elements with std::vector<int> : " << std::fixed << std::setprecision(6)
               << vectorTime1 << " s\n";
